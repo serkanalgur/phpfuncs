@@ -12,7 +12,7 @@ Description and other info will be here.
 
 ## Functions
 
-- [InArray (PHP in_array)](#in-array)
+- [InArray (PHP in_array)](#inarray-php-in_array)
 
 
 
