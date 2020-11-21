@@ -12,10 +12,10 @@ import (
 * haystack : should be an array
 * strict : set true for type check
 * return boolean true / false
- */
+**/
 
-
-func inArray(needle interface{}, haystack interface{}) bool {
+// InArray Function
+func InArray(needle interface{}, haystack interface{}) bool {
 	switch reflect.TypeOf(haystack).Kind() {
 		default:
       s := reflect.ValueOf(haystack)
