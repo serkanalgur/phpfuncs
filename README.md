@@ -13,8 +13,7 @@ Description and other info will be here.
 ## Functions
 
 - [InArray (PHP in_array)](#inarray-php-in_array)
-
-
+- [Time (PHP time)](#time-php-time)
 
 ### InArray (PHP in_array)
 
@@ -51,3 +50,12 @@ You can see in [examples folder](examples/InArray.go)
     fmt.Printf("Result is : %v\n",arrayo)
   }
 ````
+
+### Time (PHP time)
+
+#### Usage of time
+
+  ```go
+    phpfuncs.Time()
+    //Return current Unix timestamp
+  ```
