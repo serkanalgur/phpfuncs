@@ -6,6 +6,10 @@ Php Functions in Go
 
 ```bash
   go get github.com/serkanalgur/phpfuncs
+
+  # For update
+
+  go get -u github.com/serkanalgur/phpfuncs
 ```
 
 Description and other info will be here.
@@ -53,9 +57,28 @@ You can see in [examples folder](examples/InArray.go)
 
 ### Time (PHP time)
 
-#### Usage of time
+#### Usage of Time Function
 
   ```go
     phpfuncs.Time()
     //Return current Unix timestamp
   ```
+
+#### Example of Time Function
+
+You can see in [examples folder](examples/Time.go)
+
+```go
+  package main
+
+  import (
+    "fmt"
+
+    "github.com/serkanalgur/phpfuncs"
+  )
+
+  func main(){
+    currentTime := phpfuncs.Time()
+    fmt.Printf("Current Timestamp is: %d",currentTime)
+  }
+```
