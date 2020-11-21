@@ -9,9 +9,19 @@ const TestWords = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed 
 
 const needle = "est"
 
-func TestInArray(t *testing.T) {
+func TestInArrayString(t *testing.T) {
 	want := true
 	stack := strings.Split(TestWords," ")
+	if got := inArray(needle, stack); got != want {
+		t.Errorf("inArray() = %v, want %v", got, want)
+	}
+}
+
+
+func TestInArrrayInt(t *testing.T){
+	want := true
+	var needle = 2
+	stack := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
 	if got := inArray(needle, stack); got != want {
 		t.Errorf("inArray() = %v, want %v", got, want)
 	}
