@@ -18,7 +18,12 @@ Php Functions in Go
 
 Description and other info will be here.
 
-## Functions
+
+### Proper Documentation
+
+Please Visit [https://pkg.go.dev/badge/serkanalgur/phpfuncs](https://pkg.go.dev/badge/serkanalgur/phpfuncs)
+
+<!-- ## Functions
 
 - [InArray (PHP in_array)](#inarray-php-in_array)
 - [Time (PHP time)](#time-php-time)
@@ -85,4 +90,4 @@ You can see in [examples folder](examples/Time.go)
     currentTime := phpfuncs.Time()
     fmt.Printf("Current Timestamp is: %d",currentTime)
   }
-```
+``` -->
