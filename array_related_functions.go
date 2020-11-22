@@ -44,6 +44,16 @@ func ArrayCountValues(v []interface{}) map[interface{}]uint {
 		return cnt
 }
 
+// ArrayMerge - Merge Arrays into one
+func ArrayMerge(v ...[]interface{}) []interafce{}{
+
+	fArray := make([]interface{},0)
+	for _, m := range v {
+		fArray = append(fArray, m...)
+	}
+	return fArray
+}
+
 // Count - Count array values
 func Count(v []interface{}) int {
 	return len(v)
