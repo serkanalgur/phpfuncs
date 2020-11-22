@@ -54,6 +54,21 @@ func ArrayMerge(v ...[]interface{}) []interface{} {
 	return fArray
 }
 
+// ArrayValues - Return array values
+func ArrayValues(v ...[]interface{}) (value []interface{}) {
+		var values []interface{}
+
+		for _, val := range v {
+			cIn := InArray(val, v)
+				if!cIn {
+					values = append(values, val)
+				}
+		}
+
+		return values
+}
+
+
 // Count - Count array values
 func Count(v []interface{}) int {
 	return len(v)
