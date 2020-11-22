@@ -43,3 +43,8 @@ func ArrayCountValues(v []interface{}) map[interface{}]uint {
 
 		return cnt
 }
+
+// Count - Count array values
+func Count(v []interface{}) int {
+	return len(v)
+}
