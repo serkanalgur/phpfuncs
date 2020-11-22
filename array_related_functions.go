@@ -45,7 +45,7 @@ func ArrayCountValues(v []interface{}) map[interface{}]uint {
 }
 
 // ArrayMerge - Merge Arrays into one
-func ArrayMerge(v ...[]interface{}) []interafce{}{
+func ArrayMerge(v ...[]interface{}) []interface{} {
 
 	fArray := make([]interface{},0)
 	for _, m := range v {
