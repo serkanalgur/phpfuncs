@@ -4,17 +4,13 @@ import (
 	"reflect"
 )
 
-/**
-*	Similar function of in_array in PHP.
-* Original : https://www.php.net/manual/en/function.in-array.php
-* func inArray
-* needle : string, int
-* haystack : should be an array
-* strict : set true for type check
-* return boolean true / false
-**/
-
-// InArray Function
+// InArray - Similar function of in_array in PHP
+// Original : https://www.php.net/manual/en/function.in-array.php
+// func inArray
+// needle : string, int
+// haystack : should be an array
+// strict : set true for type check
+// return boolean true / false
 func InArray(needle interface{}, haystack interface{}) bool {
 	switch reflect.TypeOf(haystack).Kind() {
 		default:
