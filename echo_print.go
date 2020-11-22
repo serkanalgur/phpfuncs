@@ -10,11 +10,11 @@ func Echo(vars ...interface{}){
 }
 
 // Print - Prints what user gave
-func Print(vars interface{}) {
-	fmt.Print(vars)
+func Print(vars ...interface{}) {
+	fmt.Print(vars ...)
 }
 
 // PrintR - Prints what user gave
-func PrintR(vars interface{}) {
-	fmt.Print(vars)
+func PrintR(vars ...interface{}) {
+	fmt.Print(vars ...)
 }
