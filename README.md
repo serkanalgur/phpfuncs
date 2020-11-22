@@ -2,6 +2,8 @@
 
 Php Functions in Go
 
+:bangbang: **THIS MODULE IS UNDER DEVELOPMENT. PLEASE USE CAUTIOUSLY** :bangbang:
+
 ## Installation
 
 ```bash
