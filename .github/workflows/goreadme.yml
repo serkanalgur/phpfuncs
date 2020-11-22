@@ -4,9 +4,9 @@ name: GOREADME
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 jobs:
     goreadme:
         runs-on: ubuntu-latest
