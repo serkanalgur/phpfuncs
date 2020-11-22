@@ -15,3 +15,10 @@ func ArrayKeys(v map[string]interface{}) []string {
 
 	return aRdata
 }
+
+// ArrayPush - Add an element to end of given array
+func ArrayPush(v *[]interface{}, data ...interface{}) {
+
+		*v = append(*v, data...)
+
+}
