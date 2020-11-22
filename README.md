@@ -1,6 +1,6 @@
 # phpfuncs
 
-[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/serkanalgur/phpfuncs)
+[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs)
 
 Php Functions in Go
 
@@ -21,7 +21,7 @@ Description and other info will be here.
 
 ### Proper Documentation
 
-Please Visit [https://pkg.go.dev/badge/serkanalgur/phpfuncs](https://pkg.go.dev/badge/serkanalgur/phpfuncs)
+Please Visit [https://pkg.go.dev/github.com/serkanalgur/phpfuncs](https://pkg.go.dev/github.com/serkanalgur/phpfuncs)
 
 <!-- ## Functions
 
