@@ -1,6 +1,6 @@
 # phpfuncs
 
-[![GoDoc](https://godoc.org/github.com/serkanalgur/phpfuncs?status.svg)](https://godoc.org/github.com/serkanalgur/phpfuncs)
+[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/serkanalgur/phpfuncs)
 
 Php Functions in Go
 
