@@ -1,5 +1,7 @@
 # phpfuncs
 
+[![GoDoc](https://godoc.org/github.com/serkanalgur/phpfuncs?status.svg)](https://godoc.org/github.com/serkanalgur/phpfuncs)
+
 Php Functions in Go
 
 :bangbang: **THIS MODULE IS UNDER DEVELOPMENT. PLEASE USE CAUTIOUSLY** :bangbang:
