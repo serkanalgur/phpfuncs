@@ -1,9 +1,16 @@
+/* Mathematical functions not completed
+I couldn't write some of random int generators such as
+getrandmax. This is a TO-DO Like comment :/
+*/
+
 package phpfuncs
 
 import (
 	"log"
 	"math"
+	"math/rand"
 	"strconv"
+	"time"
 )
 
 // Degree180 for Deg2Rad & Rad2Deg
@@ -216,4 +223,139 @@ func IsInFinite(arg float64, ch int) bool {
 // Returns TRUE if val is infinite (positive or negative), like the result of log(0) or any value too big to fit into a float on this platform.
 func IsNan(arg float64) bool {
 	return math.IsNaN(arg)
+}
+
+// LcgValue - Combined linear congruential generator
+// Original : https://www.php.net/manual/en/function.lcg-value.php
+// lcg_value() returns a pseudo random number in the range of (0, 1). The function combines two CGs with periods of 2^31 - 85 and 2^31 - 249. The period of this function is equal to the product of both primes.
+func LcgValue() float64 {
+	return rand.Float64()
+}
+
+// Log - Natural logarithm
+// Original : https://www.php.net/manual/en/function.log.php
+// If the optional base parameter is specified, log() returns logbase arg, otherwise log() returns the natural logarithm of arg.
+func Log(arg float64) float64 {
+	return math.Log(arg)
+}
+
+// Log10 - Base-10 logarithm
+// Original : https://www.php.net/manual/en/function.log10.php
+// Returns the base-10 logarithm of arg.
+func Log10(arg float64) float64 {
+	return math.Log10(arg)
+}
+
+// Log1P - Returns log(1 + number), computed in a way that is accurate even when the value of number is close to zero.
+// Original : https://www.php.net/manual/en/function.log1p.php
+// log1p() returns log(1 + number) computed in a way that is accurate even when the value of number is close to zero. log() might only return log(1) in this case due to lack of precision.
+func Log1P(arg float64) float64 {
+	return math.Log1p(arg)
+}
+
+// Max - Find highest value.
+// Original : https://www.php.net/manual/en/function.max.php
+// If at least two parameters are provided, max() returns the biggest of these values.
+func Max(arg, arg2 float64) float64 {
+	return math.Max(arg,arg2)
+}
+
+// Min - Find lowest value.
+// Original : https://www.php.net/manual/en/function.min.php
+// If at least two parameters are provided, min() returns the smallest of these values.
+func Min(arg, arg2 float64) float64 {
+	return math.Min(arg,arg2)
+}
+
+// OctDec - Octal to decimal
+// Original : https://www.php.net/manual/en/function.octdec.php
+// Returns the decimal equivalent of the octal number represented by the octal_string argument.
+func OctDec(arg string) int64 {
+	decoded, err := strconv.ParseInt(arg, 8, 32)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return decoded
+}
+
+// Pi - Get value of pi
+// Original : https://www.php.net/manual/en/function.pi.php
+// Returns an approximation of pi.
+func Pi() float64 {
+	return math.Pi
+}
+
+// Pow - Exponential expression
+// Original : https://www.php.net/manual/en/function.pow.php
+// Returns base raised to the power of exp.
+func Pow(arg, arg2 float64) float64 {
+	return math.Pow(arg, arg2)
+}
+
+// Rad2Deg - Converts the radian number to the equivalent number in degrees.
+// Original : https://www.php.net/manual/en/function.rad2deg.php
+// This function converts number from radian to degrees.
+// Degree180 is constant and value is 180 :)
+func Rad2Deg(arg float64) float64 {
+		var mix float64 = arg * Degree180
+		return mix / math.Pi
+}
+
+// Rand - Generate a random integer
+// Original : https://www.php.net/manual/en/function.rand.php
+//  If you want a random number between 5 and 15 (inclusive), for example, use Rand(5, 15).
+func Rand(args ...int) int {
+	rand.Seed(time.Now().Unix())
+	l := len(args)
+	if l > 1 {
+		min := math.Min(float64(args[0]), float64(args[1]))
+		max := math.Max(float64(args[0]), float64(args[1]))
+		return int(min + rand.Float64()*(max-min))
+	} else if l > 0 {
+		return rand.Intn(args[0])
+	} else {
+		return rand.Intn(1 << 32)
+	}
+}
+
+// Round - Rounds a float
+// Original : https://www.php.net/manual/en/function.round.php
+// Returns the rounded value of val to specified precision (number of digits after the decimal point). precision can also be negative or zero (default).
+func Round(arg float64) float64 {
+	return math.Round(arg)
+}
+
+// Sin - Sine.
+// Original : https://www.php.net/manual/en/function.sin.php
+// sin() returns the sine of the arg parameter. The arg parameter is in radians.
+func Sin(arg float64) float64 {
+	return math.Sin(arg)
+}
+
+// Sinh - Hyperbolic sine.
+// Original : https://www.php.net/manual/en/function.sinh.php
+// Returns the hyperbolic sine of arg, defined as (exp(arg) - exp(-arg))/2.
+func Sinh(arg float64) float64 {
+	return math.Sinh(arg)
+}
+
+// Sqrt - Square root.
+// Original : https://www.php.net/manual/en/function.sqrt.php
+// Returns the square root of arg.
+func Sqrt(arg float64) float64 {
+	return math.Sqrt(arg)
+}
+
+// Tan - Tangent.
+// Original : https://www.php.net/manual/en/function.tan.php
+// tan() returns the tangent of the arg parameter. The arg parameter is in radians.
+func Tan(arg float64) float64 {
+	return math.Tan(arg)
+}
+
+// Tanh - Hyperbolic tangent.
+// Original : https://www.php.net/manual/en/function.tanh.php
+// Returns the hyperbolic tangent of arg, defined as sinh(arg)/cosh(arg).
+func Tanh(arg float64) float64 {
+	return math.Tanh(arg)
 }
