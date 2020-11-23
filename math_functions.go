@@ -1,6 +1,7 @@
 package phpfuncs
 
 import (
+	"log"
 	"math"
 	"strconv"
 )
@@ -158,4 +159,32 @@ func Floor(arg float64) float64 {
 func FMod(arg float64,arg2 float64) float64 {
 		flooRit := Floor(arg / arg2)
 		return arg - (flooRit * arg2)
+}
+
+// GetRandMax - Show largest possible random value
+// Original : https://www.php.net/manual/en/function.getrandmax.php
+// Returns the maximum value that can be returned by a call to rand().
+// TO-DO
+// func GetRandMax() float64{
+
+// }
+
+// HexDec - Hexadecimal to decimal
+// Original : https://www.php.net/manual/en/function.hexdec.php
+// Returns the decimal equivalent of the hexadecimal number represented by the hex_string argument. hexdec() converts a hexadecimal string to a decimal number.
+//
+// hexdec() will ignore any non-hexadecimal characters it encounters. As of PHP 7.4.0 supplying any invalid characters is deprecated.
+func HexDec(arg string) int64 {
+	decoded, err := strconv.ParseInt(arg, 16, 32)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return decoded
+}
+
+// HyPot - Calculate the length of the hypotenuse of a right-angle triangle.
+// Original : https://www.php.net/manual/en/function.hypot.php
+// hypot() returns the length of the hypotenuse of a right-angle triangle with sides of length x and y, or the distance of the point (x, y) from the origin. This is equivalent to sqrt(x*x + y*y).
+func HyPot(arg, arg2 float64) float64 {
+	return math.Hypot(arg,arg2)
 }
