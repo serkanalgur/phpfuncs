@@ -5,6 +5,9 @@ import (
 	"strconv"
 )
 
+// Degree180 for Deg2Rad & Rad2Deg
+const Degree180 float64 = 180
+
 // Abs - Absolute value.
 // Original : https://www.php.net/manual/en/function.abs.php
 // Returns the absolute value of number.
@@ -89,7 +92,70 @@ func Cos(arg float64) float64 {
 
 // Cosh - Hyperbolic cosine.
 // Original : https://www.php.net/manual/en/function.cosh.php
-// Returns the hyperbolic cosine of arg, defined as (exp(arg) + exp(-arg))/2..
+// Returns the hyperbolic cosine of arg, defined as (exp(arg) + exp(-arg))/2.
 func Cosh(arg float64) float64 {
 	return math.Cosh(arg)
+}
+
+// DecBin - Hyperbolic cosine.
+// Original : https://www.php.net/manual/en/function.decbin.php
+// Returns a string containing a binary representation of the given number argument.
+func DecBin(arg int64) string {
+	return strconv.FormatInt(arg, 2)
+}
+
+// DecHex - Decimal to hexadecimal.
+// Original : https://www.php.net/manual/en/function.dechex.php
+// Returns a string containing a hexadecimal representation of the given unsigned number argument.
+//
+// The largest number that can be converted is PHP_INT_MAX * 2 + 1 (or -1): on 32-bit platforms, this will be 4294967295 in decimal, which results in dechex() returning ffffffff.
+func DecHex(arg int64) string {
+	return strconv.FormatInt(arg, 16)
+}
+
+// DecOct - Decimal to Octal
+// Original : https://www.php.net/manual/en/function.decoct.php
+// Returns a string containing an octal representation of the given number argument. The largest number that can be converted depends on the platform in use. For 32-bit platforms this is usually 4294967295 in decimal resulting in 37777777777. For 64-bit platforms this is usually 9223372036854775807 in decimal resulting in 777777777777777777777.
+func DecOct(arg int64) string {
+	return strconv.FormatInt(arg, 8)
+}
+
+// Deg2Rad - Converts the number in degrees to the radian equivalent.
+// Original : https://www.php.net/manual/en/function.deg2rad.php
+// This function converts number from degrees to the radian equivalent.
+// Degree180 is constant and value is 180 :)
+func Deg2Rad(arg float64) float64 {
+		var mix float64 = arg / Degree180
+		return mix * math.Pi
+}
+
+// Exp - Calculates the exponent of e.
+// Original : https://www.php.net/manual/en/function.exp.php
+// Returns e raised to the power of arg.
+// Note : 'e' is the base of the natural system of logarithms, or approximately 2.718282.
+func Exp(arg float64) float64 {
+	return math.Exp(arg)
+}
+
+// ExpM1 - Returns exp(number) - 1, computed in a way that is accurate even when the value of number is close to zero
+// Original : https://www.php.net/manual/en/function.expm1.php
+// expm1() returns the equivalent to 'exp(arg) - 1' computed in a way that is accurate even if the value of arg is near zero, a case where 'exp (arg) - 1' would be inaccurate due to subtraction of two numbers that are nearly equal.
+func ExpM1(arg float64) float64 {
+	return math.Exp(arg) -1
+}
+
+// Floor - Round fractions down
+// Original : https://www.php.net/manual/en/function.floor.php
+// Returns the next lowest integer value (as float) by rounding down value if necessary.
+func Floor(arg float64) float64 {
+	return math.Floor(arg)
+}
+
+// FMod - Returns the floating point remainder (modulo) of the division of the arguments
+// Original : https://www.php.net/manual/en/function.fmod.php
+// Returns the floating point remainder of dividing the dividend (x) by the divisor (y). The remainder (r) is defined as: x = i * y + r, for some integer i. If y is non-zero, r has the same sign as x and a magnitude less than the magnitude of y.
+// TO-DO : There is a problem with 0.2 like numbers. Will fix
+func FMod(arg float64,arg2 float64) float64 {
+		flooRit := Floor(arg / arg2)
+		return arg - (flooRit * arg2)
 }
