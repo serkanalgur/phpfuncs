@@ -1,6 +1,9 @@
 package phpfuncs
 
-import "math"
+import (
+	"math"
+	"strconv"
+)
 
 // Abs - Absolute value.
 // Original : https://www.php.net/manual/en/function.abs.php
@@ -57,4 +60,36 @@ func Atan2(arg float64, arg2 float64) float64 {
 // Returns the inverse hyperbolic tangent of arg, i.e. the value whose hyperbolic tangent is arg.
 func Atanh(arg float64) float64 {
 	return math.Atanh(arg)
+}
+
+// BaseConvert - Convert a number between arbitrary bases.
+// Original : https://www.php.net/manual/en/function.base-convert.php
+// Returns a string containing number represented in base tobase. The base in which number is given is specified in frombase. Both frombase and tobase have to be between 2 and 36, inclusive. Digits in numbers with a base higher than 10 will be represented with the letters a-z, with a meaning 10, b meaning 11 and z meaning 35. The case of the letters doesn't matter, i.e. number is interpreted case-insensitively.
+func BaseConvert(arg string, frombase, tobase int) (string, error) {
+	ft, err := strconv.ParseInt(arg, frombase, 0)
+	if err != nil {
+		return "",err
+	}
+	return strconv.FormatInt(ft,tobase), nil
+}
+
+// Ceil - Round fractions up.
+// Original : https://www.php.net/manual/en/function.ceil.php
+// Returns the next highest integer value by rounding up value if necessary.
+func Ceil(arg float64) float64 {
+	return math.Ceil(arg)
+}
+
+// Cos - Cosine.
+// Original : https://www.php.net/manual/en/function.cos.php
+// cos() returns the cosine of the arg parameter. The arg parameter is in radians.
+func Cos(arg float64) float64 {
+	return math.Cos(arg)
+}
+
+// Cosh - Hyperbolic cosine.
+// Original : https://www.php.net/manual/en/function.cosh.php
+// Returns the hyperbolic cosine of arg, defined as (exp(arg) + exp(-arg))/2..
+func Cosh(arg float64) float64 {
+	return math.Cosh(arg)
 }
