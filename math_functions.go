@@ -188,3 +188,32 @@ func HexDec(arg string) int64 {
 func HyPot(arg, arg2 float64) float64 {
 	return math.Hypot(arg,arg2)
 }
+
+// IntDiv - Integer division.
+// Original : https://www.php.net/manual/en/function.intdiv.php
+// Returns the integer quotient of the division of dividend by divisor.
+func IntDiv(arg, arg2 int64) (quotient int64) {
+	quotient = arg / arg2
+	return
+}
+
+// IsFinite - Finds whether a value is a legal finite number.
+// Original : https://www.php.net/manual/en/function.is-finite.php
+// Checks whether val is a legal finite on this platform.
+func IsFinite(arg float64, ch int) bool {
+	return !math.IsInf(arg,ch)
+}
+
+// IsInFinite - Finds whether a value is infinite.
+// Original : https://www.php.net/manual/en/function.is-infinite.php
+// Returns TRUE if val is infinite (positive or negative), like the result of log(0) or any value too big to fit into a float on this platform.
+func IsInFinite(arg float64, ch int) bool {
+	return math.IsInf(arg,ch)
+}
+
+// IsNan - Finds whether a value is infinite.
+// Original : https://www.php.net/manual/en/function.is-infinite.php
+// Returns TRUE if val is infinite (positive or negative), like the result of log(0) or any value too big to fit into a float on this platform.
+func IsNan(arg float64) bool {
+	return math.IsNaN(arg)
+}
