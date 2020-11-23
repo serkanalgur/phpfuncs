@@ -1,3 +1,8 @@
+/* Mathematical functions not completed
+I couldn't write some of random int generators such as
+getrandmax. This is a TO-DO Like comment :/
+*/
+
 package phpfuncs
 
 import (
@@ -311,4 +316,46 @@ func Rand(args ...int) int {
 	} else {
 		return rand.Intn(1 << 32)
 	}
+}
+
+// Round - Rounds a float
+// Original : https://www.php.net/manual/en/function.round.php
+// Returns the rounded value of val to specified precision (number of digits after the decimal point). precision can also be negative or zero (default).
+func Round(arg float64) float64 {
+	return math.Round(arg)
+}
+
+// Sin - Sine.
+// Original : https://www.php.net/manual/en/function.sin.php
+// sin() returns the sine of the arg parameter. The arg parameter is in radians.
+func Sin(arg float64) float64 {
+	return math.Sin(arg)
+}
+
+// Sinh - Hyperbolic sine.
+// Original : https://www.php.net/manual/en/function.sinh.php
+// Returns the hyperbolic sine of arg, defined as (exp(arg) - exp(-arg))/2.
+func Sinh(arg float64) float64 {
+	return math.Sinh(arg)
+}
+
+// Sqrt - Square root.
+// Original : https://www.php.net/manual/en/function.sqrt.php
+// Returns the square root of arg.
+func Sqrt(arg float64) float64 {
+	return math.Sqrt(arg)
+}
+
+// Tan - Tangent.
+// Original : https://www.php.net/manual/en/function.tan.php
+// tan() returns the tangent of the arg parameter. The arg parameter is in radians.
+func Tan(arg float64) float64 {
+	return math.Tan(arg)
+}
+
+// Tanh - Hyperbolic tangent.
+// Original : https://www.php.net/manual/en/function.tanh.php
+// Returns the hyperbolic tangent of arg, defined as sinh(arg)/cosh(arg).
+func Tanh(arg float64) float64 {
+	return math.Tanh(arg)
 }
