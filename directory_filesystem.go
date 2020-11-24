@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"net/http"
 	"os"
 	"path/filepath"
 	"syscall"
@@ -142,12 +143,101 @@ func FileMime(file string) time.Time {
 	return fi.ModTime()
 }
 
+// FilePerms - Gets file permissions.
+// Original : https://www.php.net/manual/en/function.fileperms.php
+// Gets permissions for the given file.
+func FilePerms(path string) os.FileMode{
+    p, _ := os.Open(path)
+    m, _ := p.Stat()
+		p.Close()
+    return m.Mode().Perm()
+}
+
+// FileSize - Gets file permissions.
+// Original : https://www.php.net/manual/en/function.filesize.php
+// Gets permissions for the given file.
+func FileSize(path string) (int64, error) {
+	fi, err := os.Stat(path)
+    if err != nil {
+        return 0, err
+    }
+    return fi.Size(), nil
+}
+
+// FileType - Gets file type.
+// Original : https://www.php.net/manual/en/function.filetype.php
+// Returns the type of the given file.
+func FileType(fs string) (string, error) {
+		f, err := os.Open(fs)
+		if err != nil {
+			return "", err
+		}
+		defer f.Close()
+		buffer := make([]byte, 512)
+		fff, err := f.Read(buffer)
+		if err != nil {
+			fmt.Println(fff)
+			return "", err
+		}
+		contentType := http.DetectContentType(buffer)
+		return contentType, nil
+}
+
+
 // IsDir - Tells whether the filename is a directory.
 // Original : https://www.php.net/manual/en/function.is-dir.php
 // Tells whether the given filename is a directory.
 func IsDir(path string) bool {
 	fi, err := os.Stat(path)
 	return err == nil && fi.IsDir()
+}
+
+// IsFile - Tells whether the filename is a regular file.
+// Original : https://www.php.net/manual/en/function.is-file.php
+// Tells whether the given file is a regular file.
+func IsFile(name string) bool{
+	file, err := os.Stat(name)
+	return err == nil && file.Mode().IsRegular()
+}
+
+// IsLink - Tells whether the filename is a symbolic link.
+// Original : https://www.php.net/manual/en/function.is-link.php
+// Tells whether the given file is a symbolic link.
+func IsLink(path string) bool{
+	_, err := os.Readlink(path)
+	return err == nil
+}
+
+// IsReadable - Tells whether a file exists and is readable.
+// Original : https://www.php.net/manual/en/function.is-readable.php
+// Tells whether a file exists and is readable.
+func IsReadable(path string) bool{
+      file, err := os.OpenFile(path, os.O_WRONLY, 0666)
+      file.Close()
+			return err == nil
+}
+
+// IsWritable - Tells whether the filename is writable.
+// Original : https://www.php.net/manual/en/function.is-writable.php
+// Returns TRUE if the filename exists and is writable. The filename argument may be a directory name allowing you to check if a directory is writable.
+func IsWritable(path string) bool {
+	file, err := os.OpenFile(path, os.O_WRONLY, 0)
+	file.Close()
+	return err == nil
+}
+
+// IsWriteable - Tells whether the filename is writable.
+// Original : https://www.php.net/manual/en/function.is-writeable.php
+// Returns TRUE if the filename exists and is writable. The filename argument may be a directory name allowing you to check if a directory is writable.
+func IsWriteable(path string) bool {
+	return IsWritable(path)
+}
+
+// MkDir - Makes directory.
+// Original : https://www.php.net/manual/en/function.mkdir.php
+// Attempts to create the directory specified by pathname.
+func MkDir(path string, mode os.FileMode) error {
+	return os.Mkdir(path, mode)
 }
 
 // ByteCountIEC - Bytecount & Humanize Bytes
