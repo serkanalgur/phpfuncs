@@ -1,8 +1,12 @@
 package phpfuncs
 
 import (
+	"fmt"
+	"io"
+	"io/ioutil"
 	"os"
 	"path/filepath"
+	"syscall"
 )
 
 // Basename - Returns trailing name component of path.
@@ -32,4 +36,80 @@ func Chmod(name string, mode os.FileMode) error {
 // Attempts to change the owner of the file filename to user user. Only the superuser may change the owner of a file.
 func Chown(name string, uid int, gid int) error {
 	return os.Chown(name, uid, gid)
+}
+
+// Copy - Copies file
+// Original : https://www.php.net/manual/en/function.copy.php
+// Makes a copy of the file source to dest.
+func Copy(src, dst string) (int64, error) {
+	sourceFileStat, err := os.Stat(src)
+	if err != nil {
+		return 0, err
+	}
+
+	if !sourceFileStat.Mode().IsRegular() {
+		return 0, fmt.Errorf("%s is not a regular file", src)
+	}
+
+	source, err := os.Open(src)
+	if err != nil {
+		return 0, err
+	}
+	defer source.Close()
+
+	destination, err := os.Create(dst)
+	if err != nil {
+		return 0, err
+	}
+	defer destination.Close()
+	nBytes, err := io.Copy(destination, source)
+	return nBytes, err
+}
+
+// Delete - Deletes a file.
+// Original : https://www.php.net/manual/en/function.delete.php
+// Deletes filename. Similar to the Unix C unlink() function. An E_WARNING level error will be generated on failure.
+func Delete(name string) error {
+	return os.Remove(name)
+}
+
+// DirName - Returns a parent directory's path
+// Original : https://www.php.net/manual/en/function.dirname.php
+// Given a string containing the path of a file or directory, this function will return the parent directory's path that is levels up from the current directory.
+func DirName(path string) ([]os.FileInfo, error) {
+	return ioutil.ReadDir(path)
+}
+
+//DiskStatus struct
+type DiskStatus struct {
+	Free string `json:"Free"`
+}
+
+// DiskFreeSpace - Returns available space on filesystem or disk partition
+// Original : https://www.php.net/manual/en/function.disk-free-space.php
+// Given a string containing a directory, this function will return the number of bytes available on the corresponding filesystem or disk partition.
+// DEVELOPER NOTE : PROBABLY WORKING ON ONLY LINUX AND MAC. TO-DO : WINDOWS
+func DiskFreeSpace(path string) (disk DiskStatus) {
+	stat := syscall.Statfs_t{}
+	err := syscall.Statfs(path, &stat)
+	if err != nil {
+		return
+	}
+	disk.Free = ByteCountIEC(stat.Bfree * uint64(stat.Bsize))
+	return
+}
+
+// ByteCountIEC - Bytecount & Humanize Bytes
+func ByteCountIEC(b uint64) string {
+	const unit = 1024
+	if b < unit {
+		return fmt.Sprintf("%d B", b)
+	}
+	div, exp := int64(unit), 0
+	for n := b / unit; n >= unit; n /= unit {
+		div *= unit
+		exp++
+	}
+	return fmt.Sprintf("%.1f %ciB",
+		float64(b)/float64(div), "KMGTPE"[exp])
 }
