@@ -10,18 +10,6 @@ import (
 	"time"
 )
 
-//ReAd constants
-const (
-	read   int = syscall.O_RDONLY // open the file read-only.
-	write  int = syscall.O_WRONLY // open the file write-only.
-	readp  int = syscall.O_RDWR   // open the file read-write.
-	append int = syscall.O_APPEND // append data to the file when writing.
-	create int = syscall.O_CREAT  // create a new file if none exists.
-	excl   int = syscall.O_EXCL   // used with O_CREATE, file must not exist
-	sync   int = syscall.O_SYNC   // open for synchronous I/O.
-	trunc  int = syscall.O_TRUNC  // if possible, truncate file when opened.
-)
-
 // Basename - Returns trailing name component of path.
 // Original : https://www.php.net/manual/en/function.basename.php
 // Given a string containing the path to a file or directory, this function will return the trailing name component.
