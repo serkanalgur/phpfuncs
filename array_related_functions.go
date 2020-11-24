@@ -10,7 +10,7 @@ type ArraySlice []interface{}
 
 // Array - Create an array
 // Original : https://www.php.net/manual/en/function.array.php
-func Array(v... interface{}) []interface{} {
+func Array(v ...interface{}) []interface{} {
 	return v
 }
 
@@ -29,39 +29,39 @@ func ArrayKeys(v map[string]interface{}) []string {
 // ArrayPush - Push one or more elements onto the end of array
 // Original : https://www.php.net/manual/en/function.array-push.php
 func ArrayPush(v *[]interface{}, data ...interface{}) {
-		*v = append(*v, data...)
+	*v = append(*v, data...)
 }
 
 // ArrayReverse - Return an array with elements in reverse order
 // Original : https://www.php.net/manual/en/function.array-reverse.php
 func ArrayReverse(v []interface{}) []interface{} {
-		for ind, fnd:= 0, len(v); ind < fnd; ind, fnd = ind+1, fnd-1 {
-			v[ind], v[fnd] = v[fnd], v[ind]
-		}
-		return v
+	for ind, fnd := 0, len(v); ind < fnd; ind, fnd = ind+1, fnd-1 {
+		v[ind], v[fnd] = v[fnd], v[ind]
+	}
+	return v
 }
 
 // ArrayCountValues - Counts all the values of an array
 // Original : https://www.php.net/manual/en/function.array-count-values.php
 func ArrayCountValues(v []interface{}) map[interface{}]uint {
 
-		cnt := make(map[interface{}]uint)
-		for _,s:= range v {
-			if c, ok := cnt[s]; ok {
-				cnt[s] = c+1
-			} else {
-				cnt[s] = 1
-			}
+	cnt := make(map[interface{}]uint)
+	for _, s := range v {
+		if c, ok := cnt[s]; ok {
+			cnt[s] = c + 1
+		} else {
+			cnt[s] = 1
 		}
+	}
 
-		return cnt
+	return cnt
 }
 
 // ArrayMerge - Merge one or more arrays
 // Original : https://www.php.net/manual/en/function.array-merge.php
 func ArrayMerge(v ...[]interface{}) []interface{} {
 
-	fArray := make([]interface{},0)
+	fArray := make([]interface{}, 0)
 	for _, m := range v {
 		fArray = append(fArray, m...)
 	}
@@ -71,16 +71,16 @@ func ArrayMerge(v ...[]interface{}) []interface{} {
 // ArrayValues - Return all the values of an array
 // Original : https://www.php.net/manual/en/function.array-values.php
 func ArrayValues(v ...[]interface{}) (value []interface{}) {
-		var values []interface{}
+	var values []interface{}
 
-		for _, val := range v {
-			cIn := InArray(val, v)
-				if!cIn {
-					values = append(values, val)
-				}
+	for _, val := range v {
+		cIn := InArray(val, v)
+		if !cIn {
+			values = append(values, val)
 		}
+	}
 
-		return values
+	return values
 }
 
 // ArrayChunk - Split an array into chunks
