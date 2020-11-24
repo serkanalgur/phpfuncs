@@ -3,6 +3,8 @@ package phpfuncs
 import (
 	"fmt"
 	"math"
+	"reflect"
+	"strings"
 )
 
 // ArraySlice type -- Required for ArrayChunk
@@ -116,4 +118,24 @@ func ArrayFlip(v map[interface{}]interface{}) map[interface{}]interface{} {
 // Original : https://www.php.net/manual/en/function.count.php
 func Count(v []interface{}) int {
 	return len(v)
+}
+
+// Implode - Join array elements with a string.
+// Original : https://www.php.net/manual/en/function.implode.php
+// Join array elements with a glue string.
+func Implode(sep string, v []string) string {
+	return strings.Replace(strings.Trim(fmt.Sprint(v), "[]"), " ", sep, -1)
+}
+
+// IsArray - Finds whether a variable is an array.
+// Original : https://www.php.net/manual/en/function.is-array.php
+// Finds whether the given variable is an array.
+func IsArray(v interface{}) bool {
+	t := reflect.TypeOf(v)
+	switch t.Kind() {
+	case reflect.Slice:
+		return true
+	default:
+	}
+	return false
 }
