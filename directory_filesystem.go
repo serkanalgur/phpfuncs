@@ -7,6 +7,19 @@ import (
 	"os"
 	"path/filepath"
 	"syscall"
+	"time"
+)
+
+//ReAd constants
+const (
+	read   int = syscall.O_RDONLY // open the file read-only.
+	write  int = syscall.O_WRONLY // open the file write-only.
+	readp  int = syscall.O_RDWR   // open the file read-write.
+	append int = syscall.O_APPEND // append data to the file when writing.
+	create int = syscall.O_CREAT  // create a new file if none exists.
+	excl   int = syscall.O_EXCL   // used with O_CREATE, file must not exist
+	sync   int = syscall.O_SYNC   // open for synchronous I/O.
+	trunc  int = syscall.O_TRUNC  // if possible, truncate file when opened.
 )
 
 // Basename - Returns trailing name component of path.
@@ -97,6 +110,48 @@ func DiskFreeSpace(path string) (disk DiskStatus) {
 	}
 	disk.Free = ByteCountIEC(stat.Bfree * uint64(stat.Bsize))
 	return
+}
+
+// FClose - Closes an open file pointer
+// Original : https://www.php.net/manual/en/function.fclose.php
+// The file pointed to by handle is closed.
+func FClose(file *os.File) error {
+	return file.Close()
+}
+
+// FOpen - Opens file
+// Original : https://www.php.net/manual/en/function.fopen.php
+// fopen() binds a named resource, specified by filename, to a stream.
+// NOT COMPLETED
+// func FOpen(file string, mode int) (os.file, error) {
+// 	f, err := os.OpenFile(file, mode, 0644)
+// 	if err != nil {
+// 		log.Fatal(err)
+// 	}
+// 	if err := f.Close(); err != nil {
+// 		log.Fatal(err)
+// 	}
+
+// 	defer file.Close()
+// }
+
+// FileExists - Checks whether a file or directory exists.
+// Original : https://www.php.net/manual/en/function.file-exists.php
+// Checks whether a file or directory exists.
+func FileExists(path string) bool {
+	_, err := os.Stat(path)
+	return err == nil
+}
+
+// FileMime - Gets file modification time
+// Original : https://www.php.net/manual/en/function.filemtime.php
+// This function returns the time when the data blocks of a file were being written to, that is, the time when the content of the file was changed.
+func FileMime(file string) time.Time {
+	fi, err := os.Stat(file)
+	if err != nil {
+		return time.Time{}
+	}
+	return fi.ModTime()
 }
 
 // ByteCountIEC - Bytecount & Humanize Bytes
