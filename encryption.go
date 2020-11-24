@@ -18,7 +18,7 @@ func Base64Encode(v string) string {
 // Base64Decode - Decodes data encoded with MIME base64.
 // Original : https://www.php.net/manual/en/function.base64-decode.php
 // Decodes a base64 encoded data.
-func Base64Decode(v string) (string,error) {
+func Base64Decode(v string) (string, error) {
 	Base64, Err := base64.StdEncoding.DecodeString(v)
 	return string(Base64), Err
 }
