@@ -303,7 +303,7 @@ func Rad2Deg(arg float64) float64 {
 
 // Rand - Generate a random integer
 // Original : https://www.php.net/manual/en/function.rand.php
-//  If you want a random number between 5 and 15 (inclusive), for example, use Rand(5, 15).
+// If you want a random number between 5 and 15 (inclusive), for example, use Rand(5, 15).
 func Rand(args ...int) int {
 	rand.Seed(time.Now().Unix())
 	l := len(args)
