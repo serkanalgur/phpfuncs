@@ -1,4 +1,4 @@
-# PHP Functions in Golang - phpfuncs
+# PHP Functions for Golang - phpfuncs
 
 [![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs)
 
