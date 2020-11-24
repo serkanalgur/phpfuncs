@@ -63,7 +63,7 @@ func Atan(arg float64) float64 {
 // This function calculates the arc tangent of the two variables x and y. It is similar to calculating the arc tangent of y / x, except that the signs of both arguments are used to determine the quadrant of the result.
 // The function returns the result in radians, which is between -PI and PI (inclusive).
 func Atan2(arg float64, arg2 float64) float64 {
-	return math.Atan2(arg,arg2)
+	return math.Atan2(arg, arg2)
 }
 
 // Atanh - Inverse hyperbolic tangent.
@@ -79,9 +79,9 @@ func Atanh(arg float64) float64 {
 func BaseConvert(arg string, frombase, tobase int) (string, error) {
 	ft, err := strconv.ParseInt(arg, frombase, 0)
 	if err != nil {
-		return "",err
+		return "", err
 	}
-	return strconv.FormatInt(ft,tobase), nil
+	return strconv.FormatInt(ft, tobase), nil
 }
 
 // Ceil - Round fractions up.
@@ -133,8 +133,8 @@ func DecOct(arg int64) string {
 // This function converts number from degrees to the radian equivalent.
 // Degree180 is constant and value is 180 :)
 func Deg2Rad(arg float64) float64 {
-		var mix float64 = arg / Degree180
-		return mix * math.Pi
+	var mix float64 = arg / Degree180
+	return mix * math.Pi
 }
 
 // Exp - Calculates the exponent of e.
@@ -149,7 +149,7 @@ func Exp(arg float64) float64 {
 // Original : https://www.php.net/manual/en/function.expm1.php
 // expm1() returns the equivalent to 'exp(arg) - 1' computed in a way that is accurate even if the value of arg is near zero, a case where 'exp (arg) - 1' would be inaccurate due to subtraction of two numbers that are nearly equal.
 func ExpM1(arg float64) float64 {
-	return math.Exp(arg) -1
+	return math.Exp(arg) - 1
 }
 
 // Floor - Round fractions down
@@ -163,9 +163,9 @@ func Floor(arg float64) float64 {
 // Original : https://www.php.net/manual/en/function.fmod.php
 // Returns the floating point remainder of dividing the dividend (x) by the divisor (y). The remainder (r) is defined as: x = i * y + r, for some integer i. If y is non-zero, r has the same sign as x and a magnitude less than the magnitude of y.
 // TO-DO : There is a problem with 0.2 like numbers. Will fix
-func FMod(arg float64,arg2 float64) float64 {
-		flooRit := Floor(arg / arg2)
-		return arg - (flooRit * arg2)
+func FMod(arg float64, arg2 float64) float64 {
+	flooRit := Floor(arg / arg2)
+	return arg - (flooRit * arg2)
 }
 
 // GetRandMax - Show largest possible random value
@@ -193,7 +193,7 @@ func HexDec(arg string) int64 {
 // Original : https://www.php.net/manual/en/function.hypot.php
 // hypot() returns the length of the hypotenuse of a right-angle triangle with sides of length x and y, or the distance of the point (x, y) from the origin. This is equivalent to sqrt(x*x + y*y).
 func HyPot(arg, arg2 float64) float64 {
-	return math.Hypot(arg,arg2)
+	return math.Hypot(arg, arg2)
 }
 
 // IntDiv - Integer division.
@@ -208,14 +208,14 @@ func IntDiv(arg, arg2 int64) (quotient int64) {
 // Original : https://www.php.net/manual/en/function.is-finite.php
 // Checks whether val is a legal finite on this platform.
 func IsFinite(arg float64, ch int) bool {
-	return !math.IsInf(arg,ch)
+	return !math.IsInf(arg, ch)
 }
 
 // IsInFinite - Finds whether a value is infinite.
 // Original : https://www.php.net/manual/en/function.is-infinite.php
 // Returns TRUE if val is infinite (positive or negative), like the result of log(0) or any value too big to fit into a float on this platform.
 func IsInFinite(arg float64, ch int) bool {
-	return math.IsInf(arg,ch)
+	return math.IsInf(arg, ch)
 }
 
 // IsNan - Finds whether a value is infinite.
@@ -257,14 +257,14 @@ func Log1P(arg float64) float64 {
 // Original : https://www.php.net/manual/en/function.max.php
 // If at least two parameters are provided, max() returns the biggest of these values.
 func Max(arg, arg2 float64) float64 {
-	return math.Max(arg,arg2)
+	return math.Max(arg, arg2)
 }
 
 // Min - Find lowest value.
 // Original : https://www.php.net/manual/en/function.min.php
 // If at least two parameters are provided, min() returns the smallest of these values.
 func Min(arg, arg2 float64) float64 {
-	return math.Min(arg,arg2)
+	return math.Min(arg, arg2)
 }
 
 // OctDec - Octal to decimal
@@ -297,8 +297,8 @@ func Pow(arg, arg2 float64) float64 {
 // This function converts number from radian to degrees.
 // Degree180 is constant and value is 180 :)
 func Rad2Deg(arg float64) float64 {
-		var mix float64 = arg * Degree180
-		return mix / math.Pi
+	var mix float64 = arg * Degree180
+	return mix / math.Pi
 }
 
 // Rand - Generate a random integer

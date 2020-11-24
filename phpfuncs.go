@@ -13,13 +13,13 @@ import (
 // return boolean true / false
 func InArray(needle interface{}, haystack interface{}) bool {
 	switch reflect.TypeOf(haystack).Kind() {
-		default:
-      s := reflect.ValueOf(haystack)
-			for i := 0; i < s.Len(); i++ {
-				if reflect.DeepEqual(needle, s.Index(i).Interface()) == true {
-						return true
-				}
+	default:
+		s := reflect.ValueOf(haystack)
+		for i := 0; i < s.Len(); i++ {
+			if reflect.DeepEqual(needle, s.Index(i).Interface()) == true {
+				return true
 			}
+		}
 	}
 	return false
 
