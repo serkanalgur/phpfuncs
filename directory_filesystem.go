@@ -154,6 +154,14 @@ func FileMime(file string) time.Time {
 	return fi.ModTime()
 }
 
+// IsDir - Tells whether the filename is a directory.
+// Original : https://www.php.net/manual/en/function.is-dir.php
+// Tells whether the given filename is a directory.
+func IsDir(path string) bool {
+	fi, err := os.Stat(path)
+	return err == nil && fi.IsDir()
+}
+
 // ByteCountIEC - Bytecount & Humanize Bytes
 func ByteCountIEC(b uint64) string {
 	const unit = 1024
