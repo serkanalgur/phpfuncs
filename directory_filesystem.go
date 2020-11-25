@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -114,12 +113,12 @@ func FClose(file *os.File) error {
 // Original : https://www.php.net/manual/en/function.fopen.php
 // fopen() binds a named resource, specified by filename, to a stream.
 // Mode : os.O_RDONLY | os.O_WRONLY | os.O_RDWR | os.O_APPEND | os.O_CREATE | os.O_EXCL | os.O_SYNC | os.O_TRUNC
-func FOpen(file string, mode int) (f *os.File) {
+func FOpen(file string, mode int) (*os.File, error) {
 	f, err := os.OpenFile(file, mode, 0644)
 	if err != nil {
-		log.Fatal(err)
+		return f,err
 	}
-	return f
+	return f,err
 }
 
 // FRead - Binary-safe file read.
