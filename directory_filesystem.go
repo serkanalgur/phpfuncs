@@ -183,6 +183,12 @@ func FileType(fs string) (string, error) {
 		return contentType, nil
 }
 
+// Glob - Find pathnames matching a pattern.
+// Original : https://www.php.net/manual/en/function.glob.php
+// The glob() function searches for all the pathnames matching pattern according to the rules used by the libc glob() function, which is similar to the rules used by common shells.
+func Glob(path string) (matches []string, err error) {
+	return filepath.Glob(path)
+}
 
 // IsDir - Tells whether the filename is a directory.
 // Original : https://www.php.net/manual/en/function.is-dir.php
@@ -240,7 +246,54 @@ func MkDir(path string, mode os.FileMode) error {
 	return os.Mkdir(path, mode)
 }
 
+// ReadLink - Returns the target of a symbolic link.
+// Original : https://www.php.net/manual/en/function.readlink.php
+// readlink() does the same as the readlink C function.
+func ReadLink(path string) (string, error){
+	li, err := os.Readlink(path)
+		if err != nil {
+			return "", err
+		}
+	return li, err
+}
+
+// RealPath - Returns canonicalized absolute pathname.
+// Original : https://www.php.net/manual/en/function.realpath.php
+// realpath() expands all symbolic links and resolves references to /./, /../ and extra / characters in the input path and returns the canonicalized absolute pathname.
+func RealPath(path string) (string, error) {
+	return filepath.Abs(path)
+}
+
+// Rename - Renames a file or directory.
+// Original : https://www.php.net/manual/en/function.rename.php
+// Attempts to rename oldname to newname, moving it between directories if necessary. If renaming a file and newname exists, it will be overwritten. If renaming a directory and newname exists, this function will emit a warning.
+func Rename(oldpath, newpath string) error {
+	return os.Rename(oldpath, newpath)
+}
+
+// RmDir — Removes directory.
+// Original : https://www.php.net/manual/en/function.rmdir.php
+// Attempts to remove the directory named by dirname. The directory must be empty, and the relevant permissions must permit this. A E_WARNING level error will be generated on failure.
+func RmDir(path string) error {
+	return os.RemoveAll(path)
+}
+
+// Stat - Gives information about a file.
+// Original : https://www.php.net/manual/en/function.stat.php
+// Gathers the statistics of the file named by filename. If filename is a symbolic link, statistics are from the file itself, not the symlink. Prior to PHP 7.4.0, on Windows NTS builds the size, atime, mtime and ctime statistics have been from the symlink, in this case.
+func Stat(name string) (os.FileInfo, error) {
+	return os.Stat(name)
+}
+
+// Unlink - Deletes a file.
+// Original : https://www.php.net/manual/en/function.unlink.php
+// Deletes filename. Similar to the Unix C unlink() function. An E_WARNING level error will be generated on failure.
+func Unlink(name string) error {
+	return Delete(name)
+}
+
 // ByteCountIEC - Bytecount & Humanize Bytes
+// Complete calculator for DiskFreeSize
 func ByteCountIEC(b uint64) string {
 	const unit = 1024
 	if b < unit {
