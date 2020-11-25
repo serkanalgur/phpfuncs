@@ -1,9 +1,11 @@
 package phpfuncs
 
 import (
+	"bufio"
 	"fmt"
 	"io"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -111,18 +113,35 @@ func FClose(file *os.File) error {
 // FOpen - Opens file
 // Original : https://www.php.net/manual/en/function.fopen.php
 // fopen() binds a named resource, specified by filename, to a stream.
-// NOT COMPLETED
-// func FOpen(file string, mode int) (os.file, error) {
-// 	f, err := os.OpenFile(file, mode, 0644)
-// 	if err != nil {
-// 		log.Fatal(err)
-// 	}
-// 	if err := f.Close(); err != nil {
-// 		log.Fatal(err)
-// 	}
+// Mode : os.O_RDONLY | os.O_WRONLY | os.O_RDWR | os.O_APPEND | os.O_CREATE | os.O_EXCL | os.O_SYNC | os.O_TRUNC
+func FOpen(file string, mode int) (f *os.File) {
+	f, err := os.OpenFile(file, mode, 0644)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return f
+}
 
-// 	defer file.Close()
-// }
+// FRead - Binary-safe file read.
+// Original : https://www.php.net/manual/en/function.fread.php
+// fread() reads up to length bytes from the file pointer referenced by handle.
+func FRead(f *os.File, sb int64) string {
+	r := bufio.NewReader(f)
+  b := make([]byte, sb)
+	var cls string
+
+	for {
+    n, err := r.Read(b)
+    if err != nil {
+			if err != io.EOF {
+				fmt.Println(err)
+			}
+      break
+    }
+    cls += string(b[0:n])
+  }
+	return cls
+}
 
 // FileExists - Checks whether a file or directory exists.
 // Original : https://www.php.net/manual/en/function.file-exists.php
