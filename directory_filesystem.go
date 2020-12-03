@@ -5,9 +5,11 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
 	"syscall"
 	"time"
 )
@@ -199,6 +201,61 @@ func FileType(fs string) (string, error) {
 		}
 		contentType := http.DetectContentType(buffer)
 		return contentType, nil
+}
+
+
+// FileGetContents - Reads entire file into a string.
+// Original : https://www.php.net/manual/en/function.file-get-contents.php
+// This function is similar to file(), except that file_get_contents() returns the file in a string, starting at the specified offset up to maxlen bytes. On failure, file_get_contents() will return FALSE.
+// TODO : Context Implementation and offset sets for URL reads.
+func FileGetContents(path string, includePath bool, context []string, offset int, maxlen int) string {
+	var v string
+		if IsURL(path) {
+			includePath = false
+		}
+
+	if includePath == true {
+		fileHere := FileExists(path)
+		if fileHere {
+			file,_ := FOpen(path,os.O_RDONLY)
+
+			if offset >= 0 && maxlen != 0 {
+			var err error
+				r := bufio.NewReader(file)
+				if offset > 0 {
+				_, err := r.Discard(offset)
+					if err != nil {
+						log.Fatalln(err)
+					}
+				}
+					buf := new(strings.Builder)
+						_, err = io.CopyN(buf, r, int64(maxlen-offset))
+							if err != nil {
+								log.Fatal(err)
+							}
+					v = buf.String()
+
+			} else {
+				v = FRead(file,512)
+			}
+			FClose(file)
+		}
+	} else {
+		u, err := http.Get(path)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		defer u.Body.Close()
+		body, err := ioutil.ReadAll(u.Body)
+			if err != nil {
+				log.Fatalln(err)
+			}
+
+			v = string(body)
+	}
+
+	return v
 }
 
 // Glob - Find pathnames matching a pattern.
