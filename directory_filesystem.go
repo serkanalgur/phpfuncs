@@ -207,7 +207,7 @@ func FileType(fs string) (string, error) {
 // FileGetContents - Reads entire file into a string.
 // Original : https://www.php.net/manual/en/function.file-get-contents.php
 // This function is similar to file(), except that file_get_contents() returns the file in a string, starting at the specified offset up to maxlen bytes. On failure, file_get_contents() will return FALSE.
-// TODO : Context Implementation and offset sets for URL reads.
+// TODO : Context Implementation.
 func FileGetContents(path string, includePath bool, context []string, offset int, maxlen int) string {
 	var v string
 		if IsURL(path) {
@@ -247,12 +247,28 @@ func FileGetContents(path string, includePath bool, context []string, offset int
 		}
 
 		defer u.Body.Close()
-		body, err := ioutil.ReadAll(u.Body)
-			if err != nil {
-				log.Fatalln(err)
+			if offset >= 0 && maxlen > 0 {
+				var err error
+					r := bufio.NewReader(u.Body)
+					if offset > 0 {
+					_, err := r.Discard(offset)
+						if err != nil {
+							log.Fatalln(err)
+						}
+					}
+						buf := new(strings.Builder)
+							_, err = io.CopyN(buf, r, int64(maxlen-offset))
+								if err != nil {
+									log.Fatal(err)
+								}
+						v = buf.String()
+			} else {
+				body, err := ioutil.ReadAll(u.Body)
+					if err != nil {
+						log.Fatalln(err)
+					}
+				v = string(body)
 			}
-
-			v = string(body)
 	}
 
 	return v
