@@ -188,7 +188,7 @@ func Sort(v interface{}, flag string) bool {
 				case "SORT_STRING":
 					array := v.([]string)
 					sort.Strings(array)
-				case "SERT_NUMERIC":
+				case "SORT_NUMERIC":
 					array := v.([]int)
 					sort.Ints(array)
 				default:
