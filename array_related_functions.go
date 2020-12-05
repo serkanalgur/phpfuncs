@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"reflect"
+	"sort"
 	"strings"
 )
 
@@ -120,6 +121,7 @@ func Count(v []interface{}) int {
 	return len(v)
 }
 
+
 // Implode - Join array elements with a string.
 // Original : https://www.php.net/manual/en/function.implode.php
 // Join array elements with a glue string.
@@ -158,5 +160,45 @@ func InArray(needle interface{}, haystack interface{}) bool {
 		}
 	}
 	return false
+}
 
+// Sizeof - Alias of Count
+// Original : https://www.php.net/manual/en/function.sizeof.php
+func Sizeof(v []interface{}) int{
+	return Count(v)
+}
+
+// Sort - Sort an array
+// Original : https://www.php.net/manual/en/function.sort.php
+// This function sorts an array. Elements will be arranged from lowest to highest when this function has completed.
+// Flags are same as php sort.
+//  SORT_REGULAR - compare items normally;
+//  SORT_NUMERIC - compare items numerically
+//  SORT_STRING - compare items as strings
+//  SORT_NATURAL - compare items as strings using "natural ordering" like natsort()
+func Sort(v interface{}, flag string) bool {
+	art := reflect.TypeOf(v)
+	var va bool
+
+		if art.Kind() == reflect.Slice {
+			switch flag {
+				case "SORT_REGULAR":
+					array := v.([]string)
+					sort.Strings(array)
+				case "SORT_STRING":
+					array := v.([]string)
+					sort.Strings(array)
+				case "SERT_NUMERIC":
+					array := v.([]int)
+					sort.Ints(array)
+				default:
+					array := v.([]string)
+					sort.Strings(array)
+			}
+			va = true
+		} else {
+			va = false
+		}
+
+		return va
 }
