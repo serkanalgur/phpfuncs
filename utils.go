@@ -4,7 +4,6 @@ import (
 	"net/url"
 	"regexp"
 	"strings"
-	"time"
 	"unicode/utf8"
 )
 
@@ -49,12 +48,4 @@ func IsURL(str string) bool {
 		return false
 	}
 	return rxURL.MatchString(str)
-}
-
-// TimE - Return current Unix timestamp
-// Original : https://www.php.net/manual/en/function.time.php
-// Returns the current time measured in the number of seconds since the Unix Epoch (January 1 1970 00:00:00 GMT).
-func TimE() int64 {
-		now := time.Now() // LocalTime
-	return now.Unix()
 }
