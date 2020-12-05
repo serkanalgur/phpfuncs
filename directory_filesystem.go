@@ -116,7 +116,7 @@ func FClose(file *os.File) error {
 // fopen() binds a named resource, specified by filename, to a stream.
 // Mode : os.O_RDONLY | os.O_WRONLY | os.O_RDWR | os.O_APPEND | os.O_CREATE | os.O_EXCL | os.O_SYNC | os.O_TRUNC
 func FOpen(file string, mode int) (*os.File, error) {
-	f, err := os.OpenFile(file, mode, 0644)
+	f, err := os.OpenFile(file, mode|os.O_CREATE, 0644)
 	if err != nil {
 		return f,err
 	}
@@ -375,6 +375,30 @@ func RmDir(path string) error {
 func Stat(name string) (os.FileInfo, error) {
 	return os.Stat(name)
 }
+
+// Touch - Sets access and modification time of file
+// Original : https://www.php.net/manual/en/function.touch.php
+// Attempts to set the access and modification times of the file named in the filename parameter to the value given in time. Note that the access time is always modified, regardless of the number of parameters.
+// If the file does not exist, it will be created.
+func Touch(path string, t int64, at int64) bool {
+
+	_, err := FOpen(path,os.O_RDWR)
+		if err != nil {
+			log.Fatal(err)
+			return false
+		}
+
+		atim := time.Unix(at, 0)
+		ttim := time.Unix(t, 0)
+
+
+		if err := os.Chtimes(path,ttim,atim); err != nil {
+					log.Fatal(err)
+					return false
+			}
+	return true
+}
+
 
 // Unlink - Deletes a file.
 // Original : https://www.php.net/manual/en/function.unlink.php
