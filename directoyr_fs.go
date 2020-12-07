@@ -287,6 +287,15 @@ func FilePutContents(path,data string) {
 		FClose(f)
 }
 
+
+// FPuts - Alias of FWrite
+// Original : https://www.php.net/manual/en/function.fputs.php
+// This function is an alias of: FWrite()..
+func FPuts(f *os.File, data string) int {
+	return FWrite(f,data)
+}
+
+
 // FWrite - Binary-safe file write
 // Original : https://www.php.net/manual/en/function.fwrite.php
 // fwrite() writes the contents of string to the file stream pointed to by handle.
@@ -314,11 +323,22 @@ func IsDir(path string) bool {
 	return err == nil && fi.IsDir()
 }
 
+// IsExecutable - Tells whether the filename is executable
+// Original : https://www.php.net/manual/en/function.is-executable.php
+// Tells whether the filename is executable.
+func IsExecutable(path string) bool {
+	fi, err := os.Lstat(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return fi.Mode()&0100 != 0
+}
+
 // IsFile - Tells whether the filename is a regular file.
 // Original : https://www.php.net/manual/en/function.is-file.php
 // Tells whether the given file is a regular file.
-func IsFile(name string) bool{
-	file, err := os.Stat(name)
+func IsFile(path string) bool{
+	file, err := os.Stat(path)
 	return err == nil && file.Mode().IsRegular()
 }
 
@@ -353,6 +373,26 @@ func IsWritable(path string) bool {
 // Returns TRUE if the filename exists and is writable. The filename argument may be a directory name allowing you to check if a directory is writable.
 func IsWriteable(path string) bool {
 	return IsWritable(path)
+}
+
+// Link - Create a hard link
+// Original : https://www.php.net/manual/en/function.link.php
+// link() creates a hard link.
+func Link(target, link string) {
+ err := os.Link(target,link)
+   if err != nil {
+      log.Fatal(err)
+   }
+}
+
+// SymLink - Creates a symbolic link
+// Original : https://www.php.net/manual/en/function.symlink.php
+// symlink() creates a symbolic link to the existing target with the specified name link.
+func SymLink(target, link string) {
+   err := os.Symlink(target, link)
+   if err != nil {
+      log.Fatal(err)
+   }
 }
 
 // MkDir - Makes directory.
