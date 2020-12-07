@@ -274,6 +274,31 @@ func FileGetContents(path string, includePath bool, context []string, offset int
 	return v
 }
 
+// FilePutContents - Write data to a file
+// Original : https://www.php.net/manual/en/function.file-put-contents.php
+// This function is identical to calling fopen(), fwrite() and fclose() successively to write data to a file.
+// TODO: Flags
+func FilePutContents(path,data string) {
+	f,err := FOpen(path,os.O_RDWR|os.O_CREATE)
+		if err !=nil {
+			log.Fatalln(err)
+		}
+		FWrite(f,data)
+		FClose(f)
+}
+
+// FWrite - Binary-safe file write
+// Original : https://www.php.net/manual/en/function.fwrite.php
+// fwrite() writes the contents of string to the file stream pointed to by handle.
+func FWrite(f *os.File, data string) int {
+	dataToByte := []byte(data)
+	fw, err := f.Write(dataToByte)
+		if err != nil {
+			log.Fatal(err)
+		}
+		return fw
+}
+
 // Glob - Find pathnames matching a pattern.
 // Original : https://www.php.net/manual/en/function.glob.php
 // The glob() function searches for all the pathnames matching pattern according to the rules used by the libc glob() function, which is similar to the rules used by common shells.
