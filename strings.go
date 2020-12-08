@@ -27,10 +27,10 @@ func Addslashes(s string) string {
 	return string(r)
 }
 
-// Bin2hex - Convert binary data into hexadecimal representation
+// Bin2Hex - Convert binary data into hexadecimal representation
 // Original : https://www.php.net/manual/en/function.bin2hex.php
 // Returns an ASCII string containing the hexadecimal representation of str. The conversion is done byte-wise with the high-nibble first.
-func Bin2hex(s string) string {
+func Bin2Hex(s string) string {
 	bin, err := strconv.ParseInt(s, 2, 64)
 	if err != nil {
 		log.Fatal(err)
@@ -43,6 +43,18 @@ func Bin2hex(s string) string {
 // Returns an array of strings, each of which is a substring of string formed by splitting it on boundaries formed by the string delimiter.
 func Explode(s, set string) []string {
 	return strings.Split(s, set)
+}
+
+// Hex2Bin - Decodes a hexadecimally encoded binary string
+// Original : https://www.php.net/manual/en/function.hex2bin.php
+// Decodes a hexadecimally encoded binary string.
+//  NOTE: This function does NOT convert a hexadecimal number to a binary number. This can be done using the BaseConvert() function.
+func Hex2Bin(s string) string {
+	bin, err := strconv.ParseInt(s, 16, 64)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return strconv.FormatInt(bin, 2)
 }
 
 // HtmlspecialChars - Convert special characters to HTML entities.
