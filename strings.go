@@ -1,6 +1,7 @@
 package phpfuncs
 
 import (
+	"html"
 	"log"
 	"strconv"
 	"strings"
@@ -30,32 +31,48 @@ func Addslashes(s string) string {
 // Original : https://www.php.net/manual/en/function.bin2hex.php
 // Returns an ASCII string containing the hexadecimal representation of str. The conversion is done byte-wise with the high-nibble first.
 func Bin2hex(s string) string {
-	bin, err := strconv.ParseInt(s,2,64)
+	bin, err := strconv.ParseInt(s, 2, 64)
 	if err != nil {
 		log.Fatal(err)
 	}
-	return strconv.FormatInt(bin,16)
+	return strconv.FormatInt(bin, 16)
 }
 
 // Explode - Split a string by a string
 // Original : https://www.php.net/manual/en/function.explode.php
 // Returns an array of strings, each of which is a substring of string formed by splitting it on boundaries formed by the string delimiter.
-func Explode(s,set string) []string {
-	return strings.Split(s,set)
+func Explode(s, set string) []string {
+	return strings.Split(s, set)
+}
+
+// HtmlspecialChars - Convert special characters to HTML entities.
+// Original : https://www.php.net/manual/en/function.htmlspecialchars.php
+// Certain characters have special significance in HTML, and should be represented by HTML entities if they are to preserve their meanings. This function returns a string with these conversions made
+func HtmlspecialChars(s string) string {
+	return html.EscapeString(s)
+}
+
+// HtmlspecialCharsdecode - Convert special HTML entities back to characters.
+// Original : https://www.php.net/manual/en/function.htmlspecialchars-decode.php
+// Convert special HTML entities back to characters.
+func HtmlspecialCharsdecode(s string) string {
+	return html.UnescapeString(s)
 }
 
 // Join - Alias o Implode
 // Original : https://www.php.net/manual/en/function.join.php
 // Alias o Implode
 func Join(set string, s []string) string {
-	return Implode(set,s)
+	return Implode(set, s)
 }
 
 // Ltrim - Strip whitespace (or other characters) from the beginning of a string
 // Original : https://www.php.net/manual/en/function.ltrim.php
 // Strip whitespace (or other characters) from the beginning of a string.
-func Ltrim(s, set string) string{
-	if set == "" { set = " "}
+func Ltrim(s, set string) string {
+	if set == "" {
+		set = " "
+	}
 	return strings.TrimLeft(s, set)
 }
 
@@ -63,7 +80,9 @@ func Ltrim(s, set string) string{
 // Original : https://www.php.net/manual/en/function.rtrim.php
 // This function returns a string with whitespace (or other characters) stripped from the end of str.
 func Rtrim(s, set string) string {
-	if set == "" { set = " "}
+	if set == "" {
+		set = " "
+	}
 	return strings.TrimRight(s, set)
 }
 
@@ -73,7 +92,6 @@ func Rtrim(s, set string) string {
 func Strtolower(s string) string {
 	return strings.ToLower(s)
 }
-
 
 // Strtoupper - Make a string uppercase
 // Original : https://www.php.net/manual/en/function.strtoupper.php
@@ -100,6 +118,8 @@ func MbStrtoupper(s string) string {
 // Original : https://www.php.net/manual/en/function.trim.php
 // This function returns a string with whitespace stripped from the beginning and end of str.
 func Trim(s, set string) string {
-	if set == "" {return strings.TrimSpace(s)}
+	if set == "" {
+		return strings.TrimSpace(s)
+	}
 	return strings.Trim(s, set)
 }
