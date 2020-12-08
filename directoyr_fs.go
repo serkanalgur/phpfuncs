@@ -478,6 +478,20 @@ func Tempnam(dir, prefix string) string{
 		return p
 }
 
+// Tempfile - Creates a temporary file
+// Original : https://www.php.net/manual/en/function.tmpfile.php
+// Creates a temporary file with a unique name in read-write (w+) mode and returns a file handle.
+//
+// The file is automatically removed when closed (for example, by calling fclose(), or when there are no remaining references to the file handle returned by tmpfile()), or when the script ends.
+func Tempfile() (f *os.File) {
+	raName := StringWithCharset(30,charset)
+	tmpfile, err := ioutil.TempFile("", raName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return tmpfile
+}
+
 // Unlink - Deletes a file.
 // Original : https://www.php.net/manual/en/function.unlink.php
 // Deletes filename. Similar to the Unix C unlink() function. An E_WARNING level error will be generated on failure.
