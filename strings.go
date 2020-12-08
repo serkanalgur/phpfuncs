@@ -76,6 +76,13 @@ func Ltrim(s, set string) string {
 	return strings.TrimLeft(s, set)
 }
 
+// Nl2br - Inserts HTML line breaks before all newlines in a string
+// Original : https://www.php.net/manual/en/function.nl2br.php
+// Returns string with <br /> or <br> inserted before all newlines (\r\n, \n\r, \n and \r).
+func Nl2br(s string) string {
+	return strings.ReplaceAll(s, "\n", "<br />\n")
+}
+
 // Rtrim - Strip whitespace (or other characters) from the end of a string
 // Original : https://www.php.net/manual/en/function.rtrim.php
 // This function returns a string with whitespace (or other characters) stripped from the end of str.
@@ -84,6 +91,21 @@ func Rtrim(s, set string) string {
 		set = " "
 	}
 	return strings.TrimRight(s, set)
+}
+
+// StrRepeat - Repeat a string
+// Original : https://www.php.net/manual/en/function.str-repeat.php
+// Returns string repeated times times.
+func StrRepeat(s string, count int) string {
+	return strings.Repeat(s, count)
+}
+
+// StrReplace - Replace all occurrences of the search string with the replacement string
+// Original : https://www.php.net/manual/en/function.str-replace.php
+// This function returns a string or an array with all occurrences of search in subject replaced with the given replace value.
+// n value must set to -1 if you want to infinite change
+func StrReplace(find, replace, s string, n int) string {
+	return strings.Replace(s, find, replace, n)
 }
 
 // Strtolower - Make a string lowercase
