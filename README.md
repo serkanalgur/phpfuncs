@@ -1,10 +1,10 @@
 # PHP Functions for Golang - phpfuncs
 
-[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs)
+[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs) [![Go Report Card](https://goreportcard.com/badge/github.com/serkanalgur/phpfuncs)](https://goreportcard.com/report/github.com/serkanalgur/phpfuncs)
 
 PHP functions implementation to Golang. This package is for the Go beginners who have developed PHP code before. You can use PHP like functions in your app, module etc. when you add this module to your project.
 
-:bangbang: **THIS MODULE IS ACTIVELY UNDER DEVELOPMENT. PLEASE USE CAUTIOUSLY** :bangbang:
+:bangbang: **THIS MODULE IS UNDER DEVELOPMENT. PLEASE USE CAUTIOUSLY** :bangbang:
 
 ## Installation
 
