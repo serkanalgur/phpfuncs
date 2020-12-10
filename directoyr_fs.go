@@ -466,7 +466,7 @@ func Touch(path string, t int64, at int64) bool {
 
 
 // Tempnam - Create file with unique file name
-// Orginal : https://www.php.net/manual/en/function.tempnam.php
+// Original : https://www.php.net/manual/en/function.tempnam.php
 // Creates a file with a unique filename, with access permission set to 0600, in the specified directory. If the directory does not exist or is not writable, tempnam() may generate a file in the system's temporary directory, and return the full path to that file, including its name.
 func Tempnam(dir, prefix string) string{
 	raName := StringWithCharset(30,charset)
