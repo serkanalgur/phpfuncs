@@ -5,11 +5,11 @@ install:
   - export GOPATH=$HOME/go
   - go get -t -v ./...
 os: linux
-dis: xenial
+dist: xenial
 env:
   - GO111MODULE=on
 script:
   - go test -coverprofile=coverage.txt -covermode=atomic
-  - go test $GOPATH/tests/...
+  - go test $GOPATH/src/github.com/serkanalgur/phpfuncs/tests/...
 after_success:
   - bash <(curl -s https://codecov.io/bash)
