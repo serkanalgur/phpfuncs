@@ -118,9 +118,9 @@ func FClose(file *os.File) error {
 func FOpen(file string, mode int) (*os.File, error) {
 	f, err := os.OpenFile(file, mode|os.O_CREATE, 0644)
 	if err != nil {
-		return f,err
+		return f, err
 	}
-	return f,err
+	return f, err
 }
 
 // FRead - Binary-safe file read.
@@ -128,19 +128,19 @@ func FOpen(file string, mode int) (*os.File, error) {
 // fread() reads up to length bytes from the file pointer referenced by handle.
 func FRead(f *os.File, sb int64) string {
 	r := bufio.NewReader(f)
-  b := make([]byte, sb)
+	b := make([]byte, sb)
 	var cls string
 
 	for {
-    n, err := r.Read(b)
-    if err != nil {
+		n, err := r.Read(b)
+		if err != nil {
 			if err != io.EOF {
 				fmt.Println(err)
 			}
-      break
-    }
-    cls += string(b[0:n])
-  }
+			break
+		}
+		cls += string(b[0:n])
+	}
 	return cls
 }
 
@@ -166,11 +166,11 @@ func FileMime(file string) time.Time {
 // FilePerms - Gets file permissions.
 // Original : https://www.php.net/manual/en/function.fileperms.php
 // Gets permissions for the given file.
-func FilePerms(path string) os.FileMode{
-    p, _ := os.Open(path)
-    m, _ := p.Stat()
-		p.Close()
-    return m.Mode().Perm()
+func FilePerms(path string) os.FileMode {
+	p, _ := os.Open(path)
+	m, _ := p.Stat()
+	p.Close()
+	return m.Mode().Perm()
 }
 
 // FileSize - Gets file permissions.
@@ -178,31 +178,30 @@ func FilePerms(path string) os.FileMode{
 // Gets permissions for the given file.
 func FileSize(path string) (int64, error) {
 	fi, err := os.Stat(path)
-    if err != nil {
-        return 0, err
-    }
-    return fi.Size(), nil
+	if err != nil {
+		return 0, err
+	}
+	return fi.Size(), nil
 }
 
 // FileType - Gets file type.
 // Original : https://www.php.net/manual/en/function.filetype.php
 // Returns the type of the given file.
 func FileType(fs string) (string, error) {
-		f, err := os.Open(fs)
-		if err != nil {
-			return "", err
-		}
-		defer f.Close()
-		buffer := make([]byte, 512)
-		fff, err := f.Read(buffer)
-		if err != nil {
-			fmt.Println(fff)
-			return "", err
-		}
-		contentType := http.DetectContentType(buffer)
-		return contentType, nil
+	f, err := os.Open(fs)
+	if err != nil {
+		return "", err
+	}
+	defer f.Close()
+	buffer := make([]byte, 512)
+	fff, err := f.Read(buffer)
+	if err != nil {
+		fmt.Println(fff)
+		return "", err
+	}
+	contentType := http.DetectContentType(buffer)
+	return contentType, nil
 }
-
 
 // FileGetContents - Reads entire file into a string.
 // Original : https://www.php.net/manual/en/function.file-get-contents.php
@@ -210,33 +209,33 @@ func FileType(fs string) (string, error) {
 // TODO : Context Implementation.
 func FileGetContents(path string, includePath bool, context []string, offset int, maxlen int) string {
 	var v string
-		if IsURL(path) {
-			includePath = false
-		}
+	if IsURL(path) {
+		includePath = false
+	}
 
 	if includePath == true {
 		fileHere := FileExists(path)
 		if fileHere {
-			file,_ := FOpen(path,os.O_RDONLY)
+			file, _ := FOpen(path, os.O_RDONLY)
 
 			if offset >= 0 && maxlen != 0 {
-			var err error
+				var err error
 				r := bufio.NewReader(file)
 				if offset > 0 {
-				_, err := r.Discard(offset)
+					_, err := r.Discard(offset)
 					if err != nil {
 						log.Fatalln(err)
 					}
 				}
-					buf := new(strings.Builder)
-						_, err = io.CopyN(buf, r, int64(maxlen-offset))
-							if err != nil {
-								log.Fatal(err)
-							}
-					v = buf.String()
+				buf := new(strings.Builder)
+				_, err = io.CopyN(buf, r, int64(maxlen-offset))
+				if err != nil {
+					log.Fatal(err)
+				}
+				v = buf.String()
 
 			} else {
-				v = FRead(file,512)
+				v = FRead(file, 512)
 			}
 			FClose(file)
 		}
@@ -247,28 +246,28 @@ func FileGetContents(path string, includePath bool, context []string, offset int
 		}
 
 		defer u.Body.Close()
-			if offset >= 0 && maxlen > 0 {
-				var err error
-					r := bufio.NewReader(u.Body)
-					if offset > 0 {
-					_, err := r.Discard(offset)
-						if err != nil {
-							log.Fatalln(err)
-						}
-					}
-						buf := new(strings.Builder)
-							_, err = io.CopyN(buf, r, int64(maxlen-offset))
-								if err != nil {
-									log.Fatal(err)
-								}
-						v = buf.String()
-			} else {
-				body, err := ioutil.ReadAll(u.Body)
-					if err != nil {
-						log.Fatalln(err)
-					}
-				v = string(body)
+		if offset >= 0 && maxlen > 0 {
+			var err error
+			r := bufio.NewReader(u.Body)
+			if offset > 0 {
+				_, err := r.Discard(offset)
+				if err != nil {
+					log.Fatalln(err)
+				}
 			}
+			buf := new(strings.Builder)
+			_, err = io.CopyN(buf, r, int64(maxlen-offset))
+			if err != nil {
+				log.Fatal(err)
+			}
+			v = buf.String()
+		} else {
+			body, err := ioutil.ReadAll(u.Body)
+			if err != nil {
+				log.Fatalln(err)
+			}
+			v = string(body)
+		}
 	}
 
 	return v
@@ -278,23 +277,21 @@ func FileGetContents(path string, includePath bool, context []string, offset int
 // Original : https://www.php.net/manual/en/function.file-put-contents.php
 // This function is identical to calling fopen(), fwrite() and fclose() successively to write data to a file.
 // TODO: Flags
-func FilePutContents(path,data string) {
-	f,err := FOpen(path,os.O_RDWR|os.O_CREATE)
-		if err !=nil {
-			log.Fatalln(err)
-		}
-		FWrite(f,data)
-		FClose(f)
+func FilePutContents(path, data string) {
+	f, err := FOpen(path, os.O_RDWR|os.O_CREATE)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	FWrite(f, data)
+	FClose(f)
 }
-
 
 // FPuts - Alias of FWrite
 // Original : https://www.php.net/manual/en/function.fputs.php
 // This function is an alias of: FWrite()..
 func FPuts(f *os.File, data string) int {
-	return FWrite(f,data)
+	return FWrite(f, data)
 }
-
 
 // FWrite - Binary-safe file write
 // Original : https://www.php.net/manual/en/function.fwrite.php
@@ -302,10 +299,10 @@ func FPuts(f *os.File, data string) int {
 func FWrite(f *os.File, data string) int {
 	dataToByte := []byte(data)
 	fw, err := f.Write(dataToByte)
-		if err != nil {
-			log.Fatal(err)
-		}
-		return fw
+	if err != nil {
+		log.Fatal(err)
+	}
+	return fw
 }
 
 // Glob - Find pathnames matching a pattern.
@@ -337,7 +334,7 @@ func IsExecutable(path string) bool {
 // IsFile - Tells whether the filename is a regular file.
 // Original : https://www.php.net/manual/en/function.is-file.php
 // Tells whether the given file is a regular file.
-func IsFile(path string) bool{
+func IsFile(path string) bool {
 	file, err := os.Stat(path)
 	return err == nil && file.Mode().IsRegular()
 }
@@ -345,7 +342,7 @@ func IsFile(path string) bool{
 // IsLink - Tells whether the filename is a symbolic link.
 // Original : https://www.php.net/manual/en/function.is-link.php
 // Tells whether the given file is a symbolic link.
-func IsLink(path string) bool{
+func IsLink(path string) bool {
 	_, err := os.Readlink(path)
 	return err == nil
 }
@@ -353,10 +350,10 @@ func IsLink(path string) bool{
 // IsReadable - Tells whether a file exists and is readable.
 // Original : https://www.php.net/manual/en/function.is-readable.php
 // Tells whether a file exists and is readable.
-func IsReadable(path string) bool{
-      file, err := os.OpenFile(path, os.O_WRONLY, 0666)
-      file.Close()
-			return err == nil
+func IsReadable(path string) bool {
+	file, err := os.OpenFile(path, os.O_WRONLY, 0666)
+	file.Close()
+	return err == nil
 }
 
 // IsWritable - Tells whether the filename is writable.
@@ -379,20 +376,20 @@ func IsWriteable(path string) bool {
 // Original : https://www.php.net/manual/en/function.link.php
 // link() creates a hard link.
 func Link(target, link string) {
- err := os.Link(target,link)
-   if err != nil {
-      log.Fatal(err)
-   }
+	err := os.Link(target, link)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 // SymLink - Creates a symbolic link
 // Original : https://www.php.net/manual/en/function.symlink.php
 // symlink() creates a symbolic link to the existing target with the specified name link.
 func SymLink(target, link string) {
-   err := os.Symlink(target, link)
-   if err != nil {
-      log.Fatal(err)
-   }
+	err := os.Symlink(target, link)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 // MkDir - Makes directory.
@@ -405,11 +402,11 @@ func MkDir(path string, mode os.FileMode) error {
 // ReadLink - Returns the target of a symbolic link.
 // Original : https://www.php.net/manual/en/function.readlink.php
 // readlink() does the same as the readlink C function.
-func ReadLink(path string) (string, error){
+func ReadLink(path string) (string, error) {
 	li, err := os.Readlink(path)
-		if err != nil {
-			return "", err
-		}
+	if err != nil {
+		return "", err
+	}
 	return li, err
 }
 
@@ -447,35 +444,33 @@ func Stat(name string) (os.FileInfo, error) {
 // If the file does not exist, it will be created.
 func Touch(path string, t int64, at int64) bool {
 
-	_, err := FOpen(path,os.O_RDWR)
-		if err != nil {
-			log.Fatal(err)
-			return false
-		}
+	_, err := FOpen(path, os.O_RDWR)
+	if err != nil {
+		log.Fatal(err)
+		return false
+	}
 
-		atim := time.Unix(at, 0)
-		ttim := time.Unix(t, 0)
+	atim := time.Unix(at, 0)
+	ttim := time.Unix(t, 0)
 
-
-		if err := os.Chtimes(path,ttim,atim); err != nil {
-					log.Fatal(err)
-					return false
-			}
+	if err := os.Chtimes(path, ttim, atim); err != nil {
+		log.Fatal(err)
+		return false
+	}
 	return true
 }
-
 
 // Tempnam - Create file with unique file name
 // Original : https://www.php.net/manual/en/function.tempnam.php
 // Creates a file with a unique filename, with access permission set to 0600, in the specified directory. If the directory does not exist or is not writable, tempnam() may generate a file in the system's temporary directory, and return the full path to that file, including its name.
-func Tempnam(dir, prefix string) string{
-	raName := StringWithCharset(30,charset)
-	p := filepath.FromSlash(dir+prefix+raName)
-		_, err := os.OpenFile(p, os.O_CREATE, 0600)
-		if err != nil {
-			log.Fatalln(err)
-		}
-		return p
+func Tempnam(dir, prefix string) string {
+	raName := StringWithCharset(30, charset)
+	p := filepath.FromSlash(dir + prefix + raName)
+	_, err := os.OpenFile(p, os.O_CREATE, 0600)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	return p
 }
 
 // Tempfile - Creates a temporary file
@@ -484,7 +479,7 @@ func Tempnam(dir, prefix string) string{
 //
 // The file is automatically removed when closed (for example, by calling fclose(), or when there are no remaining references to the file handle returned by tmpfile()), or when the script ends.
 func Tempfile() (f *os.File) {
-	raName := StringWithCharset(30,charset)
+	raName := StringWithCharset(30, charset)
 	tmpfile, err := ioutil.TempFile("", raName)
 	if err != nil {
 		log.Fatal(err)

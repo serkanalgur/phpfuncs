@@ -121,7 +121,6 @@ func Count(v []interface{}) int {
 	return len(v)
 }
 
-
 // Implode - Join array elements with a string.
 // Original : https://www.php.net/manual/en/function.implode.php
 // Join array elements with a glue string.
@@ -164,7 +163,7 @@ func InArray(needle interface{}, haystack interface{}) bool {
 
 // Sizeof - Alias of Count
 // Original : https://www.php.net/manual/en/function.sizeof.php
-func Sizeof(v []interface{}) int{
+func Sizeof(v []interface{}) int {
 	return Count(v)
 }
 
@@ -180,25 +179,25 @@ func Sort(v interface{}, flag string) bool {
 	art := reflect.TypeOf(v)
 	var va bool
 
-		if art.Kind() == reflect.Slice {
-			switch flag {
-				case "SORT_REGULAR":
-					array := v.([]string)
-					sort.Strings(array)
-				case "SORT_STRING":
-					array := v.([]string)
-					sort.Strings(array)
-				case "SORT_NUMERIC":
-					array := v.([]int)
-					sort.Ints(array)
-				default:
-					array := v.([]string)
-					sort.Strings(array)
-			}
-			va = true
-		} else {
-			va = false
+	if art.Kind() == reflect.Slice {
+		switch flag {
+		case "SORT_REGULAR":
+			array := v.([]string)
+			sort.Strings(array)
+		case "SORT_STRING":
+			array := v.([]string)
+			sort.Strings(array)
+		case "SORT_NUMERIC":
+			array := v.([]int)
+			sort.Ints(array)
+		default:
+			array := v.([]string)
+			sort.Strings(array)
 		}
+		va = true
+	} else {
+		va = false
+	}
 
-		return va
+	return va
 }

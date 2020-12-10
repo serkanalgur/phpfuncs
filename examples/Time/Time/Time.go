@@ -6,9 +6,9 @@ import (
 	"github.com/serkanalgur/phpfuncs"
 )
 
-func main(){
+func main() {
 	currentTime := phpfuncs.Time()
-	fmt.Printf("Current Timestamp is: %d",currentTime)
+	fmt.Printf("Current Timestamp is: %d", currentTime)
 }
 
 // https://play.golang.org/p/xzhpqD0nNJh

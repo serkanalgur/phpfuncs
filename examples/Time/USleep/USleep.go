@@ -6,12 +6,12 @@ import (
 	"github.com/serkanalgur/phpfuncs"
 )
 
-func main(){
-	fmt.Printf("Current Timestamp is: %d\n",phpfuncs.Time())
+func main() {
+	fmt.Printf("Current Timestamp is: %d\n", phpfuncs.Time())
 
-		phpfuncs.USleep(2000000)
+	phpfuncs.USleep(2000000)
 
-	fmt.Printf("Current Timestamp After 2 seconds sleep is: %d\n",phpfuncs.Time())
+	fmt.Printf("Current Timestamp After 2 seconds sleep is: %d\n", phpfuncs.Time())
 }
 
 // Expected result is based current timestamp and +2 seconds
