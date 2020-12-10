@@ -7,11 +7,11 @@ import (
 	"github.com/serkanalgur/phpfuncs"
 )
 
-  func main(){
+func main() {
 
-    test := strings.Split("Denee için serkan algur kişisinden birşeyler seçmeliyiz."," ")
+	test := strings.Split("Denee için serkan algur kişisinden birşeyler seçmeliyiz.", " ")
 
-    arrayo := phpfuncs.InArray("serkaaaan",test)
+	arrayo := phpfuncs.InArray("serkaaaan", test)
 
-    fmt.Printf("Result is : %v\n",arrayo)
-  }
+	fmt.Printf("Result is : %v\n", arrayo)
+}

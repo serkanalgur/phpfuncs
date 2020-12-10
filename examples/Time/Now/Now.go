@@ -6,9 +6,9 @@ import (
 	"github.com/serkanalgur/phpfuncs"
 )
 
-func main(){
+func main() {
 	currentTime := phpfuncs.Now()
-	fmt.Printf("Current Timestamp is: %d",currentTime)
+	fmt.Printf("Current Timestamp is: %d", currentTime)
 }
 
 // Expected : Current Timestamp is : "current timestamp"
