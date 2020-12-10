@@ -1,11 +1,15 @@
 language: go
 go:
-  - 1.15.5
-  - 1.15.6
   - release
-sudo: false
-install: true
+install:
+  - export GOPATH=$HOME/go
+  - go get -t -v ./...
+os: linux
+dis: xenial
 env:
   - GO111MODULE=on
 script:
-  go test ./tests/...
+  - go test -coverprofile=coverage.txt -covermode=atomic
+  - go test $GOPATH/tests/...
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
