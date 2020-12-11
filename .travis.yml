@@ -1,6 +1,6 @@
 language: go
 go:
-  - release
+  - 1.15.6
 install:
   - export GOPATH=$HOME/go
   - go get -t -v ./...
