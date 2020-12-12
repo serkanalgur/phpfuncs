@@ -1,6 +1,6 @@
 # PHP Functions for Golang - phpfuncs
 
-[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs) [![Go Report Card](https://goreportcard.com/badge/github.com/serkanalgur/phpfuncs)](https://goreportcard.com/report/github.com/serkanalgur/phpfuncs)
+[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs) [![Go Report Card](https://goreportcard.com/badge/github.com/serkanalgur/phpfuncs)](https://goreportcard.com/report/github.com/serkanalgur/phpfuncs) [![Build Status](https://travis-ci.org/serkanalgur/phpfuncs.svg?branch=main)](https://travis-ci.org/serkanalgur/phpfuncs) [![codecov](https://codecov.io/gh/serkanalgur/phpfuncs/branch/main/graph/badge.svg?token=WETVWX4GA3)](https://codecov.io/gh/serkanalgur/phpfuncs)
 
 PHP functions implementation to Golang. This package is for the Go beginners who have developed PHP code before. You can use PHP like functions in your app, module etc. when you add this module to your project.
 
@@ -181,7 +181,7 @@ func Abs(arg float64) float64
 
 Abs - Absolute value.
 
-Original : https://www.php.net/manual/en/function.abs.php
+Original : <https://www.php.net/manual/en/function.abs.php>
 
 Returns the absolute value of number.
 
@@ -193,7 +193,7 @@ func Acos(arg float64) float64
 
 Acos - Arc cosine.
 
-Original : https://www.php.net/manual/en/function.acos.php
+Original : <https://www.php.net/manual/en/function.acos.php>
 
 Returns the arc cosine of arg in radians. acos() is the inverse function of
 cos(), which means that a==cos(acos(a)) for every value of a that is within
@@ -207,7 +207,7 @@ func Acosh(arg float64) float64
 
 Acosh - Inverse hyperbolic cosine.
 
-Original : https://www.php.net/manual/en/function.acosh.php
+Original : <https://www.php.net/manual/en/function.acosh.php>
 
 Returns the inverse hyperbolic cosine of arg, i.e. the value whose hyperbolic
 cosine is arg.
@@ -220,7 +220,7 @@ func Addslashes(s string) string
 
 Addslashes - Quote string with slashes
 
-Original : https://www.php.net/manual/en/function.addslashes.php
+Original : <https://www.php.net/manual/en/function.addslashes.php>
 
 Returns a string with backslashes added before characters that need to be
 escaped.
@@ -233,7 +233,7 @@ func Array(v ...interface{}) []interface{}
 
 Array - Create an array
 
-Original : https://www.php.net/manual/en/function.array.php
+Original : <https://www.php.net/manual/en/function.array.php>
 
 #### func ArrayCountValues
 
@@ -243,7 +243,7 @@ func ArrayCountValues(v []interface{}) map[interface{}]uint
 
 ArrayCountValues - Counts all the values of an array
 
-Original : https://www.php.net/manual/en/function.array-count-values.php
+Original : <https://www.php.net/manual/en/function.array-count-values.php>
 
 #### func ArrayFlip
 
@@ -253,7 +253,7 @@ func ArrayFlip(v map[interface{}]interface{}) map[interface{}]interface{}
 
 ArrayFlip - Exchanges all keys with their associated values in an array
 
-Original : https://www.php.net/manual/en/function.array-flip.php
+Original : <https://www.php.net/manual/en/function.array-flip.php>
 
 ArrayFlip returns an array in flip order, i.e. keys from array become values and
 values from array become keys.
@@ -266,7 +266,7 @@ func ArrayKeys(v map[string]interface{}) []string
 
 ArrayKeys - Return all the keys or a subset of the keys of an array
 
-Original : https://www.php.net/manual/en/function.array-keys.php
+Original : <https://www.php.net/manual/en/function.array-keys.php>
 
 #### func ArrayMerge
 
@@ -276,7 +276,7 @@ func ArrayMerge(v ...[]interface{}) []interface{}
 
 ArrayMerge - Merge one or more arrays
 
-Original : https://www.php.net/manual/en/function.array-merge.php
+Original : <https://www.php.net/manual/en/function.array-merge.php>
 
 #### func ArrayPush
 
@@ -286,7 +286,7 @@ func ArrayPush(v *[]interface{}, data ...interface{})
 
 ArrayPush - Push one or more elements onto the end of array
 
-Original : https://www.php.net/manual/en/function.array-push.php
+Original : <https://www.php.net/manual/en/function.array-push.php>
 
 #### func ArrayReverse
 
@@ -296,7 +296,7 @@ func ArrayReverse(v []interface{}) []interface{}
 
 ArrayReverse - Return an array with elements in reverse order
 
-Original : https://www.php.net/manual/en/function.array-reverse.php
+Original : <https://www.php.net/manual/en/function.array-reverse.php>
 
 #### func ArrayValues
 
@@ -306,7 +306,7 @@ func ArrayValues(v ...[]interface{}) (value []interface{})
 
 ArrayValues - Return all the values of an array
 
-Original : https://www.php.net/manual/en/function.array-values.php
+Original : <https://www.php.net/manual/en/function.array-values.php>
 
 #### func Asin
 
@@ -316,7 +316,7 @@ func Asin(arg float64) float64
 
 Asin - Arc sine.
 
-Original : https://www.php.net/manual/en/function.asin.php
+Original : <https://www.php.net/manual/en/function.asin.php>
 
 Returns the arc sine of arg in radians. asin() is the inverse function of sin(),
 which means that a==sin(asin(a)) for every value of a that is within asin()'s
@@ -330,7 +330,7 @@ func Asinh(arg float64) float64
 
 Asinh - Inverse hyperbolic sine.
 
-Original : https://www.php.net/manual/en/function.asinh.php
+Original : <https://www.php.net/manual/en/function.asinh.php>
 
 Returns the inverse hyperbolic sine of arg, i.e. the value whose hyperbolic sine
 is arg.
@@ -343,7 +343,7 @@ func Atan(arg float64) float64
 
 Atan - Arc tangent.
 
-Original : https://www.php.net/manual/en/function.atan.php
+Original : <https://www.php.net/manual/en/function.atan.php>
 
 Returns the arc tangent of arg in radians. atan() is the inverse function of
 tan(), which means that a==tan(atan(a)) for every value of a that is within
@@ -357,7 +357,7 @@ func Atan2(arg float64, arg2 float64) float64
 
 Atan2 - Arc tangent of two variables.
 
-Original : https://www.php.net/manual/en/function.atan2.php
+Original : <https://www.php.net/manual/en/function.atan2.php>
 
 This function calculates the arc tangent of the two variables x and y. It is
 similar to calculating the arc tangent of y / x, except that the signs of both
@@ -374,7 +374,7 @@ func Atanh(arg float64) float64
 
 Atanh - Inverse hyperbolic tangent.
 
-Original : https://www.php.net/manual/en/function.atanh.php
+Original : <https://www.php.net/manual/en/function.atanh.php>
 
 Returns the inverse hyperbolic tangent of arg, i.e. the value whose hyperbolic
 tangent is arg.
@@ -387,7 +387,7 @@ func Base64Decode(v string) (string, error)
 
 Base64Decode - Decodes data encoded with MIME base64.
 
-Original : https://www.php.net/manual/en/function.base64-decode.php
+Original : <https://www.php.net/manual/en/function.base64-decode.php>
 
 Decodes a base64 encoded data.
 
@@ -399,7 +399,7 @@ func Base64Encode(v string) string
 
 Base64Encode - Encodes data with MIME base64.
 
-Original : https://www.php.net/manual/en/function.base64-encode.php
+Original : <https://www.php.net/manual/en/function.base64-encode.php>
 
 Encodes given data with base64.
 
@@ -411,7 +411,7 @@ func BaseConvert(arg string, frombase, tobase int) (string, error)
 
 BaseConvert - Convert a number between arbitrary bases.
 
-Original : https://www.php.net/manual/en/function.base-convert.php
+Original : <https://www.php.net/manual/en/function.base-convert.php>
 
 Returns a string containing number represented in base tobase. The base in which
 number is given is specified in frombase. Both frombase and tobase have to be
@@ -428,7 +428,7 @@ func Basename(path string) string
 
 Basename - Returns trailing name component of path.
 
-Original : https://www.php.net/manual/en/function.basename.php
+Original : <https://www.php.net/manual/en/function.basename.php>
 
 Given a string containing the path to a file or directory, this function will
 return the trailing name component.
@@ -441,7 +441,7 @@ func Bin2Hex(s string) string
 
 Bin2Hex - Convert binary data into hexadecimal representation
 
-Original : https://www.php.net/manual/en/function.bin2hex.php
+Original : <https://www.php.net/manual/en/function.bin2hex.php>
 
 Returns an ASCII string containing the hexadecimal representation of str. The
 conversion is done byte-wise with the high-nibble first.
@@ -464,7 +464,7 @@ func Ceil(arg float64) float64
 
 Ceil - Round fractions up.
 
-Original : https://www.php.net/manual/en/function.ceil.php
+Original : <https://www.php.net/manual/en/function.ceil.php>
 
 Returns the next highest integer value by rounding up value if necessary.
 
@@ -476,7 +476,7 @@ func Chgrp(name string, uid, gid int) error
 
 Chgrp - Changes file group.
 
-Original : https://www.php.net/manual/en/function.chgrp.php
+Original : <https://www.php.net/manual/en/function.chgrp.php>
 
 Attempts to change the group of the file filename to group.
 
@@ -491,7 +491,7 @@ func Chmod(name string, mode os.FileMode) error
 
 Chmod - Changes file mode
 
-Original : https://www.php.net/manual/en/function.chmod.php
+Original : <https://www.php.net/manual/en/function.chmod.php>
 
 Attempts to change the mode of the specified file to that given in mode.
 
@@ -503,7 +503,7 @@ func Chown(name string, uid int, gid int) error
 
 Chown - Changes file owner.
 
-Original : https://www.php.net/manual/en/function.chown.php
+Original : <https://www.php.net/manual/en/function.chown.php>
 
 Attempts to change the owner of the file filename to user user. Only the
 superuser may change the owner of a file.
@@ -516,7 +516,7 @@ func Copy(src, dst string) (int64, error)
 
 Copy - Copies file
 
-Original : https://www.php.net/manual/en/function.copy.php
+Original : <https://www.php.net/manual/en/function.copy.php>
 
 Makes a copy of the file source to dest.
 
@@ -528,7 +528,7 @@ func Cos(arg float64) float64
 
 Cos - Cosine.
 
-Original : https://www.php.net/manual/en/function.cos.php
+Original : <https://www.php.net/manual/en/function.cos.php>
 
 cos() returns the cosine of the arg parameter. The arg parameter is in radians.
 
@@ -540,7 +540,7 @@ func Cosh(arg float64) float64
 
 Cosh - Hyperbolic cosine.
 
-Original : https://www.php.net/manual/en/function.cosh.php
+Original : <https://www.php.net/manual/en/function.cosh.php>
 
 Returns the hyperbolic cosine of arg, defined as (exp(arg) + exp(-arg))/2.
 
@@ -552,7 +552,7 @@ func Count(v []interface{}) int
 
 Count - Count all elements in an array, or something in an object
 
-Original : https://www.php.net/manual/en/function.count.php
+Original : <https://www.php.net/manual/en/function.count.php>
 
 #### func DecBin
 
@@ -562,7 +562,7 @@ func DecBin(arg int64) string
 
 DecBin - Hyperbolic cosine.
 
-Original : https://www.php.net/manual/en/function.decbin.php
+Original : <https://www.php.net/manual/en/function.decbin.php>
 
 Returns a string containing a binary representation of the given number
 argument.
@@ -575,7 +575,7 @@ func DecHex(arg int64) string
 
 DecHex - Decimal to hexadecimal.
 
-Original : https://www.php.net/manual/en/function.dechex.php
+Original : <https://www.php.net/manual/en/function.dechex.php>
 
 Returns a string containing a hexadecimal representation of the given unsigned
 number argument.
@@ -592,7 +592,7 @@ func DecOct(arg int64) string
 
 DecOct - Decimal to Octal
 
-Original : https://www.php.net/manual/en/function.decoct.php
+Original : <https://www.php.net/manual/en/function.decoct.php>
 
 Returns a string containing an octal representation of the given number
 argument. The largest number that can be converted depends on the platform in
@@ -607,7 +607,7 @@ func Deg2Rad(arg float64) float64
 
 Deg2Rad - Converts the number in degrees to the radian equivalent.
 
-Original : https://www.php.net/manual/en/function.deg2rad.php
+Original : <https://www.php.net/manual/en/function.deg2rad.php>
 
 This function converts number from degrees to the radian equivalent.
 
@@ -621,7 +621,7 @@ func Delete(name string) error
 
 Delete - Deletes a file.
 
-Original : https://www.php.net/manual/en/function.delete.php
+Original : <https://www.php.net/manual/en/function.delete.php>
 
 Deletes filename. Similar to the Unix C unlink() function. An E_WARNING level
 error will be generated on failure.
@@ -634,7 +634,7 @@ func Die(of int)
 
 Die - Equivalent to exit
 
-Original : https://www.php.net/manual/en/function.die.php
+Original : <https://www.php.net/manual/en/function.die.php>
 
 This language construct is equivalent to exit().
 
@@ -646,7 +646,7 @@ func DirName(path string) ([]os.FileInfo, error)
 
 DirName - Returns a parent directory's path
 
-Original : https://www.php.net/manual/en/function.dirname.php
+Original : <https://www.php.net/manual/en/function.dirname.php>
 
 Given a string containing the path of a file or directory, this function will
 return the parent directory's path that is levels up from the current directory.
@@ -659,7 +659,7 @@ func Echo(vars ...interface{})
 
 Echo - Output one or more strings
 
-Original : https://www.php.net/manual/en/function.echo.php
+Original : <https://www.php.net/manual/en/function.echo.php>
 
 #### func Exec
 
@@ -669,7 +669,7 @@ func Exec(of string)
 
 Exec - Start a command on system
 
-Original : https://www.php.net/manual/tr/function.exec.php
+Original : <https://www.php.net/manual/tr/function.exec.php>
 
 exec() executes the given command.
 
@@ -681,7 +681,7 @@ func Exit(of int)
 
 Exit - Output a message and terminate the current script
 
-Original : https://www.php.net/manual/en/function.exit.php
+Original : <https://www.php.net/manual/en/function.exit.php>
 
 Terminates execution of the script. Shutdown functions and object destructors
 will always be executed even if exit is called.
@@ -694,7 +694,7 @@ func Exp(arg float64) float64
 
 Exp - Calculates the exponent of e.
 
-Original : https://www.php.net/manual/en/function.exp.php
+Original : <https://www.php.net/manual/en/function.exp.php>
 
 Returns e raised to the power of arg.
 
@@ -710,7 +710,7 @@ func ExpM1(arg float64) float64
 ExpM1 - Returns exp(number) - 1, computed in a way that is accurate even when
 the value of number is close to zero
 
-Original : https://www.php.net/manual/en/function.expm1.php
+Original : <https://www.php.net/manual/en/function.expm1.php>
 
 expm1() returns the equivalent to 'exp(arg) - 1' computed in a way that is
 accurate even if the value of arg is near zero, a case where 'exp (arg) - 1'
@@ -724,7 +724,7 @@ func Explode(s, set string) []string
 
 Explode - Split a string by a string
 
-Original : https://www.php.net/manual/en/function.explode.php
+Original : <https://www.php.net/manual/en/function.explode.php>
 
 Returns an array of strings, each of which is a substring of string formed by
 splitting it on boundaries formed by the string delimiter.
@@ -737,7 +737,7 @@ func FClose(file *os.File) error
 
 FClose - Closes an open file pointer
 
-Original : https://www.php.net/manual/en/function.fclose.php
+Original : <https://www.php.net/manual/en/function.fclose.php>
 
 The file pointed to by handle is closed.
 
@@ -750,7 +750,7 @@ func FMod(arg float64, arg2 float64) float64
 FMod - Returns the floating point remainder (modulo) of the division of the
 arguments
 
-Original : https://www.php.net/manual/en/function.fmod.php
+Original : <https://www.php.net/manual/en/function.fmod.php>
 
 Returns the floating point remainder of dividing the dividend (x) by the divisor
 (y). The remainder (r) is defined as: x = i \* y + r, for some integer i. If y is
@@ -766,7 +766,7 @@ func FOpen(file string, mode int) (*os.File, error)
 
 FOpen - Opens file
 
-Original : https://www.php.net/manual/en/function.fopen.php
+Original : <https://www.php.net/manual/en/function.fopen.php>
 
 fopen() binds a named resource, specified by filename, to a stream.
 
@@ -781,7 +781,7 @@ func FPuts(f *os.File, data string) int
 
 FPuts - Alias of FWrite
 
-Original : https://www.php.net/manual/en/function.fputs.php
+Original : <https://www.php.net/manual/en/function.fputs.php>
 
 This function is an alias of: FWrite()..
 
@@ -793,7 +793,7 @@ func FRead(f *os.File, sb int64) string
 
 FRead - Binary-safe file read.
 
-Original : https://www.php.net/manual/en/function.fread.php
+Original : <https://www.php.net/manual/en/function.fread.php>
 
 fread() reads up to length bytes from the file pointer referenced by handle.
 
@@ -805,7 +805,7 @@ func FWrite(f *os.File, data string) int
 
 FWrite - Binary-safe file write
 
-Original : https://www.php.net/manual/en/function.fwrite.php
+Original : <https://www.php.net/manual/en/function.fwrite.php>
 
 fwrite() writes the contents of string to the file stream pointed to by handle.
 
@@ -817,7 +817,7 @@ func FileExists(path string) bool
 
 FileExists - Checks whether a file or directory exists.
 
-Original : https://www.php.net/manual/en/function.file-exists.php
+Original : <https://www.php.net/manual/en/function.file-exists.php>
 
 Checks whether a file or directory exists.
 
@@ -829,7 +829,7 @@ func FileGetContents(path string, includePath bool, context []string, offset int
 
 FileGetContents - Reads entire file into a string.
 
-Original : https://www.php.net/manual/en/function.file-get-contents.php
+Original : <https://www.php.net/manual/en/function.file-get-contents.php>
 
 This function is similar to file(), except that file_get_contents() returns the
 file in a string, starting at the specified offset up to maxlen bytes. On
@@ -843,7 +843,7 @@ func FileMime(file string) time.Time
 
 FileMime - Gets file modification time
 
-Original : https://www.php.net/manual/en/function.filemtime.php
+Original : <https://www.php.net/manual/en/function.filemtime.php>
 
 This function returns the time when the data blocks of a file were being written
 to, that is, the time when the content of the file was changed.
@@ -856,7 +856,7 @@ func FilePerms(path string) os.FileMode
 
 FilePerms - Gets file permissions.
 
-Original : https://www.php.net/manual/en/function.fileperms.php Gets permissions
+Original : <https://www.php.net/manual/en/function.fileperms.php> Gets permissions
 for the given file.
 
 #### func FilePutContents
@@ -867,7 +867,7 @@ func FilePutContents(path, data string)
 
 FilePutContents - Write data to a file
 
-Original : https://www.php.net/manual/en/function.file-put-contents.php
+Original : <https://www.php.net/manual/en/function.file-put-contents.php>
 
 This function is identical to calling fopen(), fwrite() and fclose()
 successively to write data to a file. TODO: Flags
@@ -880,7 +880,7 @@ func FileSize(path string) (int64, error)
 
 FileSize - Gets file permissions.
 
-Original : https://www.php.net/manual/en/function.filesize.php Gets permissions
+Original : <https://www.php.net/manual/en/function.filesize.php> Gets permissions
 for the given file.
 
 #### func FileType
@@ -891,7 +891,7 @@ func FileType(fs string) (string, error)
 
 FileType - Gets file type.
 
-Original : https://www.php.net/manual/en/function.filetype.php
+Original : <https://www.php.net/manual/en/function.filetype.php>
 
 Returns the type of the given file.
 
@@ -903,7 +903,7 @@ func Floor(arg float64) float64
 
 Floor - Round fractions down
 
-Original : https://www.php.net/manual/en/function.floor.php
+Original : <https://www.php.net/manual/en/function.floor.php>
 
 Returns the next lowest integer value (as float) by rounding down value if
 necessary.
@@ -916,7 +916,7 @@ func Glob(path string) (matches []string, err error)
 
 Glob - Find pathnames matching a pattern.
 
-Original : https://www.php.net/manual/en/function.glob.php
+Original : <https://www.php.net/manual/en/function.glob.php>
 
 The glob() function searches for all the pathnames matching pattern according to
 the rules used by the libc glob() function, which is similar to the rules used
@@ -930,11 +930,11 @@ func Hex2Bin(s string) string
 
 Hex2Bin - Decodes a hexadecimally encoded binary string
 
-Original : https://www.php.net/manual/en/function.hex2bin.php
+Original : <https://www.php.net/manual/en/function.hex2bin.php>
 
 Decodes a hexadecimally encoded binary string.
 
-    NOTE: This function does NOT convert a hexadecimal number to a binary number. This can be done using the BaseConvert() function.
+```NOTE: This function does NOT convert a hexadecimal number to a binary number. This can be done using the BaseConvert() function.```
 
 #### func HexDec
 
@@ -944,7 +944,7 @@ func HexDec(arg string) int64
 
 HexDec - Hexadecimal to decimal
 
-Original : https://www.php.net/manual/en/function.hexdec.php
+Original : <https://www.php.net/manual/en/function.hexdec.php>
 
 Returns the decimal equivalent of the hexadecimal number represented by the
 hex_string argument. hexdec() converts a hexadecimal string to a decimal number.
@@ -960,7 +960,7 @@ func HtmlspecialChars(s string) string
 
 HtmlspecialChars - Convert special characters to HTML entities.
 
-Original : https://www.php.net/manual/en/function.htmlspecialchars.php
+Original : <https://www.php.net/manual/en/function.htmlspecialchars.php>
 
 Certain characters have special significance in HTML, and should be represented
 by HTML entities if they are to preserve their meanings. This function returns a
@@ -974,7 +974,7 @@ func HtmlspecialCharsdecode(s string) string
 
 HtmlspecialCharsdecode - Convert special HTML entities back to characters.
 
-Original : https://www.php.net/manual/en/function.htmlspecialchars-decode.php
+Original : <https://www.php.net/manual/en/function.htmlspecialchars-decode.php>
 
 Convert special HTML entities back to characters.
 
@@ -986,7 +986,7 @@ func HyPot(arg, arg2 float64) float64
 
 HyPot - Calculate the length of the hypotenuse of a right-angle triangle.
 
-Original : https://www.php.net/manual/en/function.hypot.php
+Original : <https://www.php.net/manual/en/function.hypot.php>
 
 hypot() returns the length of the hypotenuse of a right-angle triangle with
 sides of length x and y, or the distance of the point (x, y) from the origin.
@@ -1000,7 +1000,7 @@ func Implode(sep string, v []string) string
 
 Implode - Join array elements with a string.
 
-Original : https://www.php.net/manual/en/function.implode.php
+Original : <https://www.php.net/manual/en/function.implode.php>
 
 Join array elements with a glue string.
 
@@ -1012,12 +1012,13 @@ func InArray(needle interface{}, haystack interface{}) bool
 
 InArray - Similar function of in_array in PHP
 
-Original : https://www.php.net/manual/en/function.in-array.php
+Original : <https://www.php.net/manual/en/function.in-array.php>
 
-    needle : string, int
+  ```needle : string, int
     haystack : should be an array
     strict : set true for type check
     return boolean true / false
+  ```
 
 #### func IntDiv
 
@@ -1027,7 +1028,7 @@ func IntDiv(arg, arg2 int64) (quotient int64)
 
 IntDiv - Integer division.
 
-Original : https://www.php.net/manual/en/function.intdiv.php
+Original : <https://www.php.net/manual/en/function.intdiv.php>
 
 Returns the integer quotient of the division of dividend by divisor.
 
@@ -1039,7 +1040,7 @@ func IsArray(v interface{}) bool
 
 IsArray - Finds whether a variable is an array.
 
-Original : https://www.php.net/manual/en/function.is-array.php
+Original : <https://www.php.net/manual/en/function.is-array.php>
 
 Finds whether the given variable is an array.
 
@@ -1051,7 +1052,7 @@ func IsDir(path string) bool
 
 IsDir - Tells whether the filename is a directory.
 
-Original : https://www.php.net/manual/en/function.is-dir.php
+Original : <https://www.php.net/manual/en/function.is-dir.php>
 
 Tells whether the given filename is a directory.
 
@@ -1063,7 +1064,7 @@ func IsExecutable(path string) bool
 
 IsExecutable - Tells whether the filename is executable
 
-Original : https://www.php.net/manual/en/function.is-executable.php
+Original : <https://www.php.net/manual/en/function.is-executable.php>
 
 Tells whether the filename is executable.
 
@@ -1075,7 +1076,7 @@ func IsFile(path string) bool
 
 IsFile - Tells whether the filename is a regular file.
 
-Original : https://www.php.net/manual/en/function.is-file.php
+Original : <https://www.php.net/manual/en/function.is-file.php>
 
 Tells whether the given file is a regular file.
 
@@ -1087,7 +1088,7 @@ func IsFinite(arg float64, ch int) bool
 
 IsFinite - Finds whether a value is a legal finite number.
 
-Original : https://www.php.net/manual/en/function.is-finite.php
+Original : <https://www.php.net/manual/en/function.is-finite.php>
 
 Checks whether val is a legal finite on this platform.
 
@@ -1099,7 +1100,7 @@ func IsInFinite(arg float64, ch int) bool
 
 IsInFinite - Finds whether a value is infinite.
 
-Original : https://www.php.net/manual/en/function.is-infinite.php
+Original : <https://www.php.net/manual/en/function.is-infinite.php>
 
 Returns TRUE if val is infinite (positive or negative), like the result of
 log(0) or any value too big to fit into a float on this platform.
@@ -1112,7 +1113,7 @@ func IsLink(path string) bool
 
 IsLink - Tells whether the filename is a symbolic link.
 
-Original : https://www.php.net/manual/en/function.is-link.php
+Original : <https://www.php.net/manual/en/function.is-link.php>
 
 Tells whether the given file is a symbolic link.
 
@@ -1124,7 +1125,7 @@ func IsNan(arg float64) bool
 
 IsNan - Finds whether a value is infinite.
 
-Original : https://www.php.net/manual/en/function.is-infinite.php
+Original : <https://www.php.net/manual/en/function.is-infinite.php>
 
 Returns TRUE if val is infinite (positive or negative), like the result of
 log(0) or any value too big to fit into a float on this platform.
@@ -1137,7 +1138,7 @@ func IsReadable(path string) bool
 
 IsReadable - Tells whether a file exists and is readable.
 
-Original : https://www.php.net/manual/en/function.is-readable.php
+Original : <https://www.php.net/manual/en/function.is-readable.php>
 
 Tells whether a file exists and is readable.
 
@@ -1157,7 +1158,7 @@ func IsWritable(path string) bool
 
 IsWritable - Tells whether the filename is writable.
 
-Original : https://www.php.net/manual/en/function.is-writable.php
+Original : <https://www.php.net/manual/en/function.is-writable.php>
 
 Returns TRUE if the filename exists and is writable. The filename argument may
 be a directory name allowing you to check if a directory is writable.
@@ -1170,7 +1171,7 @@ func IsWriteable(path string) bool
 
 IsWriteable - Tells whether the filename is writable.
 
-Original : https://www.php.net/manual/en/function.is-writeable.php
+Original : <https://www.php.net/manual/en/function.is-writeable.php>
 
 Returns TRUE if the filename exists and is writable. The filename argument may
 be a directory name allowing you to check if a directory is writable.
@@ -1183,7 +1184,7 @@ func Join(set string, s []string) string
 
 Join - Alias o Implode
 
-Original : https://www.php.net/manual/en/function.join.php
+Original : <https://www.php.net/manual/en/function.join.php>
 
 Alias o Implode
 
@@ -1195,7 +1196,7 @@ func LcgValue() float64
 
 LcgValue - Combined linear congruential generator
 
-Original : https://www.php.net/manual/en/function.lcg-value.php
+Original : <https://www.php.net/manual/en/function.lcg-value.php>
 
 lcg_value() returns a pseudo random number in the range of (0, 1). The function
 combines two CGs with periods of 2^31 - 85 and 2^31 - 249. The period of this
@@ -1209,7 +1210,7 @@ func Link(target, link string)
 
 Link - Create a hard link
 
-Original : https://www.php.net/manual/en/function.link.php
+Original : <https://www.php.net/manual/en/function.link.php>
 
 link() creates a hard link.
 
@@ -1221,7 +1222,7 @@ func Log(arg float64) float64
 
 Log - Natural logarithm
 
-Original : https://www.php.net/manual/en/function.log.php
+Original : <https://www.php.net/manual/en/function.log.php>
 
 If the optional base parameter is specified, log() returns logbase arg,
 otherwise log() returns the natural logarithm of arg.
@@ -1234,7 +1235,7 @@ func Log10(arg float64) float64
 
 Log10 - Base-10 logarithm
 
-Original : https://www.php.net/manual/en/function.log10.php
+Original : <https://www.php.net/manual/en/function.log10.php>
 
 Returns the base-10 logarithm of arg.
 
@@ -1247,7 +1248,7 @@ func Log1P(arg float64) float64
 Log1P - Returns log(1 + number), computed in a way that is accurate even when
 the value of number is close to zero.
 
-Original : https://www.php.net/manual/en/function.log1p.php
+Original : <https://www.php.net/manual/en/function.log1p.php>
 
 log1p() returns log(1 + number) computed in a way that is accurate even when the
 value of number is close to zero. log() might only return log(1) in this case
@@ -1261,7 +1262,7 @@ func Ltrim(s, set string) string
 
 Ltrim - Strip whitespace (or other characters) from the beginning of a string
 
-Original : https://www.php.net/manual/en/function.ltrim.php
+Original : <https://www.php.net/manual/en/function.ltrim.php>
 
 Strip whitespace (or other characters) from the beginning of a string.
 
@@ -1273,7 +1274,7 @@ func MD5(v string) string
 
 MD5 - Calculate the md5 hash of a string.
 
-Original : https://www.php.net/manual/en/function.md5.php
+Original : <https://www.php.net/manual/en/function.md5.php>
 
 Calculates the MD5 hash of str using the RSA Data Security, Inc. MD5
 Message-Digest Algorithm.
@@ -1286,7 +1287,7 @@ func MD5File(v string) string
 
 MD5File - Calculates the md5 hash of a given file.
 
-Original : https://www.php.net/manual/en/function.md5-file.php
+Original : <https://www.php.net/manual/en/function.md5-file.php>
 
 Calculates the MD5 hash of the file specified by the filename parameter using
 the RSA Data Security, Inc. MD5 Message-Digest Algorithm, and returns that hash.
@@ -1300,7 +1301,7 @@ func Max(arg, arg2 float64) float64
 
 Max - Find highest value.
 
-Original : https://www.php.net/manual/en/function.max.php
+Original : <https://www.php.net/manual/en/function.max.php>
 
 If at least two parameters are provided, max() returns the biggest of these
 values.
@@ -1313,7 +1314,7 @@ func MbStrtolower(s string) string
 
 MbStrtolower - Make a string lowercase
 
-Original : https://www.php.net/manual/en/function.mb-strtolower.php
+Original : <https://www.php.net/manual/en/function.mb-strtolower.php>
 
 Returns str with all alphabetic characters converted to lowercase.
 
@@ -1325,7 +1326,7 @@ func MbStrtoupper(s string) string
 
 MbStrtoupper - Make a string uppercase
 
-Original : https://www.php.net/manual/en/function.mb-strtoupper.php
+Original : <https://www.php.net/manual/en/function.mb-strtoupper.php>
 
 Returns str with all alphabetic characters converted to uppercase.
 
@@ -1337,7 +1338,7 @@ func Min(arg, arg2 float64) float64
 
 Min - Find lowest value.
 
-Original : https://www.php.net/manual/en/function.min.php
+Original : <https://www.php.net/manual/en/function.min.php>
 
 If at least two parameters are provided, min() returns the smallest of these
 values.
@@ -1350,7 +1351,7 @@ func MkDir(path string, mode os.FileMode) error
 
 MkDir - Makes directory.
 
-Original : https://www.php.net/manual/en/function.mkdir.php
+Original : <https://www.php.net/manual/en/function.mkdir.php>
 
 Attempts to create the directory specified by pathname.
 
@@ -1362,9 +1363,9 @@ func Nl2br(s string) string
 
 Nl2br - Inserts HTML line breaks before all newlines in a string
 
-Original : https://www.php.net/manual/en/function.nl2br.php
+Original : <https://www.php.net/manual/en/function.nl2br.php>
 
-Returns string with <br /> or <br> inserted before all newlines (\r\n, \n\r, \n
+Returns string with ```<br />``` or ```<br>``` inserted before all newlines (\r\n, \n\r, \n
 and \r).
 
 #### func Now
@@ -1375,7 +1376,7 @@ func Now() int64
 
 Now - Similar function of time() in PHP.
 
-Original : https://www.php.net/manual/en/function.time.php
+Original : <https://www.php.net/manual/en/function.time.php>
 
 Returns the current time measured in the number of seconds since the Unix Epoch
 (January 1 1970 00:00:00 GMT).
@@ -1388,7 +1389,7 @@ func OctDec(arg string) int64
 
 OctDec - Octal to decimal
 
-Original : https://www.php.net/manual/en/function.octdec.php
+Original : <https://www.php.net/manual/en/function.octdec.php>
 
 Returns the decimal equivalent of the octal number represented by the
 octal_string argument.
@@ -1401,7 +1402,7 @@ func Pi() float64
 
 Pi - Get value of pi
 
-Original : https://www.php.net/manual/en/function.pi.php
+Original : <https://www.php.net/manual/en/function.pi.php>
 
 Returns an approximation of pi.
 
@@ -1413,7 +1414,7 @@ func Pow(arg, arg2 float64) float64
 
 Pow - Exponential expression
 
-Original : https://www.php.net/manual/en/function.pow.php
+Original : <https://www.php.net/manual/en/function.pow.php>
 
 Returns base raised to the power of exp.
 
@@ -1425,7 +1426,7 @@ func Print(vars string)
 
 Print - Output a string
 
-Original : https://www.php.net/manual/en/function.print.php
+Original : <https://www.php.net/manual/en/function.print.php>
 
 #### func PrintR
 
@@ -1435,7 +1436,7 @@ func PrintR(vars ...interface{})
 
 PrintR - Prints human-readable information about a variable
 
-Original : https://www.php.net/manual/en/function.print-r.php
+Original : <https://www.php.net/manual/en/function.print-r.php>
 
 #### func Rad2Deg
 
@@ -1445,7 +1446,7 @@ func Rad2Deg(arg float64) float64
 
 Rad2Deg - Converts the radian number to the equivalent number in degrees.
 
-Original : https://www.php.net/manual/en/function.rad2deg.php
+Original : <https://www.php.net/manual/en/function.rad2deg.php>
 
 This function converts number from radian to degrees. Degree180 is constant and
 value is 180 :)
@@ -1458,7 +1459,7 @@ func Rand(args ...int) int
 
 Rand - Generate a random integer
 
-Original : https://www.php.net/manual/en/function.rand.php
+Original : <https://www.php.net/manual/en/function.rand.php>
 
 If you want a random number between 5 and 15 (inclusive), for example, use
 Rand(5, 15).
@@ -1471,7 +1472,7 @@ func ReadLink(path string) (string, error)
 
 ReadLink - Returns the target of a symbolic link.
 
-Original : https://www.php.net/manual/en/function.readlink.php
+Original : <https://www.php.net/manual/en/function.readlink.php>
 
 readlink() does the same as the readlink C function.
 
@@ -1483,7 +1484,7 @@ func RealPath(path string) (string, error)
 
 RealPath - Returns canonicalized absolute pathname.
 
-Original : https://www.php.net/manual/en/function.realpath.php
+Original : <https://www.php.net/manual/en/function.realpath.php>
 
 realpath() expands all symbolic links and resolves references to /./, /../ and
 extra / characters in the input path and returns the canonicalized absolute
@@ -1497,7 +1498,7 @@ func Rename(oldpath, newpath string) error
 
 Rename - Renames a file or directory.
 
-Original : https://www.php.net/manual/en/function.rename.php
+Original : <https://www.php.net/manual/en/function.rename.php>
 
 Attempts to rename oldname to newname, moving it between directories if
 necessary. If renaming a file and newname exists, it will be overwritten. If
@@ -1511,7 +1512,7 @@ func RmDir(path string) error
 
 RmDir — Removes directory.
 
-Original : https://www.php.net/manual/en/function.rmdir.php
+Original : <https://www.php.net/manual/en/function.rmdir.php>
 
 Attempts to remove the directory named by dirname. The directory must be empty,
 and the relevant permissions must permit this. A E_WARNING level error will be
@@ -1525,7 +1526,7 @@ func Round(arg float64) float64
 
 Round - Rounds a float
 
-Original : https://www.php.net/manual/en/function.round.php
+Original : <https://www.php.net/manual/en/function.round.php>
 
 Returns the rounded value of val to specified precision (number of digits after
 the decimal point). precision can also be negative or zero (default).
@@ -1538,7 +1539,7 @@ func Rtrim(s, set string) string
 
 Rtrim - Strip whitespace (or other characters) from the end of a string
 
-Original : https://www.php.net/manual/en/function.rtrim.php
+Original : <https://www.php.net/manual/en/function.rtrim.php>
 
 This function returns a string with whitespace (or other characters) stripped
 from the end of str.
@@ -1551,7 +1552,7 @@ func Sha1(v string) string
 
 Sha1 - Calculate the sha1 hash of a string.
 
-Original : https://www.php.net/manual/en/function.sha1.php
+Original : <https://www.php.net/manual/en/function.sha1.php>
 
 Calculates the sha1 hash of str using the US Secure Hash Algorithm 1.
 
@@ -1563,7 +1564,7 @@ func Sha1File(v string) string
 
 Sha1File - Calculate the sha1 hash of a file.
 
-Original : https://www.php.net/manual/en/function.sha1-file.php
+Original : <https://www.php.net/manual/en/function.sha1-file.php>
 
 Calculates the sha1 hash of the file specified by filename using the US Secure
 Hash Algorithm 1, and returns that hash. The hash is a 40-character hexadecimal
@@ -1577,7 +1578,7 @@ func ShellExec(of string)
 
 ShellExec - Execute command via shell and return the complete output as a string
 
-Original : https://www.php.net/manual/en/function.shell-exec.php
+Original : <https://www.php.net/manual/en/function.shell-exec.php>
 
 This function is identical to the backtick operator.
 
@@ -1589,7 +1590,7 @@ func Sin(arg float64) float64
 
 Sin - Sine.
 
-Original : https://www.php.net/manual/en/function.sin.php
+Original : <https://www.php.net/manual/en/function.sin.php>
 
 sin() returns the sine of the arg parameter. The arg parameter is in radians.
 
@@ -1601,7 +1602,7 @@ func Sinh(arg float64) float64
 
 Sinh - Hyperbolic sine.
 
-Original : https://www.php.net/manual/en/function.sinh.php
+Original : <https://www.php.net/manual/en/function.sinh.php>
 
 Returns the hyperbolic sine of arg, defined as (exp(arg) - exp(-arg))/2.
 
@@ -1613,7 +1614,7 @@ func Sizeof(v []interface{}) int
 
 Sizeof - Alias of Count
 
-Original : https://www.php.net/manual/en/function.sizeof.php
+Original : <https://www.php.net/manual/en/function.sizeof.php>
 
 #### func Sleep
 
@@ -1623,7 +1624,7 @@ func Sleep(t int64)
 
 Sleep - Delay in seconds
 
-Original : https://www.php.net/manual/en/function.sleep.php
+Original : <https://www.php.net/manual/en/function.sleep.php>
 
 Delays the program execution for the given number of seconds.
 
@@ -1635,17 +1636,18 @@ func Sort(v interface{}, flag string) bool
 
 Sort - Sort an array
 
-Original : https://www.php.net/manual/en/function.sort.php
+Original : <https://www.php.net/manual/en/function.sort.php>
 
 This function sorts an array. Elements will be arranged from lowest to highest
 when this function has completed.
 
 Flags are same as php sort.
 
-    SORT_REGULAR - compare items normally;
-    SORT_NUMERIC - compare items numerically
-    SORT_STRING - compare items as strings
-    SORT_NATURAL - compare items as strings using "natural ordering" like natsort()
+  ```SORT_REGULAR - compare items normally;
+  SORT_NUMERIC - compare items numerically
+  SORT_STRING - compare items as strings
+  SORT_NATURAL - compare items as strings using "natural ordering" like natsort()
+  ```
 
 #### func Sqrt
 
@@ -1655,7 +1657,7 @@ func Sqrt(arg float64) float64
 
 Sqrt - Square root.
 
-Original : https://www.php.net/manual/en/function.sqrt.php
+Original : <https://www.php.net/manual/en/function.sqrt.php>
 
 Returns the square root of arg.
 
@@ -1667,7 +1669,7 @@ func Stat(name string) (os.FileInfo, error)
 
 Stat - Gives information about a file.
 
-Original : https://www.php.net/manual/en/function.stat.php
+Original : <https://www.php.net/manual/en/function.stat.php>
 
 Gathers the statistics of the file named by filename. If filename is a symbolic
 link, statistics are from the file itself, not the symlink. Prior to PHP 7.4.0,
@@ -1682,7 +1684,7 @@ func StrRepeat(s string, count int) string
 
 StrRepeat - Repeat a string
 
-Original : https://www.php.net/manual/en/function.str-repeat.php
+Original : <https://www.php.net/manual/en/function.str-repeat.php>
 
 Returns string repeated times times.
 
@@ -1695,7 +1697,7 @@ func StrReplace(find, replace, s string, n int) string
 StrReplace - Replace all occurrences of the search string with the replacement
 string
 
-Original : https://www.php.net/manual/en/function.str-replace.php
+Original : <https://www.php.net/manual/en/function.str-replace.php>
 
 This function returns a string or an array with all occurrences of search in
 subject replaced with the given replace value.
@@ -1718,7 +1720,7 @@ func Strtolower(s string) string
 
 Strtolower - Make a string lowercase
 
-Original : https://www.php.net/manual/en/function.strtolower.php
+Original : <https://www.php.net/manual/en/function.strtolower.php>
 
 Returns string with all alphabetic characters converted to lowercase.
 
@@ -1730,7 +1732,7 @@ func Strtoupper(s string) string
 
 Strtoupper - Make a string uppercase
 
-Original : https://www.php.net/manual/en/function.strtoupper.php
+Original : <https://www.php.net/manual/en/function.strtoupper.php>
 
 Returns string with all alphabetic characters converted to uppercase.
 
@@ -1742,7 +1744,7 @@ func SymLink(target, link string)
 
 SymLink - Creates a symbolic link
 
-Original : https://www.php.net/manual/en/function.symlink.php
+Original : <https://www.php.net/manual/en/function.symlink.php>
 
 symlink() creates a symbolic link to the existing target with the specified name
 link.
@@ -1755,7 +1757,7 @@ func Tan(arg float64) float64
 
 Tan - Tangent.
 
-Original : https://www.php.net/manual/en/function.tan.php
+Original : <https://www.php.net/manual/en/function.tan.php>
 
 tan() returns the tangent of the arg parameter. The arg parameter is in radians.
 
@@ -1767,7 +1769,7 @@ func Tanh(arg float64) float64
 
 Tanh - Hyperbolic tangent.
 
-Original : https://www.php.net/manual/en/function.tanh.php
+Original : <https://www.php.net/manual/en/function.tanh.php>
 
 Returns the hyperbolic tangent of arg, defined as sinh(arg)/cosh(arg).
 
@@ -1779,7 +1781,7 @@ func Tempfile() (f *os.File)
 
 Tempfile - Creates a temporary file
 
-Original : https://www.php.net/manual/en/function.tmpfile.php
+Original : <https://www.php.net/manual/en/function.tmpfile.php>
 
 Creates a temporary file with a unique name in read-write (w+) mode and returns
 a file handle.
@@ -1796,7 +1798,7 @@ func Tempnam(dir, prefix string) string
 
 Tempnam - Create file with unique file name
 
-Original : https://www.php.net/manual/en/function.tempnam.php
+Original : <https://www.php.net/manual/en/function.tempnam.php>
 
 Creates a file with a unique filename, with access permission set to 0600, in
 the specified directory. If the directory does not exist or is not writable,
@@ -1811,7 +1813,7 @@ func Time() int64
 
 Time - Similar function of time() in PHP.
 
-Original : https://www.php.net/manual/en/function.time.php
+Original : <https://www.php.net/manual/en/function.time.php>
 
 Returns the current time measured in the number of seconds since the Unix Epoch
 (January 1 1970 00:00:00 GMT).
@@ -1824,7 +1826,7 @@ func Touch(path string, t int64, at int64) bool
 
 Touch - Sets access and modification time of file
 
-Original : https://www.php.net/manual/en/function.touch.php
+Original : <https://www.php.net/manual/en/function.touch.php>
 
 Attempts to set the access and modification times of the file named in the
 filename parameter to the value given in time. Note that the access time is
@@ -1840,7 +1842,7 @@ func Trim(s, set string) string
 Trim - Strip whitespace (or other characters) from the beginning and end of a
 string
 
-Original : https://www.php.net/manual/en/function.trim.php
+Original : <https://www.php.net/manual/en/function.trim.php>
 
 This function returns a string with whitespace stripped from the beginning and
 end of str.
@@ -1853,7 +1855,7 @@ func USleep(t int64)
 
 USleep - Delay in microseconds
 
-Original : https://www.php.net/manual/en/function.usleep.php
+Original : <https://www.php.net/manual/en/function.usleep.php>
 
 Delays program execution for the given number of microseconds.
 
@@ -1865,7 +1867,7 @@ func Unlink(name string) error
 
 Unlink - Deletes a file.
 
-Original : https://www.php.net/manual/en/function.unlink.php
+Original : <https://www.php.net/manual/en/function.unlink.php>
 
 Deletes filename. Similar to the Unix C unlink() function. An E_WARNING level
 error will be generated on failure.
@@ -1886,13 +1888,13 @@ func ArrayChunk(v ArraySlice, size int) ArraySlice
 
 ArrayChunk - Split an array into chunks
 
-Original : https://www.php.net/manual/en/function.array-chunk.php
+Original : <https://www.php.net/manual/en/function.array-chunk.php>
 
 #### type DiskStatus
 
 ```go
 type DiskStatus struct {
-	Free string `json:"Free"`
+ Free string `json:"Free"`
 }
 ```
 
@@ -1906,7 +1908,7 @@ func DiskFreeSpace(path string) (disk DiskStatus)
 
 DiskFreeSpace - Returns available space on filesystem or disk partition
 
-Original : https://www.php.net/manual/en/function.disk-free-space.php
+Original : <https://www.php.net/manual/en/function.disk-free-space.php>
 
 Given a string containing a directory, this function will return the number of
 bytes available on the corresponding filesystem or disk partition.
