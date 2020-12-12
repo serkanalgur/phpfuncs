@@ -5,7 +5,6 @@ os: linux
 dist: xenial
 script:
   - go get github.com/serkanalgur/phpfuncs
-  - cd ./serkanalgur/phpfuncs
   - go test -v ./tests/...
   - go test -coverprofile=coverage.txt -covermode=atomic ./tests/...
 after_success:
