@@ -12,12 +12,14 @@ import (
 type ArraySlice []interface{}
 
 // Array - Create an array
+//
 // Original : https://www.php.net/manual/en/function.array.php
 func Array(v ...interface{}) []interface{} {
 	return v
 }
 
 // ArrayKeys - Return all the keys or a subset of the keys of an array
+//
 // Original : https://www.php.net/manual/en/function.array-keys.php
 func ArrayKeys(v map[string]interface{}) []string {
 	var aRdata []string
@@ -30,12 +32,14 @@ func ArrayKeys(v map[string]interface{}) []string {
 }
 
 // ArrayPush - Push one or more elements onto the end of array
+//
 // Original : https://www.php.net/manual/en/function.array-push.php
 func ArrayPush(v *[]interface{}, data ...interface{}) {
 	*v = append(*v, data...)
 }
 
 // ArrayReverse - Return an array with elements in reverse order
+//
 // Original : https://www.php.net/manual/en/function.array-reverse.php
 func ArrayReverse(v []interface{}) []interface{} {
 	for ind, fnd := 0, len(v); ind < fnd; ind, fnd = ind+1, fnd-1 {
@@ -45,6 +49,7 @@ func ArrayReverse(v []interface{}) []interface{} {
 }
 
 // ArrayCountValues - Counts all the values of an array
+//
 // Original : https://www.php.net/manual/en/function.array-count-values.php
 func ArrayCountValues(v []interface{}) map[interface{}]uint {
 
@@ -61,6 +66,7 @@ func ArrayCountValues(v []interface{}) map[interface{}]uint {
 }
 
 // ArrayMerge - Merge one or more arrays
+//
 // Original : https://www.php.net/manual/en/function.array-merge.php
 func ArrayMerge(v ...[]interface{}) []interface{} {
 
@@ -72,6 +78,7 @@ func ArrayMerge(v ...[]interface{}) []interface{} {
 }
 
 // ArrayValues - Return all the values of an array
+//
 // Original : https://www.php.net/manual/en/function.array-values.php
 func ArrayValues(v ...[]interface{}) (value []interface{}) {
 	var values []interface{}
@@ -87,6 +94,7 @@ func ArrayValues(v ...[]interface{}) (value []interface{}) {
 }
 
 // ArrayChunk - Split an array into chunks
+//
 // Original : https://www.php.net/manual/en/function.array-chunk.php
 func ArrayChunk(v ArraySlice, size int) ArraySlice {
 
@@ -103,7 +111,9 @@ func ArrayChunk(v ArraySlice, size int) ArraySlice {
 }
 
 // ArrayFlip - Exchanges all keys with their associated values in an array
+//
 // Original : https://www.php.net/manual/en/function.array-flip.php
+//
 // ArrayFlip returns an array in flip order, i.e. keys from array become values and values from array become keys.
 func ArrayFlip(v map[interface{}]interface{}) map[interface{}]interface{} {
 
@@ -116,20 +126,25 @@ func ArrayFlip(v map[interface{}]interface{}) map[interface{}]interface{} {
 }
 
 // Count - Count all elements in an array, or something in an object
+//
 // Original : https://www.php.net/manual/en/function.count.php
 func Count(v []interface{}) int {
 	return len(v)
 }
 
 // Implode - Join array elements with a string.
+//
 // Original : https://www.php.net/manual/en/function.implode.php
+//
 // Join array elements with a glue string.
 func Implode(sep string, v []string) string {
 	return strings.Replace(strings.Trim(fmt.Sprint(v), "[]"), " ", sep, -1)
 }
 
 // IsArray - Finds whether a variable is an array.
+//
 // Original : https://www.php.net/manual/en/function.is-array.php
+//
 // Finds whether the given variable is an array.
 func IsArray(v interface{}) bool {
 	t := reflect.TypeOf(v)
@@ -142,12 +157,13 @@ func IsArray(v interface{}) bool {
 }
 
 // InArray - Similar function of in_array in PHP
+//
 // Original : https://www.php.net/manual/en/function.in-array.php
-// func inArray
-// needle : string, int
-// haystack : should be an array
-// strict : set true for type check
-// return boolean true / false
+//
+//  needle : string, int
+//  haystack : should be an array
+//  strict : set true for type check
+//  return boolean true / false
 func InArray(needle interface{}, haystack interface{}) bool {
 	switch reflect.TypeOf(haystack).Kind() {
 	default:
@@ -162,14 +178,18 @@ func InArray(needle interface{}, haystack interface{}) bool {
 }
 
 // Sizeof - Alias of Count
+//
 // Original : https://www.php.net/manual/en/function.sizeof.php
 func Sizeof(v []interface{}) int {
 	return Count(v)
 }
 
 // Sort - Sort an array
+//
 // Original : https://www.php.net/manual/en/function.sort.php
+//
 // This function sorts an array. Elements will be arranged from lowest to highest when this function has completed.
+//
 // Flags are same as php sort.
 //  SORT_REGULAR - compare items normally;
 //  SORT_NUMERIC - compare items numerically
