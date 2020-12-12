@@ -1,13 +1,12 @@
 language: go
 go:
   - 1.15.6
-install:
-  - export GOPATH=$HOME/go
-  - go get github.com/serkanalgur/phpfuncs
 os: linux
 dist: xenial
 script:
-  - go test -v $GOPATH/src/github.com/serkanalgur/phpfuncs/tests/...
-  - go test -coverprofile=coverage.txt -covermode=atomic $GOPATH/src/github.com/serkanalgur/phpfuncs/tests/...
+  - go get github.com/serkanalgur/phpfuncs
+  - cd ./serkanalgur/phpfuncs
+  - go test -v ./tests/...
+  - go test -coverprofile=coverage.txt -covermode=atomic ./tests/...
 after_success:
   - bash <(curl -s https://codecov.io/bash)
