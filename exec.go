@@ -5,7 +5,16 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"regexp"
+	"strings"
 )
+
+var rPatt *regexp.Regexp
+
+
+func init() {
+	rPatt = regexp.MustCompile(`[^\w@%+=:,./-]`)
+}
 
 // Exec - Start a command on system
 //
@@ -55,4 +64,34 @@ func Exit(of int) {
 // This language construct is equivalent to exit().
 func Die(of int) {
 	os.Exit(of)
+}
+
+// Escapeshellarg - Escape a string to be used as a shell argument
+//
+// Original: https://www.php.net/manual/en/function.escapeshellarg.php
+//
+func Escapeshellarg(s string) string {
+	if len(s) == 0 {return "''"}
+
+	if rPatt.MatchString(s) {
+		return "'" + strings.ReplaceAll(s, "'", "'\"'\"'") + "'"
+	}
+
+	return s
+}
+
+// Escapeshellcmd - Escape shell metacharacters
+//
+// Original: https://www.php.net/manual/en/function.escapeshellcmd.php
+//
+func Escapeshellcmd(s string) string {
+	cmds := Explode(s, " ") // I know thats maybe not proper way...
+
+	z := make([]string, len(cmds))
+
+		for i ,s := range cmds {
+			z[i] = Escapeshellarg(s)
+		}
+
+		return Join(" ",z)
 }
