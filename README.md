@@ -8,146 +8,146 @@ PHP functions implementation to Golang. This package is for the Go beginners who
 
 - [PHP Functions for Golang - phpfuncs](#php-functions-for-golang---phpfuncs)
   - [Installation](#installation)
-    - [Tests](#tests)
-    - [Proper Documentation](#proper-documentation)
-    - [Functions List](#functions-list)
-      - [func Abs](#func-abs)
-      - [func Acos](#func-acos)
-      - [func Acosh](#func-acosh)
-      - [func Addslashes](#func-addslashes)
-      - [func Array](#func-array)
-      - [func ArrayCountValues](#func-arraycountvalues)
-      - [func ArrayFlip](#func-arrayflip)
-      - [func ArrayKeys](#func-arraykeys)
-      - [func ArrayMerge](#func-arraymerge)
-      - [func ArrayPush](#func-arraypush)
-      - [func ArrayReverse](#func-arrayreverse)
-      - [func ArrayValues](#func-arrayvalues)
-      - [func Asin](#func-asin)
-      - [func Asinh](#func-asinh)
-      - [func Atan](#func-atan)
-      - [func Atan2](#func-atan2)
-      - [func Atanh](#func-atanh)
-      - [func Base64Decode](#func-base64decode)
-      - [func Base64Encode](#func-base64encode)
-      - [func BaseConvert](#func-baseconvert)
-      - [func Basename](#func-basename)
-      - [func Bin2Hex](#func-bin2hex)
-      - [func ByteCountIEC](#func-bytecountiec)
-      - [func Ceil](#func-ceil)
-      - [func Chgrp](#func-chgrp)
-      - [func Chmod](#func-chmod)
-      - [func Chown](#func-chown)
-      - [func Copy](#func-copy)
-      - [func Cos](#func-cos)
-      - [func Cosh](#func-cosh)
-      - [func Count](#func-count)
-      - [func DecBin](#func-decbin)
-      - [func DecHex](#func-dechex)
-      - [func DecOct](#func-decoct)
-      - [func Deg2Rad](#func-deg2rad)
-      - [func Delete](#func-delete)
-      - [func Die](#func-die)
-      - [func DirName](#func-dirname)
-      - [func Echo](#func-echo)
-      - [func Exec](#func-exec)
-      - [func Exit](#func-exit)
-      - [func Exp](#func-exp)
-      - [func ExpM1](#func-expm1)
-      - [func Explode](#func-explode)
-      - [func FClose](#func-fclose)
-      - [func FMod](#func-fmod)
-      - [func FOpen](#func-fopen)
-      - [func FPuts](#func-fputs)
-      - [func FRead](#func-fread)
-      - [func FWrite](#func-fwrite)
-      - [func FileExists](#func-fileexists)
-      - [func FileGetContents](#func-filegetcontents)
-      - [func FileMime](#func-filemime)
-      - [func FilePerms](#func-fileperms)
-      - [func FilePutContents](#func-fileputcontents)
-      - [func FileSize](#func-filesize)
-      - [func FileType](#func-filetype)
-      - [func Floor](#func-floor)
-      - [func Glob](#func-glob)
-      - [func Hex2Bin](#func-hex2bin)
-      - [func HexDec](#func-hexdec)
-      - [func HtmlspecialChars](#func-htmlspecialchars)
-      - [func HtmlspecialCharsdecode](#func-htmlspecialcharsdecode)
-      - [func HyPot](#func-hypot)
-      - [func Implode](#func-implode)
-      - [func InArray](#func-inarray)
-      - [func IntDiv](#func-intdiv)
-      - [func IsArray](#func-isarray)
-      - [func IsDir](#func-isdir)
-      - [func IsExecutable](#func-isexecutable)
-      - [func IsFile](#func-isfile)
-      - [func IsFinite](#func-isfinite)
-      - [func IsInFinite](#func-isinfinite)
-      - [func IsLink](#func-islink)
-      - [func IsNan](#func-isnan)
-      - [func IsReadable](#func-isreadable)
-      - [func IsURL](#func-isurl)
-      - [func IsWritable](#func-iswritable)
-      - [func IsWriteable](#func-iswriteable)
-      - [func Join](#func-join)
-      - [func LcgValue](#func-lcgvalue)
-      - [func Link](#func-link)
-      - [func Log](#func-log)
-      - [func Log10](#func-log10)
-      - [func Log1P](#func-log1p)
-      - [func Ltrim](#func-ltrim)
-      - [func MD5](#func-md5)
-      - [func MD5File](#func-md5file)
-      - [func Max](#func-max)
-      - [func MbStrtolower](#func-mbstrtolower)
-      - [func MbStrtoupper](#func-mbstrtoupper)
-      - [func Min](#func-min)
-      - [func MkDir](#func-mkdir)
-      - [func Nl2br](#func-nl2br)
-      - [func Now](#func-now)
-      - [func OctDec](#func-octdec)
-      - [func Pi](#func-pi)
-      - [func Pow](#func-pow)
-      - [func Print](#func-print)
-      - [func PrintR](#func-printr)
-      - [func Rad2Deg](#func-rad2deg)
-      - [func Rand](#func-rand)
-      - [func ReadLink](#func-readlink)
-      - [func RealPath](#func-realpath)
-      - [func Rename](#func-rename)
-      - [func RmDir](#func-rmdir)
-      - [func Round](#func-round)
-      - [func Rtrim](#func-rtrim)
-      - [func Sha1](#func-sha1)
-      - [func Sha1File](#func-sha1file)
-      - [func ShellExec](#func-shellexec)
-      - [func Sin](#func-sin)
-      - [func Sinh](#func-sinh)
-      - [func Sizeof](#func-sizeof)
-      - [func Sleep](#func-sleep)
-      - [func Sort](#func-sort)
-      - [func Sqrt](#func-sqrt)
-      - [func Stat](#func-stat)
-      - [func StrRepeat](#func-strrepeat)
-      - [func StrReplace](#func-strreplace)
-      - [func StringWithCharset](#func-stringwithcharset)
-      - [func Strtolower](#func-strtolower)
-      - [func Strtoupper](#func-strtoupper)
-      - [func SymLink](#func-symlink)
-      - [func Tan](#func-tan)
-      - [func Tanh](#func-tanh)
-      - [func Tempfile](#func-tempfile)
-      - [func Tempnam](#func-tempnam)
-      - [func Time](#func-time)
-      - [func Touch](#func-touch)
-      - [func Trim](#func-trim)
-      - [func USleep](#func-usleep)
-      - [func Unlink](#func-unlink)
-      - [type ArraySlice](#type-arrayslice)
-      - [func ArrayChunk](#func-arraychunk)
-      - [type DiskStatus](#type-diskstatus)
-      - [func DiskFreeSpace](#func-diskfreespace)
+  - [Tests](#tests)
+  - [Proper Documentation](#proper-documentation)
+  - [Functions List](#functions-list)
+    - [func Abs](#func-abs)
+    - [func Acos](#func-acos)
+    - [func Acosh](#func-acosh)
+    - [func Addslashes](#func-addslashes)
+    - [func Array](#func-array)
+    - [func ArrayCountValues](#func-arraycountvalues)
+    - [func ArrayFlip](#func-arrayflip)
+    - [func ArrayKeys](#func-arraykeys)
+    - [func ArrayMerge](#func-arraymerge)
+    - [func ArrayPush](#func-arraypush)
+    - [func ArrayReverse](#func-arrayreverse)
+    - [func ArrayValues](#func-arrayvalues)
+    - [func Asin](#func-asin)
+    - [func Asinh](#func-asinh)
+    - [func Atan](#func-atan)
+    - [func Atan2](#func-atan2)
+    - [func Atanh](#func-atanh)
+    - [func Base64Decode](#func-base64decode)
+    - [func Base64Encode](#func-base64encode)
+    - [func BaseConvert](#func-baseconvert)
+    - [func Basename](#func-basename)
+    - [func Bin2Hex](#func-bin2hex)
+    - [func ByteCountIEC](#func-bytecountiec)
+    - [func Ceil](#func-ceil)
+    - [func Chgrp](#func-chgrp)
+    - [func Chmod](#func-chmod)
+    - [func Chown](#func-chown)
+    - [func Copy](#func-copy)
+    - [func Cos](#func-cos)
+    - [func Cosh](#func-cosh)
+    - [func Count](#func-count)
+    - [func DecBin](#func-decbin)
+    - [func DecHex](#func-dechex)
+    - [func DecOct](#func-decoct)
+    - [func Deg2Rad](#func-deg2rad)
+    - [func Delete](#func-delete)
+    - [func Die](#func-die)
+    - [func DirName](#func-dirname)
+    - [func Echo](#func-echo)
+    - [func Exec](#func-exec)
+    - [func Exit](#func-exit)
+    - [func Exp](#func-exp)
+    - [func ExpM1](#func-expm1)
+    - [func Explode](#func-explode)
+    - [func FClose](#func-fclose)
+    - [func FMod](#func-fmod)
+    - [func FOpen](#func-fopen)
+    - [func FPuts](#func-fputs)
+    - [func FRead](#func-fread)
+    - [func FWrite](#func-fwrite)
+    - [func FileExists](#func-fileexists)
+    - [func FileGetContents](#func-filegetcontents)
+    - [func FileMime](#func-filemime)
+    - [func FilePerms](#func-fileperms)
+    - [func FilePutContents](#func-fileputcontents)
+    - [func FileSize](#func-filesize)
+    - [func FileType](#func-filetype)
+    - [func Floor](#func-floor)
+    - [func Glob](#func-glob)
+    - [func Hex2Bin](#func-hex2bin)
+    - [func HexDec](#func-hexdec)
+    - [func HtmlspecialChars](#func-htmlspecialchars)
+    - [func HtmlspecialCharsdecode](#func-htmlspecialcharsdecode)
+    - [func HyPot](#func-hypot)
+    - [func Implode](#func-implode)
+    - [func InArray](#func-inarray)
+    - [func IntDiv](#func-intdiv)
+    - [func IsArray](#func-isarray)
+    - [func IsDir](#func-isdir)
+    - [func IsExecutable](#func-isexecutable)
+    - [func IsFile](#func-isfile)
+    - [func IsFinite](#func-isfinite)
+    - [func IsInFinite](#func-isinfinite)
+    - [func IsLink](#func-islink)
+    - [func IsNan](#func-isnan)
+    - [func IsReadable](#func-isreadable)
+    - [func IsURL](#func-isurl)
+    - [func IsWritable](#func-iswritable)
+    - [func IsWriteable](#func-iswriteable)
+    - [func Join](#func-join)
+    - [func LcgValue](#func-lcgvalue)
+    - [func Link](#func-link)
+    - [func Log](#func-log)
+    - [func Log10](#func-log10)
+    - [func Log1P](#func-log1p)
+    - [func Ltrim](#func-ltrim)
+    - [func MD5](#func-md5)
+    - [func MD5File](#func-md5file)
+    - [func Max](#func-max)
+    - [func MbStrtolower](#func-mbstrtolower)
+    - [func MbStrtoupper](#func-mbstrtoupper)
+    - [func Min](#func-min)
+    - [func MkDir](#func-mkdir)
+    - [func Nl2br](#func-nl2br)
+    - [func Now](#func-now)
+    - [func OctDec](#func-octdec)
+    - [func Pi](#func-pi)
+    - [func Pow](#func-pow)
+    - [func Print](#func-print)
+    - [func PrintR](#func-printr)
+    - [func Rad2Deg](#func-rad2deg)
+    - [func Rand](#func-rand)
+    - [func ReadLink](#func-readlink)
+    - [func RealPath](#func-realpath)
+    - [func Rename](#func-rename)
+    - [func RmDir](#func-rmdir)
+    - [func Round](#func-round)
+    - [func Rtrim](#func-rtrim)
+    - [func Sha1](#func-sha1)
+    - [func Sha1File](#func-sha1file)
+    - [func ShellExec](#func-shellexec)
+    - [func Sin](#func-sin)
+    - [func Sinh](#func-sinh)
+    - [func Sizeof](#func-sizeof)
+    - [func Sleep](#func-sleep)
+    - [func Sort](#func-sort)
+    - [func Sqrt](#func-sqrt)
+    - [func Stat](#func-stat)
+    - [func StrRepeat](#func-strrepeat)
+    - [func StrReplace](#func-strreplace)
+    - [func StringWithCharset](#func-stringwithcharset)
+    - [func Strtolower](#func-strtolower)
+    - [func Strtoupper](#func-strtoupper)
+    - [func SymLink](#func-symlink)
+    - [func Tan](#func-tan)
+    - [func Tanh](#func-tanh)
+    - [func Tempfile](#func-tempfile)
+    - [func Tempnam](#func-tempnam)
+    - [func Time](#func-time)
+    - [func Touch](#func-touch)
+    - [func Trim](#func-trim)
+    - [func USleep](#func-usleep)
+    - [func Unlink](#func-unlink)
+    - [type ArraySlice](#type-arrayslice)
+    - [func ArrayChunk](#func-arraychunk)
+    - [type DiskStatus](#type-diskstatus)
+    - [func DiskFreeSpace](#func-diskfreespace)
 
 ## Installation
 
@@ -159,21 +159,21 @@ PHP functions implementation to Golang. This package is for the Go beginners who
   go get -u github.com/serkanalgur/phpfuncs
 ```
 
-### Tests
+## Tests
 
 ```bash
   go test ./tests/...
 ```
 
-### Proper Documentation
+## Proper Documentation
 
 Please Visit [https://pkg.go.dev/github.com/serkanalgur/phpfuncs](https://pkg.go.dev/github.com/serkanalgur/phpfuncs)
 
-### Functions List
+## Functions List
 
 Here is the functions list for now:
 
-#### func Abs
+### func Abs
 
 ```go
 func Abs(arg float64) float64
@@ -185,7 +185,7 @@ Original : <https://www.php.net/manual/en/function.abs.php>
 
 Returns the absolute value of number.
 
-#### func Acos
+### func Acos
 
 ```go
 func Acos(arg float64) float64
@@ -199,7 +199,7 @@ Returns the arc cosine of arg in radians. acos() is the inverse function of
 cos(), which means that a==cos(acos(a)) for every value of a that is within
 acos()' range.
 
-#### func Acosh
+### func Acosh
 
 ```go
 func Acosh(arg float64) float64
@@ -212,7 +212,7 @@ Original : <https://www.php.net/manual/en/function.acosh.php>
 Returns the inverse hyperbolic cosine of arg, i.e. the value whose hyperbolic
 cosine is arg.
 
-#### func Addslashes
+### func Addslashes
 
 ```go
 func Addslashes(s string) string
@@ -225,7 +225,7 @@ Original : <https://www.php.net/manual/en/function.addslashes.php>
 Returns a string with backslashes added before characters that need to be
 escaped.
 
-#### func Array
+### func Array
 
 ```go
 func Array(v ...interface{}) []interface{}
@@ -235,7 +235,7 @@ Array - Create an array
 
 Original : <https://www.php.net/manual/en/function.array.php>
 
-#### func ArrayCountValues
+### func ArrayCountValues
 
 ```go
 func ArrayCountValues(v []interface{}) map[interface{}]uint
@@ -245,7 +245,7 @@ ArrayCountValues - Counts all the values of an array
 
 Original : <https://www.php.net/manual/en/function.array-count-values.php>
 
-#### func ArrayFlip
+### func ArrayFlip
 
 ```go
 func ArrayFlip(v map[interface{}]interface{}) map[interface{}]interface{}
@@ -258,7 +258,7 @@ Original : <https://www.php.net/manual/en/function.array-flip.php>
 ArrayFlip returns an array in flip order, i.e. keys from array become values and
 values from array become keys.
 
-#### func ArrayKeys
+### func ArrayKeys
 
 ```go
 func ArrayKeys(v map[string]interface{}) []string
@@ -268,7 +268,7 @@ ArrayKeys - Return all the keys or a subset of the keys of an array
 
 Original : <https://www.php.net/manual/en/function.array-keys.php>
 
-#### func ArrayMerge
+### func ArrayMerge
 
 ```go
 func ArrayMerge(v ...[]interface{}) []interface{}
@@ -278,7 +278,7 @@ ArrayMerge - Merge one or more arrays
 
 Original : <https://www.php.net/manual/en/function.array-merge.php>
 
-#### func ArrayPush
+### func ArrayPush
 
 ```go
 func ArrayPush(v *[]interface{}, data ...interface{})
@@ -288,7 +288,7 @@ ArrayPush - Push one or more elements onto the end of array
 
 Original : <https://www.php.net/manual/en/function.array-push.php>
 
-#### func ArrayReverse
+### func ArrayReverse
 
 ```go
 func ArrayReverse(v []interface{}) []interface{}
@@ -298,7 +298,7 @@ ArrayReverse - Return an array with elements in reverse order
 
 Original : <https://www.php.net/manual/en/function.array-reverse.php>
 
-#### func ArrayValues
+### func ArrayValues
 
 ```go
 func ArrayValues(v ...[]interface{}) (value []interface{})
@@ -308,7 +308,7 @@ ArrayValues - Return all the values of an array
 
 Original : <https://www.php.net/manual/en/function.array-values.php>
 
-#### func Asin
+### func Asin
 
 ```go
 func Asin(arg float64) float64
@@ -322,7 +322,7 @@ Returns the arc sine of arg in radians. asin() is the inverse function of sin(),
 which means that a==sin(asin(a)) for every value of a that is within asin()'s
 range.
 
-#### func Asinh
+### func Asinh
 
 ```go
 func Asinh(arg float64) float64
@@ -335,7 +335,7 @@ Original : <https://www.php.net/manual/en/function.asinh.php>
 Returns the inverse hyperbolic sine of arg, i.e. the value whose hyperbolic sine
 is arg.
 
-#### func Atan
+### func Atan
 
 ```go
 func Atan(arg float64) float64
@@ -349,7 +349,7 @@ Returns the arc tangent of arg in radians. atan() is the inverse function of
 tan(), which means that a==tan(atan(a)) for every value of a that is within
 atan()'s range.
 
-#### func Atan2
+### func Atan2
 
 ```go
 func Atan2(arg float64, arg2 float64) float64
@@ -366,7 +366,7 @@ arguments are used to determine the quadrant of the result.
 The function returns the result in radians, which is between -PI and PI
 (inclusive).
 
-#### func Atanh
+### func Atanh
 
 ```go
 func Atanh(arg float64) float64
@@ -379,7 +379,7 @@ Original : <https://www.php.net/manual/en/function.atanh.php>
 Returns the inverse hyperbolic tangent of arg, i.e. the value whose hyperbolic
 tangent is arg.
 
-#### func Base64Decode
+### func Base64Decode
 
 ```go
 func Base64Decode(v string) (string, error)
@@ -391,7 +391,7 @@ Original : <https://www.php.net/manual/en/function.base64-decode.php>
 
 Decodes a base64 encoded data.
 
-#### func Base64Encode
+### func Base64Encode
 
 ```go
 func Base64Encode(v string) string
@@ -403,7 +403,7 @@ Original : <https://www.php.net/manual/en/function.base64-encode.php>
 
 Encodes given data with base64.
 
-#### func BaseConvert
+### func BaseConvert
 
 ```go
 func BaseConvert(arg string, frombase, tobase int) (string, error)
@@ -420,7 +420,7 @@ be represented with the letters a-z, with a meaning 10, b meaning 11 and z
 meaning 35. The case of the letters doesn't matter, i.e. number is interpreted
 case-insensitively.
 
-#### func Basename
+### func Basename
 
 ```go
 func Basename(path string) string
@@ -433,7 +433,7 @@ Original : <https://www.php.net/manual/en/function.basename.php>
 Given a string containing the path to a file or directory, this function will
 return the trailing name component.
 
-#### func Bin2Hex
+### func Bin2Hex
 
 ```go
 func Bin2Hex(s string) string
@@ -446,7 +446,7 @@ Original : <https://www.php.net/manual/en/function.bin2hex.php>
 Returns an ASCII string containing the hexadecimal representation of str. The
 conversion is done byte-wise with the high-nibble first.
 
-#### func ByteCountIEC
+### func ByteCountIEC
 
 ```go
 func ByteCountIEC(b uint64) string
@@ -456,7 +456,7 @@ ByteCountIEC - Bytecount & Humanize Bytes
 
 Complete calculator for DiskFreeSize
 
-#### func Ceil
+### func Ceil
 
 ```go
 func Ceil(arg float64) float64
@@ -468,7 +468,7 @@ Original : <https://www.php.net/manual/en/function.ceil.php>
 
 Returns the next highest integer value by rounding up value if necessary.
 
-#### func Chgrp
+### func Chgrp
 
 ```go
 func Chgrp(name string, uid, gid int) error
@@ -483,7 +483,7 @@ Attempts to change the group of the file filename to group.
 Only the superuser may change the group of a file arbitrarily; other users may
 change the group of a file to any group of which that user is a member.
 
-#### func Chmod
+### func Chmod
 
 ```go
 func Chmod(name string, mode os.FileMode) error
@@ -495,7 +495,7 @@ Original : <https://www.php.net/manual/en/function.chmod.php>
 
 Attempts to change the mode of the specified file to that given in mode.
 
-#### func Chown
+### func Chown
 
 ```go
 func Chown(name string, uid int, gid int) error
@@ -508,7 +508,7 @@ Original : <https://www.php.net/manual/en/function.chown.php>
 Attempts to change the owner of the file filename to user user. Only the
 superuser may change the owner of a file.
 
-#### func Copy
+### func Copy
 
 ```go
 func Copy(src, dst string) (int64, error)
@@ -520,7 +520,7 @@ Original : <https://www.php.net/manual/en/function.copy.php>
 
 Makes a copy of the file source to dest.
 
-#### func Cos
+### func Cos
 
 ```go
 func Cos(arg float64) float64
@@ -532,7 +532,7 @@ Original : <https://www.php.net/manual/en/function.cos.php>
 
 cos() returns the cosine of the arg parameter. The arg parameter is in radians.
 
-#### func Cosh
+### func Cosh
 
 ```go
 func Cosh(arg float64) float64
@@ -544,7 +544,7 @@ Original : <https://www.php.net/manual/en/function.cosh.php>
 
 Returns the hyperbolic cosine of arg, defined as (exp(arg) + exp(-arg))/2.
 
-#### func Count
+### func Count
 
 ```go
 func Count(v []interface{}) int
@@ -554,7 +554,7 @@ Count - Count all elements in an array, or something in an object
 
 Original : <https://www.php.net/manual/en/function.count.php>
 
-#### func DecBin
+### func DecBin
 
 ```go
 func DecBin(arg int64) string
@@ -567,7 +567,7 @@ Original : <https://www.php.net/manual/en/function.decbin.php>
 Returns a string containing a binary representation of the given number
 argument.
 
-#### func DecHex
+### func DecHex
 
 ```go
 func DecHex(arg int64) string
@@ -584,7 +584,7 @@ The largest number that can be converted is PHP_INT_MAX \* 2 + 1 (or -1): on
 32-bit platforms, this will be 4294967295 in decimal, which results in dechex()
 returning ffffffff.
 
-#### func DecOct
+### func DecOct
 
 ```go
 func DecOct(arg int64) string
@@ -599,7 +599,7 @@ argument. The largest number that can be converted depends on the platform in
 use. For 32-bit platforms this is usually 4294967295 in decimal resulting in 37777777777. For 64-bit platforms this is usually 9223372036854775807 in decimal
 resulting in 777777777777777777777.
 
-#### func Deg2Rad
+### func Deg2Rad
 
 ```go
 func Deg2Rad(arg float64) float64
@@ -613,7 +613,7 @@ This function converts number from degrees to the radian equivalent.
 
 Degree180 is constant and value is 180 :)
 
-#### func Delete
+### func Delete
 
 ```go
 func Delete(name string) error
@@ -626,7 +626,7 @@ Original : <https://www.php.net/manual/en/function.delete.php>
 Deletes filename. Similar to the Unix C unlink() function. An E_WARNING level
 error will be generated on failure.
 
-#### func Die
+### func Die
 
 ```go
 func Die(of int)
@@ -638,7 +638,7 @@ Original : <https://www.php.net/manual/en/function.die.php>
 
 This language construct is equivalent to exit().
 
-#### func DirName
+### func DirName
 
 ```go
 func DirName(path string) ([]os.FileInfo, error)
@@ -651,7 +651,7 @@ Original : <https://www.php.net/manual/en/function.dirname.php>
 Given a string containing the path of a file or directory, this function will
 return the parent directory's path that is levels up from the current directory.
 
-#### func Echo
+### func Echo
 
 ```go
 func Echo(vars ...interface{})
@@ -661,7 +661,7 @@ Echo - Output one or more strings
 
 Original : <https://www.php.net/manual/en/function.echo.php>
 
-#### func Exec
+### func Exec
 
 ```go
 func Exec(of string)
@@ -673,7 +673,7 @@ Original : <https://www.php.net/manual/tr/function.exec.php>
 
 exec() executes the given command.
 
-#### func Exit
+### func Exit
 
 ```go
 func Exit(of int)
@@ -686,7 +686,7 @@ Original : <https://www.php.net/manual/en/function.exit.php>
 Terminates execution of the script. Shutdown functions and object destructors
 will always be executed even if exit is called.
 
-#### func Exp
+### func Exp
 
 ```go
 func Exp(arg float64) float64
@@ -701,7 +701,7 @@ Returns e raised to the power of arg.
 Note : 'e' is the base of the natural system of logarithms, or approximately
 2.718282.
 
-#### func ExpM1
+### func ExpM1
 
 ```go
 func ExpM1(arg float64) float64
@@ -716,7 +716,7 @@ expm1() returns the equivalent to 'exp(arg) - 1' computed in a way that is
 accurate even if the value of arg is near zero, a case where 'exp (arg) - 1'
 would be inaccurate due to subtraction of two numbers that are nearly equal.
 
-#### func Explode
+### func Explode
 
 ```go
 func Explode(s, set string) []string
@@ -729,7 +729,7 @@ Original : <https://www.php.net/manual/en/function.explode.php>
 Returns an array of strings, each of which is a substring of string formed by
 splitting it on boundaries formed by the string delimiter.
 
-#### func FClose
+### func FClose
 
 ```go
 func FClose(file *os.File) error
@@ -741,7 +741,7 @@ Original : <https://www.php.net/manual/en/function.fclose.php>
 
 The file pointed to by handle is closed.
 
-#### func FMod
+### func FMod
 
 ```go
 func FMod(arg float64, arg2 float64) float64
@@ -758,7 +758,7 @@ non-zero, r has the same sign as x and a magnitude less than the magnitude of y.
 
 TO-DO : There is a problem with 0.2 like numbers. Will fix
 
-#### func FOpen
+### func FOpen
 
 ```go
 func FOpen(file string, mode int) (*os.File, error)
@@ -773,7 +773,7 @@ fopen() binds a named resource, specified by filename, to a stream.
 Mode : os.O_RDONLY | os.O_WRONLY | os.O_RDWR | os.O_APPEND | os.O_CREATE |
 os.O_EXCL | os.O_SYNC | os.O_TRUNC
 
-#### func FPuts
+### func FPuts
 
 ```go
 func FPuts(f *os.File, data string) int
@@ -785,7 +785,7 @@ Original : <https://www.php.net/manual/en/function.fputs.php>
 
 This function is an alias of: FWrite()..
 
-#### func FRead
+### func FRead
 
 ```go
 func FRead(f *os.File, sb int64) string
@@ -797,7 +797,7 @@ Original : <https://www.php.net/manual/en/function.fread.php>
 
 fread() reads up to length bytes from the file pointer referenced by handle.
 
-#### func FWrite
+### func FWrite
 
 ```go
 func FWrite(f *os.File, data string) int
@@ -809,7 +809,7 @@ Original : <https://www.php.net/manual/en/function.fwrite.php>
 
 fwrite() writes the contents of string to the file stream pointed to by handle.
 
-#### func FileExists
+### func FileExists
 
 ```go
 func FileExists(path string) bool
@@ -821,7 +821,7 @@ Original : <https://www.php.net/manual/en/function.file-exists.php>
 
 Checks whether a file or directory exists.
 
-#### func FileGetContents
+### func FileGetContents
 
 ```go
 func FileGetContents(path string, includePath bool, context []string, offset int, maxlen int) string
@@ -835,7 +835,7 @@ This function is similar to file(), except that file_get_contents() returns the
 file in a string, starting at the specified offset up to maxlen bytes. On
 failure, file_get_contents() will return FALSE. TODO : Context Implementation.
 
-#### func FileMime
+### func FileMime
 
 ```go
 func FileMime(file string) time.Time
@@ -848,7 +848,7 @@ Original : <https://www.php.net/manual/en/function.filemtime.php>
 This function returns the time when the data blocks of a file were being written
 to, that is, the time when the content of the file was changed.
 
-#### func FilePerms
+### func FilePerms
 
 ```go
 func FilePerms(path string) os.FileMode
@@ -859,7 +859,7 @@ FilePerms - Gets file permissions.
 Original : <https://www.php.net/manual/en/function.fileperms.php> Gets permissions
 for the given file.
 
-#### func FilePutContents
+### func FilePutContents
 
 ```go
 func FilePutContents(path, data string)
@@ -872,7 +872,7 @@ Original : <https://www.php.net/manual/en/function.file-put-contents.php>
 This function is identical to calling fopen(), fwrite() and fclose()
 successively to write data to a file. TODO: Flags
 
-#### func FileSize
+### func FileSize
 
 ```go
 func FileSize(path string) (int64, error)
@@ -883,7 +883,7 @@ FileSize - Gets file permissions.
 Original : <https://www.php.net/manual/en/function.filesize.php> Gets permissions
 for the given file.
 
-#### func FileType
+### func FileType
 
 ```go
 func FileType(fs string) (string, error)
@@ -895,7 +895,7 @@ Original : <https://www.php.net/manual/en/function.filetype.php>
 
 Returns the type of the given file.
 
-#### func Floor
+### func Floor
 
 ```go
 func Floor(arg float64) float64
@@ -908,7 +908,7 @@ Original : <https://www.php.net/manual/en/function.floor.php>
 Returns the next lowest integer value (as float) by rounding down value if
 necessary.
 
-#### func Glob
+### func Glob
 
 ```go
 func Glob(path string) (matches []string, err error)
@@ -922,7 +922,7 @@ The glob() function searches for all the pathnames matching pattern according to
 the rules used by the libc glob() function, which is similar to the rules used
 by common shells.
 
-#### func Hex2Bin
+### func Hex2Bin
 
 ```go
 func Hex2Bin(s string) string
@@ -936,7 +936,7 @@ Decodes a hexadecimally encoded binary string.
 
 ```NOTE: This function does NOT convert a hexadecimal number to a binary number. This can be done using the BaseConvert() function.```
 
-#### func HexDec
+### func HexDec
 
 ```go
 func HexDec(arg string) int64
@@ -952,7 +952,7 @@ hex_string argument. hexdec() converts a hexadecimal string to a decimal number.
 hexdec() will ignore any non-hexadecimal characters it encounters. As of PHP
 7.4.0 supplying any invalid characters is deprecated.
 
-#### func HtmlspecialChars
+### func HtmlspecialChars
 
 ```go
 func HtmlspecialChars(s string) string
@@ -966,7 +966,7 @@ Certain characters have special significance in HTML, and should be represented
 by HTML entities if they are to preserve their meanings. This function returns a
 string with these conversions made
 
-#### func HtmlspecialCharsdecode
+### func HtmlspecialCharsdecode
 
 ```go
 func HtmlspecialCharsdecode(s string) string
@@ -978,7 +978,7 @@ Original : <https://www.php.net/manual/en/function.htmlspecialchars-decode.php>
 
 Convert special HTML entities back to characters.
 
-#### func HyPot
+### func HyPot
 
 ```go
 func HyPot(arg, arg2 float64) float64
@@ -992,7 +992,7 @@ hypot() returns the length of the hypotenuse of a right-angle triangle with
 sides of length x and y, or the distance of the point (x, y) from the origin.
 This is equivalent to sqrt(x*x + y*y).
 
-#### func Implode
+### func Implode
 
 ```go
 func Implode(sep string, v []string) string
@@ -1004,7 +1004,7 @@ Original : <https://www.php.net/manual/en/function.implode.php>
 
 Join array elements with a glue string.
 
-#### func InArray
+### func InArray
 
 ```go
 func InArray(needle interface{}, haystack interface{}) bool
@@ -1020,7 +1020,7 @@ Original : <https://www.php.net/manual/en/function.in-array.php>
     return boolean true / false
   ```
 
-#### func IntDiv
+### func IntDiv
 
 ```go
 func IntDiv(arg, arg2 int64) (quotient int64)
@@ -1032,7 +1032,7 @@ Original : <https://www.php.net/manual/en/function.intdiv.php>
 
 Returns the integer quotient of the division of dividend by divisor.
 
-#### func IsArray
+### func IsArray
 
 ```go
 func IsArray(v interface{}) bool
@@ -1044,7 +1044,7 @@ Original : <https://www.php.net/manual/en/function.is-array.php>
 
 Finds whether the given variable is an array.
 
-#### func IsDir
+### func IsDir
 
 ```go
 func IsDir(path string) bool
@@ -1056,7 +1056,7 @@ Original : <https://www.php.net/manual/en/function.is-dir.php>
 
 Tells whether the given filename is a directory.
 
-#### func IsExecutable
+### func IsExecutable
 
 ```go
 func IsExecutable(path string) bool
@@ -1068,7 +1068,7 @@ Original : <https://www.php.net/manual/en/function.is-executable.php>
 
 Tells whether the filename is executable.
 
-#### func IsFile
+### func IsFile
 
 ```go
 func IsFile(path string) bool
@@ -1080,7 +1080,7 @@ Original : <https://www.php.net/manual/en/function.is-file.php>
 
 Tells whether the given file is a regular file.
 
-#### func IsFinite
+### func IsFinite
 
 ```go
 func IsFinite(arg float64, ch int) bool
@@ -1092,7 +1092,7 @@ Original : <https://www.php.net/manual/en/function.is-finite.php>
 
 Checks whether val is a legal finite on this platform.
 
-#### func IsInFinite
+### func IsInFinite
 
 ```go
 func IsInFinite(arg float64, ch int) bool
@@ -1105,7 +1105,7 @@ Original : <https://www.php.net/manual/en/function.is-infinite.php>
 Returns TRUE if val is infinite (positive or negative), like the result of
 log(0) or any value too big to fit into a float on this platform.
 
-#### func IsLink
+### func IsLink
 
 ```go
 func IsLink(path string) bool
@@ -1117,7 +1117,7 @@ Original : <https://www.php.net/manual/en/function.is-link.php>
 
 Tells whether the given file is a symbolic link.
 
-#### func IsNan
+### func IsNan
 
 ```go
 func IsNan(arg float64) bool
@@ -1130,7 +1130,7 @@ Original : <https://www.php.net/manual/en/function.is-infinite.php>
 Returns TRUE if val is infinite (positive or negative), like the result of
 log(0) or any value too big to fit into a float on this platform.
 
-#### func IsReadable
+### func IsReadable
 
 ```go
 func IsReadable(path string) bool
@@ -1142,7 +1142,7 @@ Original : <https://www.php.net/manual/en/function.is-readable.php>
 
 Tells whether a file exists and is readable.
 
-#### func IsURL
+### func IsURL
 
 ```go
 func IsURL(str string) bool
@@ -1150,7 +1150,7 @@ func IsURL(str string) bool
 
 IsURL function
 
-#### func IsWritable
+### func IsWritable
 
 ```go
 func IsWritable(path string) bool
@@ -1163,7 +1163,7 @@ Original : <https://www.php.net/manual/en/function.is-writable.php>
 Returns TRUE if the filename exists and is writable. The filename argument may
 be a directory name allowing you to check if a directory is writable.
 
-#### func IsWriteable
+### func IsWriteable
 
 ```go
 func IsWriteable(path string) bool
@@ -1176,7 +1176,7 @@ Original : <https://www.php.net/manual/en/function.is-writeable.php>
 Returns TRUE if the filename exists and is writable. The filename argument may
 be a directory name allowing you to check if a directory is writable.
 
-#### func Join
+### func Join
 
 ```go
 func Join(set string, s []string) string
@@ -1188,7 +1188,7 @@ Original : <https://www.php.net/manual/en/function.join.php>
 
 Alias o Implode
 
-#### func LcgValue
+### func LcgValue
 
 ```go
 func LcgValue() float64
@@ -1202,7 +1202,7 @@ lcg_value() returns a pseudo random number in the range of (0, 1). The function
 combines two CGs with periods of 2^31 - 85 and 2^31 - 249. The period of this
 function is equal to the product of both primes.
 
-#### func Link
+### func Link
 
 ```go
 func Link(target, link string)
@@ -1214,7 +1214,7 @@ Original : <https://www.php.net/manual/en/function.link.php>
 
 link() creates a hard link.
 
-#### func Log
+### func Log
 
 ```go
 func Log(arg float64) float64
@@ -1227,7 +1227,7 @@ Original : <https://www.php.net/manual/en/function.log.php>
 If the optional base parameter is specified, log() returns logbase arg,
 otherwise log() returns the natural logarithm of arg.
 
-#### func Log10
+### func Log10
 
 ```go
 func Log10(arg float64) float64
@@ -1239,7 +1239,7 @@ Original : <https://www.php.net/manual/en/function.log10.php>
 
 Returns the base-10 logarithm of arg.
 
-#### func Log1P
+### func Log1P
 
 ```go
 func Log1P(arg float64) float64
@@ -1254,7 +1254,7 @@ log1p() returns log(1 + number) computed in a way that is accurate even when the
 value of number is close to zero. log() might only return log(1) in this case
 due to lack of precision.
 
-#### func Ltrim
+### func Ltrim
 
 ```go
 func Ltrim(s, set string) string
@@ -1266,7 +1266,7 @@ Original : <https://www.php.net/manual/en/function.ltrim.php>
 
 Strip whitespace (or other characters) from the beginning of a string.
 
-#### func MD5
+### func MD5
 
 ```go
 func MD5(v string) string
@@ -1279,7 +1279,7 @@ Original : <https://www.php.net/manual/en/function.md5.php>
 Calculates the MD5 hash of str using the RSA Data Security, Inc. MD5
 Message-Digest Algorithm.
 
-#### func MD5File
+### func MD5File
 
 ```go
 func MD5File(v string) string
@@ -1293,7 +1293,7 @@ Calculates the MD5 hash of the file specified by the filename parameter using
 the RSA Data Security, Inc. MD5 Message-Digest Algorithm, and returns that hash.
 The hash is a 32-character hexadecimal number.
 
-#### func Max
+### func Max
 
 ```go
 func Max(arg, arg2 float64) float64
@@ -1306,7 +1306,7 @@ Original : <https://www.php.net/manual/en/function.max.php>
 If at least two parameters are provided, max() returns the biggest of these
 values.
 
-#### func MbStrtolower
+### func MbStrtolower
 
 ```go
 func MbStrtolower(s string) string
@@ -1318,7 +1318,7 @@ Original : <https://www.php.net/manual/en/function.mb-strtolower.php>
 
 Returns str with all alphabetic characters converted to lowercase.
 
-#### func MbStrtoupper
+### func MbStrtoupper
 
 ```go
 func MbStrtoupper(s string) string
@@ -1330,7 +1330,7 @@ Original : <https://www.php.net/manual/en/function.mb-strtoupper.php>
 
 Returns str with all alphabetic characters converted to uppercase.
 
-#### func Min
+### func Min
 
 ```go
 func Min(arg, arg2 float64) float64
@@ -1343,7 +1343,7 @@ Original : <https://www.php.net/manual/en/function.min.php>
 If at least two parameters are provided, min() returns the smallest of these
 values.
 
-#### func MkDir
+### func MkDir
 
 ```go
 func MkDir(path string, mode os.FileMode) error
@@ -1355,7 +1355,7 @@ Original : <https://www.php.net/manual/en/function.mkdir.php>
 
 Attempts to create the directory specified by pathname.
 
-#### func Nl2br
+### func Nl2br
 
 ```go
 func Nl2br(s string) string
@@ -1368,7 +1368,7 @@ Original : <https://www.php.net/manual/en/function.nl2br.php>
 Returns string with ```<br />``` or ```<br>``` inserted before all newlines (\r\n, \n\r, \n
 and \r).
 
-#### func Now
+### func Now
 
 ```go
 func Now() int64
@@ -1381,7 +1381,7 @@ Original : <https://www.php.net/manual/en/function.time.php>
 Returns the current time measured in the number of seconds since the Unix Epoch
 (January 1 1970 00:00:00 GMT).
 
-#### func OctDec
+### func OctDec
 
 ```go
 func OctDec(arg string) int64
@@ -1394,7 +1394,7 @@ Original : <https://www.php.net/manual/en/function.octdec.php>
 Returns the decimal equivalent of the octal number represented by the
 octal_string argument.
 
-#### func Pi
+### func Pi
 
 ```go
 func Pi() float64
@@ -1406,7 +1406,7 @@ Original : <https://www.php.net/manual/en/function.pi.php>
 
 Returns an approximation of pi.
 
-#### func Pow
+### func Pow
 
 ```go
 func Pow(arg, arg2 float64) float64
@@ -1418,7 +1418,7 @@ Original : <https://www.php.net/manual/en/function.pow.php>
 
 Returns base raised to the power of exp.
 
-#### func Print
+### func Print
 
 ```go
 func Print(vars string)
@@ -1428,7 +1428,7 @@ Print - Output a string
 
 Original : <https://www.php.net/manual/en/function.print.php>
 
-#### func PrintR
+### func PrintR
 
 ```go
 func PrintR(vars ...interface{})
@@ -1438,7 +1438,7 @@ PrintR - Prints human-readable information about a variable
 
 Original : <https://www.php.net/manual/en/function.print-r.php>
 
-#### func Rad2Deg
+### func Rad2Deg
 
 ```go
 func Rad2Deg(arg float64) float64
@@ -1451,7 +1451,7 @@ Original : <https://www.php.net/manual/en/function.rad2deg.php>
 This function converts number from radian to degrees. Degree180 is constant and
 value is 180 :)
 
-#### func Rand
+### func Rand
 
 ```go
 func Rand(args ...int) int
@@ -1464,7 +1464,7 @@ Original : <https://www.php.net/manual/en/function.rand.php>
 If you want a random number between 5 and 15 (inclusive), for example, use
 Rand(5, 15).
 
-#### func ReadLink
+### func ReadLink
 
 ```go
 func ReadLink(path string) (string, error)
@@ -1476,7 +1476,7 @@ Original : <https://www.php.net/manual/en/function.readlink.php>
 
 readlink() does the same as the readlink C function.
 
-#### func RealPath
+### func RealPath
 
 ```go
 func RealPath(path string) (string, error)
@@ -1490,7 +1490,7 @@ realpath() expands all symbolic links and resolves references to /./, /../ and
 extra / characters in the input path and returns the canonicalized absolute
 pathname.
 
-#### func Rename
+### func Rename
 
 ```go
 func Rename(oldpath, newpath string) error
@@ -1504,7 +1504,7 @@ Attempts to rename oldname to newname, moving it between directories if
 necessary. If renaming a file and newname exists, it will be overwritten. If
 renaming a directory and newname exists, this function will emit a warning.
 
-#### func RmDir
+### func RmDir
 
 ```go
 func RmDir(path string) error
@@ -1518,7 +1518,7 @@ Attempts to remove the directory named by dirname. The directory must be empty,
 and the relevant permissions must permit this. A E_WARNING level error will be
 generated on failure.
 
-#### func Round
+### func Round
 
 ```go
 func Round(arg float64) float64
@@ -1531,7 +1531,7 @@ Original : <https://www.php.net/manual/en/function.round.php>
 Returns the rounded value of val to specified precision (number of digits after
 the decimal point). precision can also be negative or zero (default).
 
-#### func Rtrim
+### func Rtrim
 
 ```go
 func Rtrim(s, set string) string
@@ -1544,7 +1544,7 @@ Original : <https://www.php.net/manual/en/function.rtrim.php>
 This function returns a string with whitespace (or other characters) stripped
 from the end of str.
 
-#### func Sha1
+### func Sha1
 
 ```go
 func Sha1(v string) string
@@ -1556,7 +1556,7 @@ Original : <https://www.php.net/manual/en/function.sha1.php>
 
 Calculates the sha1 hash of str using the US Secure Hash Algorithm 1.
 
-#### func Sha1File
+### func Sha1File
 
 ```go
 func Sha1File(v string) string
@@ -1570,7 +1570,7 @@ Calculates the sha1 hash of the file specified by filename using the US Secure
 Hash Algorithm 1, and returns that hash. The hash is a 40-character hexadecimal
 number.
 
-#### func ShellExec
+### func ShellExec
 
 ```go
 func ShellExec(of string)
@@ -1582,7 +1582,7 @@ Original : <https://www.php.net/manual/en/function.shell-exec.php>
 
 This function is identical to the backtick operator.
 
-#### func Sin
+### func Sin
 
 ```go
 func Sin(arg float64) float64
@@ -1594,7 +1594,7 @@ Original : <https://www.php.net/manual/en/function.sin.php>
 
 sin() returns the sine of the arg parameter. The arg parameter is in radians.
 
-#### func Sinh
+### func Sinh
 
 ```go
 func Sinh(arg float64) float64
@@ -1606,7 +1606,7 @@ Original : <https://www.php.net/manual/en/function.sinh.php>
 
 Returns the hyperbolic sine of arg, defined as (exp(arg) - exp(-arg))/2.
 
-#### func Sizeof
+### func Sizeof
 
 ```go
 func Sizeof(v []interface{}) int
@@ -1616,7 +1616,7 @@ Sizeof - Alias of Count
 
 Original : <https://www.php.net/manual/en/function.sizeof.php>
 
-#### func Sleep
+### func Sleep
 
 ```go
 func Sleep(t int64)
@@ -1628,7 +1628,7 @@ Original : <https://www.php.net/manual/en/function.sleep.php>
 
 Delays the program execution for the given number of seconds.
 
-#### func Sort
+### func Sort
 
 ```go
 func Sort(v interface{}, flag string) bool
@@ -1649,7 +1649,7 @@ Flags are same as php sort.
   SORT_NATURAL - compare items as strings using "natural ordering" like natsort()
   ```
 
-#### func Sqrt
+### func Sqrt
 
 ```go
 func Sqrt(arg float64) float64
@@ -1661,7 +1661,7 @@ Original : <https://www.php.net/manual/en/function.sqrt.php>
 
 Returns the square root of arg.
 
-#### func Stat
+### func Stat
 
 ```go
 func Stat(name string) (os.FileInfo, error)
@@ -1676,7 +1676,7 @@ link, statistics are from the file itself, not the symlink. Prior to PHP 7.4.0,
 on Windows NTS builds the size, atime, mtime and ctime statistics have been from
 the symlink, in this case.
 
-#### func StrRepeat
+### func StrRepeat
 
 ```go
 func StrRepeat(s string, count int) string
@@ -1688,7 +1688,7 @@ Original : <https://www.php.net/manual/en/function.str-repeat.php>
 
 Returns string repeated times times.
 
-#### func StrReplace
+### func StrReplace
 
 ```go
 func StrReplace(find, replace, s string, n int) string
@@ -1704,7 +1704,7 @@ subject replaced with the given replace value.
 
 n value must set to -1 if you want to infinite change
 
-#### func StringWithCharset
+### func StringWithCharset
 
 ```go
 func StringWithCharset(length int, charset string) string
@@ -1712,7 +1712,7 @@ func StringWithCharset(length int, charset string) string
 
 StringWithCharset - Create RAndom and Unique String
 
-#### func Strtolower
+### func Strtolower
 
 ```go
 func Strtolower(s string) string
@@ -1724,7 +1724,7 @@ Original : <https://www.php.net/manual/en/function.strtolower.php>
 
 Returns string with all alphabetic characters converted to lowercase.
 
-#### func Strtoupper
+### func Strtoupper
 
 ```go
 func Strtoupper(s string) string
@@ -1736,7 +1736,7 @@ Original : <https://www.php.net/manual/en/function.strtoupper.php>
 
 Returns string with all alphabetic characters converted to uppercase.
 
-#### func SymLink
+### func SymLink
 
 ```go
 func SymLink(target, link string)
@@ -1749,7 +1749,7 @@ Original : <https://www.php.net/manual/en/function.symlink.php>
 symlink() creates a symbolic link to the existing target with the specified name
 link.
 
-#### func Tan
+### func Tan
 
 ```go
 func Tan(arg float64) float64
@@ -1761,7 +1761,7 @@ Original : <https://www.php.net/manual/en/function.tan.php>
 
 tan() returns the tangent of the arg parameter. The arg parameter is in radians.
 
-#### func Tanh
+### func Tanh
 
 ```go
 func Tanh(arg float64) float64
@@ -1773,7 +1773,7 @@ Original : <https://www.php.net/manual/en/function.tanh.php>
 
 Returns the hyperbolic tangent of arg, defined as sinh(arg)/cosh(arg).
 
-#### func Tempfile
+### func Tempfile
 
 ```go
 func Tempfile() (f *os.File)
@@ -1790,7 +1790,7 @@ The file is automatically removed when closed (for example, by calling fclose(),
 or when there are no remaining references to the file handle returned by
 tmpfile()), or when the script ends.
 
-#### func Tempnam
+### func Tempnam
 
 ```go
 func Tempnam(dir, prefix string) string
@@ -1805,7 +1805,7 @@ the specified directory. If the directory does not exist or is not writable,
 tempnam() may generate a file in the system's temporary directory, and return
 the full path to that file, including its name.
 
-#### func Time
+### func Time
 
 ```go
 func Time() int64
@@ -1818,7 +1818,7 @@ Original : <https://www.php.net/manual/en/function.time.php>
 Returns the current time measured in the number of seconds since the Unix Epoch
 (January 1 1970 00:00:00 GMT).
 
-#### func Touch
+### func Touch
 
 ```go
 func Touch(path string, t int64, at int64) bool
@@ -1833,7 +1833,7 @@ filename parameter to the value given in time. Note that the access time is
 always modified, regardless of the number of parameters. If the file does not
 exist, it will be created.
 
-#### func Trim
+### func Trim
 
 ```go
 func Trim(s, set string) string
@@ -1847,7 +1847,7 @@ Original : <https://www.php.net/manual/en/function.trim.php>
 This function returns a string with whitespace stripped from the beginning and
 end of str.
 
-#### func USleep
+### func USleep
 
 ```go
 func USleep(t int64)
@@ -1859,7 +1859,7 @@ Original : <https://www.php.net/manual/en/function.usleep.php>
 
 Delays program execution for the given number of microseconds.
 
-#### func Unlink
+### func Unlink
 
 ```go
 func Unlink(name string) error
@@ -1872,7 +1872,7 @@ Original : <https://www.php.net/manual/en/function.unlink.php>
 Deletes filename. Similar to the Unix C unlink() function. An E_WARNING level
 error will be generated on failure.
 
-#### type ArraySlice
+### type ArraySlice
 
 ```go
 type ArraySlice []interface{}
@@ -1880,7 +1880,7 @@ type ArraySlice []interface{}
 
 ArraySlice type -- Required for ArrayChunk
 
-#### func ArrayChunk
+### func ArrayChunk
 
 ```go
 func ArrayChunk(v ArraySlice, size int) ArraySlice
@@ -1890,7 +1890,7 @@ ArrayChunk - Split an array into chunks
 
 Original : <https://www.php.net/manual/en/function.array-chunk.php>
 
-#### type DiskStatus
+### type DiskStatus
 
 ```go
 type DiskStatus struct {
@@ -1900,7 +1900,7 @@ type DiskStatus struct {
 
 DiskStatus struct
 
-#### func DiskFreeSpace
+### func DiskFreeSpace
 
 ```go
 func DiskFreeSpace(path string) (disk DiskStatus)
