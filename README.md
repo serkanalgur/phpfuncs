@@ -1,6 +1,7 @@
 # PHP Functions for Golang - phpfuncs
 
 [![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs) [![Go Report Card](https://goreportcard.com/badge/github.com/serkanalgur/phpfuncs)](https://goreportcard.com/report/github.com/serkanalgur/phpfuncs) [![Build Status](https://travis-ci.org/serkanalgur/phpfuncs.svg?branch=main)](https://travis-ci.org/serkanalgur/phpfuncs) [![codecov](https://codecov.io/gh/serkanalgur/phpfuncs/branch/main/graph/badge.svg?token=WETVWX4GA3)](https://codecov.io/gh/serkanalgur/phpfuncs)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fserkanalgur%2Fphpfuncs.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fserkanalgur%2Fphpfuncs?ref=badge_shield)
 
 PHP functions implementation to Golang. This package is for the Go beginners who have developed PHP code before. You can use PHP like functions in your app, module etc. when you add this module to your project.
 
@@ -1914,3 +1915,7 @@ Given a string containing a directory, this function will return the number of
 bytes available on the corresponding filesystem or disk partition.
 
 DEVELOPER NOTE : PROBABLY WORKING ON ONLY LINUX AND MAC. TO-DO : WINDOWS
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fserkanalgur%2Fphpfuncs.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fserkanalgur%2Fphpfuncs?ref=badge_large)
