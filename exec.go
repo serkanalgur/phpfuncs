@@ -2,7 +2,6 @@ package phpfuncs
 
 import (
 	"bytes"
-	"fmt"
 	"log"
 	"os"
 	"os/exec"
@@ -13,7 +12,7 @@ import (
 // Original : https://www.php.net/manual/tr/function.exec.php
 //
 // exec() executes the given command.
-func Exec(of string) {
+func Exec(of string) string {
 	var out bytes.Buffer
 	cmd := exec.Command(of)
 	cmd.Stdout = &out
@@ -21,6 +20,7 @@ func Exec(of string) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	return out.String()
 }
 
 // ShellExec - Execute command via shell and return the complete output as a string
@@ -28,7 +28,7 @@ func Exec(of string) {
 // Original : https://www.php.net/manual/en/function.shell-exec.php
 //
 // This function is identical to the backtick operator.
-func ShellExec(of string) {
+func ShellExec(of string) string {
 	var out bytes.Buffer
 	cmd := exec.Command(of)
 	cmd.Stdout = &out
@@ -36,7 +36,7 @@ func ShellExec(of string) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%q\n", out.String())
+	return out.String()
 }
 
 // Exit - Output a message and terminate the current script
