@@ -1,6 +1,6 @@
 # PHP Functions for Golang - phpfuncs
 
-[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs) [![Go Report Card](https://goreportcard.com/badge/github.com/serkanalgur/phpfuncs)](https://goreportcard.com/report/github.com/serkanalgur/phpfuncs) [![Build Status](https://travis-ci.org/serkanalgur/phpfuncs.svg?branch=main)](https://travis-ci.org/serkanalgur/phpfuncs) [![codecov](https://codecov.io/gh/serkanalgur/phpfuncs/branch/main/graph/badge.svg?token=WETVWX4GA3)](https://codecov.io/gh/serkanalgur/phpfuncs)
+[![PkgGoDev](https://pkg.go.dev/badge/serkanalgur/phpfuncs)](https://pkg.go.dev/github.com/serkanalgur/phpfuncs) [![Go Report Card](https://goreportcard.com/badge/github.com/serkanalgur/phpfuncs)](https://goreportcard.com/report/github.com/serkanalgur/phpfuncs) [![Build Status](https://travis-ci.org/serkanalgur/phpfuncs.svg?branch=main)](https://travis-ci.org/serkanalgur/phpfuncs) [![codecov](https://codecov.io/gh/serkanalgur/phpfuncs/branch/main/graph/badge.svg?token=WETVWX4GA3)](https://codecov.io/gh/serkanalgur/phpfuncs) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fserkanalgur%2Fphpfuncs.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fserkanalgur%2Fphpfuncs?ref=badge_shield)
 
 PHP functions implementation to Golang. This package is for the Go beginners who have developed PHP code before. You can use PHP like functions in your app, module etc. when you add this module to your project.
 
@@ -50,7 +50,9 @@ PHP functions implementation to Golang. This package is for the Go beginners who
     - [func Die](#func-die)
     - [func DirName](#func-dirname)
     - [func Echo](#func-echo)
-    - [func Exec](#func-exec)
+    - [func Escapeshellarg](#func-escapeshellarg)
+    - [func Escapeshellcmd](#func-escapeshellcmd)
+    - [func  Exec](#func--exec)
     - [func Exit](#func-exit)
     - [func Exp](#func-exp)
     - [func ExpM1](#func-expm1)
@@ -121,7 +123,7 @@ PHP functions implementation to Golang. This package is for the Go beginners who
     - [func Rtrim](#func-rtrim)
     - [func Sha1](#func-sha1)
     - [func Sha1File](#func-sha1file)
-    - [func ShellExec](#func-shellexec)
+    - [func  ShellExec](#func--shellexec)
     - [func Sin](#func-sin)
     - [func Sinh](#func-sinh)
     - [func Sizeof](#func-sizeof)
@@ -148,6 +150,7 @@ PHP functions implementation to Golang. This package is for the Go beginners who
     - [func ArrayChunk](#func-arraychunk)
     - [type DiskStatus](#type-diskstatus)
     - [func DiskFreeSpace](#func-diskfreespace)
+  - [License](#license)
 
 ## Installation
 
@@ -661,10 +664,30 @@ Echo - Output one or more strings
 
 Original : <https://www.php.net/manual/en/function.echo.php>
 
-### func Exec
+### func Escapeshellarg
 
 ```go
-func Exec(of string)
+func Escapeshellarg(s string) string
+```
+
+Escapeshellarg - Escape a string to be used as a shell argument
+
+Original: <https://www.php.net/manual/en/function.escapeshellarg.php>
+
+### func Escapeshellcmd
+
+```go
+func Escapeshellcmd(s string) string
+```
+
+Escapeshellcmd - Escape shell metacharacters
+
+Original: <https://www.php.net/manual/en/function.escapeshellcmd.php>
+
+### func  Exec
+
+```go
+func Exec(of string) string
 ```
 
 Exec - Start a command on system
@@ -1570,10 +1593,10 @@ Calculates the sha1 hash of the file specified by filename using the US Secure
 Hash Algorithm 1, and returns that hash. The hash is a 40-character hexadecimal
 number.
 
-### func ShellExec
+### func  ShellExec
 
 ```go
-func ShellExec(of string)
+func ShellExec(of string) string
 ```
 
 ShellExec - Execute command via shell and return the complete output as a string
@@ -1914,3 +1937,7 @@ Given a string containing a directory, this function will return the number of
 bytes available on the corresponding filesystem or disk partition.
 
 DEVELOPER NOTE : PROBABLY WORKING ON ONLY LINUX AND MAC. TO-DO : WINDOWS
+
+## License
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fserkanalgur%2Fphpfuncs.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fserkanalgur%2Fphpfuncs?ref=badge_large)
