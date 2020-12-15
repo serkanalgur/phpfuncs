@@ -15,5 +15,5 @@ func CoverCheck(t *testing.T, s, exp string) {
 // TestBase64Encode - Test for Encryption
 func TestBase64Encode(t *testing.T) {
 	want := "SGVsbG8gV29ybGQ="
-	CoverCheck(t,phpfuncs.Base64Encode("Hello World"),want)
+	CoverCheck(t, phpfuncs.Base64Encode("Hello World"), want)
 }

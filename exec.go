@@ -11,7 +11,6 @@ import (
 
 var rPatt *regexp.Regexp
 
-
 func init() {
 	rPatt = regexp.MustCompile(`[^\w@%+=:,./-]`)
 }
@@ -71,7 +70,9 @@ func Die(of int) {
 // Original: https://www.php.net/manual/en/function.escapeshellarg.php
 //
 func Escapeshellarg(s string) string {
-	if len(s) == 0 {return "''"}
+	if len(s) == 0 {
+		return "''"
+	}
 
 	if rPatt.MatchString(s) {
 		return "'" + strings.ReplaceAll(s, "'", "'\"'\"'") + "'"
@@ -89,9 +90,9 @@ func Escapeshellcmd(s string) string {
 
 	z := make([]string, len(cmds))
 
-		for i ,s := range cmds {
-			z[i] = Escapeshellarg(s)
-		}
+	for i, s := range cmds {
+		z[i] = Escapeshellarg(s)
+	}
 
-		return Join(" ",z)
+	return Join(" ", z)
 }
