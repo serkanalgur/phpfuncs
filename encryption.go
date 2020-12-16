@@ -107,24 +107,23 @@ func Sha1File(v string) string {
 	return hex.EncodeToString(hash[:])
 }
 
-
 // Hash - Generate a hash value (message digest)
 //
 // Original: https://www.php.net/manual/en/function.hash.php
 //
 func Hash(cryp, val string) string {
 	switch cryp {
-		case "sha256":
-			return Sha256(val)
-		case "sha224":
-			return Sha224(val)
-		case "sha384":
-			return Sha384(val)
-		case "sha512":
-			return Sha512(val)
-		case "sha1":
-			return Sha1(val)
-		default:
-			return MD5(val)
+	case "sha256":
+		return Sha256(val)
+	case "sha224":
+		return Sha224(val)
+	case "sha384":
+		return Sha384(val)
+	case "sha512":
+		return Sha512(val)
+	case "sha1":
+		return Sha1(val)
+	default:
+		return MD5(val)
 	}
 }
