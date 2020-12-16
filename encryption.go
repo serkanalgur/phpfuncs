@@ -3,6 +3,8 @@ package phpfuncs
 import (
 	"crypto/md5"
 	"crypto/sha1"
+	"crypto/sha256"
+	"crypto/sha512"
 	"encoding/base64"
 	"encoding/hex"
 	"io/ioutil"
@@ -62,6 +64,34 @@ func Sha1(v string) string {
 	return hex.EncodeToString(hash[:])
 }
 
+// Sha224 - Calculate the sha1 hash of a string.
+//
+func Sha224(v string) string {
+	hash := sha256.Sum224([]byte(v))
+	return hex.EncodeToString(hash[:])
+}
+
+// Sha256 - Calculate the sha1 hash of a string.
+//
+func Sha256(v string) string {
+	hash := sha256.Sum256([]byte(v))
+	return hex.EncodeToString(hash[:])
+}
+
+// Sha384 - Calculate the sha1 hash of a string.
+//
+func Sha384(v string) string {
+	hash := sha512.Sum384([]byte(v))
+	return hex.EncodeToString(hash[:])
+}
+
+// Sha512 - Calculate the sha1 hash of a string.
+//
+func Sha512(v string) string {
+	hash := sha512.Sum512([]byte(v))
+	return hex.EncodeToString(hash[:])
+}
+
 // Sha1File - Calculate the sha1 hash of a file.
 //
 // Original : https://www.php.net/manual/en/function.sha1-file.php
@@ -75,4 +105,25 @@ func Sha1File(v string) string {
 
 	hash := sha1.Sum(file)
 	return hex.EncodeToString(hash[:])
+}
+
+// Hash - Generate a hash value (message digest)
+//
+// Original: https://www.php.net/manual/en/function.hash.php
+//
+func Hash(cryp, val string) string {
+	switch cryp {
+	case "sha256":
+		return Sha256(val)
+	case "sha224":
+		return Sha224(val)
+	case "sha384":
+		return Sha384(val)
+	case "sha512":
+		return Sha512(val)
+	case "sha1":
+		return Sha1(val)
+	default:
+		return MD5(val)
+	}
 }
