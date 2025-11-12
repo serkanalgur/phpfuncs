@@ -15,3 +15,41 @@
 # vendor/
 
 .prettierignore
+
+# Go build cache
+.cache/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vs/
+.vscode-test
+*.code-workspace
+
+# Build directories
+bin/
+dist/
+build/
+
+# Coverage files
+*.coverprofile
+coverage.out
+*.cover
+
+# Dependency files
+go.sum
+
+# Environment files
+.env
+.env.local
+.env.*.local

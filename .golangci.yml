@@ -1,0 +1,47 @@
+# GolangCI-Lint configuration for phpfuncs
+version: "2"
+
+run:
+  timeout: 5m
+  concurrency: 4
+  build-tags: []
+  tests: true
+
+linters:
+  enable:
+    - asasalint
+    - bodyclose
+    - durationcheck
+    - errcheck
+    - errorlint
+    - errname
+    - gofmt
+    - goimports
+    - gosimple
+    - govet
+    - ineffassign
+    - misspell
+    - revive
+    - staticcheck
+    - unused
+    - whitespace
+
+issues:
+  max-same-issues: 50
+
+severity:
+  default-severity: error
+
+output:
+  formats:
+    - colored-line-number
+
+settings:
+  errcheck:
+    check-type-assertions: true
+    check-blank: true
+  revive:
+    min-confidence: 0.8
+  goimports:
+    local-prefixes:
+      - github.com/serkanalgur/phpfuncs
